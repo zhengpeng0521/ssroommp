@@ -1,0 +1,75 @@
+<!-- pages/index/calendar/calendar.wxml -->
+<import src="/components/enter-loading/enter-loading.wxml" />
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+<view class='week'>
+  <view class="appointTip">温馨提示：节假日预约热门乐园，请至少提前1个月</view>
+  <!-- <view class="week-title">选择日期</view> -->
+  <!-- <view class='week-container'>
+    <view class='week-item {{index===0||index===dateUtil.weeks_ch.length-1?"color":""}}' style="width:{{dayContainerWidth}}px;height:50rpx" wx:for='{{dateUtil.weeks_ch}}' wx:key='{{index}}'>
+      <view>{{item}}</view>
+    </view>
+  </view> -->
+  <view class='week-container'>
+    <view class='week-item {{index===0||index===weeks_ch.length-1?"color":""}}' style="width:{{dayContainerWidth}}px;height:50rpx" wx:for='{{weeks_ch}}' wx:key='{{index}}'>
+      <view>{{item}}</view>
+    </view>
+  </view>
+</view>
+<scroll-view scroll-y>
+  <!-- <view class='calendar' wx:for='{{dateUtil.dateArr(startTime,endTime)}}' wx:for-item='outer' wx:key='{{index}}' data-index='{{index}}'>
+
+      <view class='calendar-item-title'>{{dateUtil.formatTimeToMonth(outer)}}</view>
+      <view class='calendar-container'>
+        <view class='calendar-item-content center' style="width:{{dayContainerWidth}}px;height:{{dayContainerWidth}}px;" wx:for='{{dateUtil.getDisplayInfo(outer).beginWeek}}' wx:key='{{index}}'></view>
+        <view class='calendar-item-content center {{inner.daysTime===daysTime?"active":""}} {{inner.available?"":"disable"}} {{isBlacklist?"disable":""}}' style="width:{{dayContainerWidth}}px;height:{{dayContainerWidth}}px;" data-available='{{inner.available}}'
+          data-daysTime='{{inner.daysTime}}' catchtap="choseDate" wx:for='{{dateUtil.getDisplayInfo(outer,appointMonthGroupPlans).daysArr}}' wx:for-item='inner' wx:key='{{index}}'>
+          <view class='calendar-item-inner center'>
+            <view>{{inner.days}}</view>
+            <view class="isFull" wx:if='{{!isBlacklist && inner.isFull}}'>约满</view>
+          </view>
+        </view>
+      </view>
+
+  </view> -->
+  <calendar dateTime="{{dateTime}}" daysTime="{{daysTime}}" isBlacklist="{{isBlacklist}}" bindchose="choseDate" />
+</scroll-view>
+<view class="calendar-bottom center" hover-class="btn-hover" bindtap="confimDate">
+  <view class="calendar-btn center">确定</view>
+</view>
+<!-- 显示特权券 -->
+<import src="/template/coupon/coupon" />
+<v-popup show="{{showPopup}}" title="选择特权券" important="（该券一经使用无法退还！）" position="bottom" bind:close="handleClose">
+  <scroll-view scroll-y="true" style="max-height: 570rpx;margin-top:0">
+    <view class="coupon">
+      <v-coupon wx:for="{{couponList}}" wx:key="{{item.welfareId}}" item="{{item}}" bindselect="onSelect" />
+    </view>
+  </scroll-view>
+</v-popup>
+<!-- 显示首次预约 -->
+<v-popup offsetTop="{{40}}" show="{{showFirstTip}}" custom-style="background:transparent" closeStyle="top:40rpx;" bind:close="closeTips">
+  <view class="modal">
+    <image class="modal-top" src="/images/bg/dialog-top.png" />
+    <view class="modal-bd">
+      <view class="modal-msg">您拥有首次预约特权，预约日期不受限</view>
+      <view class="dialog-btn">
+        <view class="btn btn-primiary" bindtap="useFirstAppoint">立即使用</view>
+      </view>
+    </view>
+  </view>
+</v-popup>
+
+<!-- 绿色通道特权券 -->
+<v-popup offsetTop="{{40}}" show="{{showConfirm}}" custom-style="background:transparent" closeStyle="top:40rpx;" data-used="0" bindtap="onClick">
+  <view class="modal">
+    <image class="modal-top" src="/images/bg/dialog-top.png" />
+    <view class="modal-bd">
+      <text class="modal-msg">您有一张绿色通道特权券\n预约日期不受限</text>
+      <view class="dialog-ft">
+        <view class="btn btn-outline" data-used="0" catchtap="onClick">不使用</view>
+        <view class="btn btn-primiary" data-used="1" catchtap="onClick">使用</view>
+      </view>
+    </view>
+  </view>
+</v-popup>

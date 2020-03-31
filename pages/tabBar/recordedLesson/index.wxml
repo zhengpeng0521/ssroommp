@@ -1,0 +1,64 @@
+<!-- pages/recordedLesson/index/index.wxml -->
+<import src="/template/loading/loading" />
+<view class="">
+  <!-- <view class="head">
+    <view class="order-type">
+      <block wx:for="{{headContent}}" wx:key="index">
+        <view class="head-item" catchtap="toogleTab" data-index="{{item.videoType}}" style="width: {{tabWidth}}% ">
+          <view class="item-content {{index === currentIndex ? 'tab-active-class':''}}">
+            {{item.videoTypeName}}
+            <view wx:if="{{item.badge !== 0 && item.badge != null}}" class="head-badge">
+              {{item.badge}}
+            </view>
+          </view>
+          <view wx:if="{{item.lineShow}}" class="head-green-line"></view>
+        </view>
+      </block>
+    </view>
+  </view> -->
+  <view class='head'>
+    <scroll-view scroll-x="true" class='scroll-tab' scroll-left='{{scrollLeft}}'>
+      <view class="order-type">
+        <block wx:for='{{headContent}}' wx:key='index'>
+          <view class="head-item" catchtap='selectTab' data-index='{{item.videoType}}'>
+            <view class="item-content {{index == currentIndex ? 'tab-active-class' : '' }}">
+              {{item.videoTypeName}}
+            </view>
+            <view wx:if="{{item.lineShow}}" class='head-green-line'></view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="product-wrap">
+    <view class="product-list" wx:if="{{list.length>0}}">
+      <navigator wx:for="{{list}}" wx:key="id" class="item" url="/pages/recordedLesson/product-detail/product-detail?goodsId={{item.id}}" hover-class="navigator-hover" open-type="navigate">
+        <view class="product-img">
+          <image src="{{item.cover}}?p=image/format,jpg/quality,q_95/resize,w_274,h_154,g_center" />
+        </view>
+        <view class="product-right-all">
+          <view class="product-name">{{item.spuName}}</view>
+          <view class="product-right-foot">
+            <view class="price">
+              <view class="discount-price">¥<text>{{item.price || 0}}</text></view>
+              <text class="benefit-amount" wx:if="{{distributorFlag}}">赚￥{{item.benefitAmount}}</text>
+              <text class="origin-price" wx:else>¥{{item.oriPrice || 0}}</text>
+            </view>
+            <view class="play-btn">
+              <view class="play-triangle"/>
+              <view class="play-text">播放</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <block  wx:else>
+      <view wx:if="{{!listLoading}}" class="no-goods-content ">
+        <image src="/images/bg/no-city.png "></image>
+        <view class="no-goods-txt ">您所在的区域的门店正在准备中，敬请期待</view>
+      </view>
+    </block>
+    <template is='loading-ui' data="{{showLoading:listLoading}}"></template>
+    <view class='listBottom' style="padding-bottom:10rpx;" wx:if="{{list.length>0}}">已经到底啦...</view>
+  </view>
+</view>

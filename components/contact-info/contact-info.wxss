@@ -1,0 +1,42 @@
+.section {
+  display: flex;
+  background-color: #ffffff;
+  height: 92rpx;
+  align-items: center;
+}
+
+.picker {
+  width: 100%;
+}
+
+.section__title {
+  color: #999999;
+  font-size: 28rpx;
+  line-height: 45rpx;
+  width: 184rpx;
+  padding-left: 20rpx;
+}
+
+.placeholder-text {
+  color: #cccccc;
+  font-size: 28rpx;
+}
+
+.picker-item {
+  display: flex;
+}
+
+
+.name-input {
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.contact-edit-block {
+  margin-top: 20rpx;
+}
+
+.contact-edit-btn {
+  margin-top: 45rpx;
+}

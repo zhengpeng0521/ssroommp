@@ -1,0 +1,32 @@
+/* components/navBar/navBar.wxss */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 128rpx;
+  padding: 0 20rpx;
+  width: 100%;
+  z-index: 11;
+  box-sizing: border-box;
+}
+
+.nav-bar .back {
+  width: 70rpx;
+  height: 70rpx;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 50%;
+  position: absolute;
+  top: 63%;
+  left: 20rpx;
+  transform: translate(0,-50%);
+}
+
+.nav-bar .back .iconfont {
+  color: #333;
+  font-size: 50rpx;
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  transform: translate(-50%,-50%);
+}

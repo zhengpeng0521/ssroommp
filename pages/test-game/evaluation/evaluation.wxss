@@ -1,0 +1,79 @@
+/* pages/test-game/evaluation/evaluation.wxss */
+page{
+  background:#C5212F;
+}
+.index{
+  padding:40rpx;
+  height:88rpx;
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+.list{
+  display: flex;
+  justify-content: space-around;
+}
+.list-item{
+  width:50rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background:rgba(235,76,85,1);
+  border:4rpx solid rgba(254,221,179,1);
+  border-radius: 50%;
+  color:#B20F1C;
+  font-weight: bold;
+}
+.active{
+  background-color: #FEDDB3;
+}
+.question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 auto 40rpx;
+  width:638rpx;
+  height:398rpx;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.question-content{
+  padding:40rpx;
+  font-size:34rpx;
+  font-weight:600;
+  color:rgba(255,232,203,1);
+  line-height:72rpx;
+  text-align: center;
+}
+.action{
+  padding:90rpx 0;
+  text-align: center;
+}
+/* .btn{
+  font-size:50rpx;
+  font-weight:normal;
+  color:rgba(255,227,208,1);
+  line-height:120rpx;
+  text-shadow:0px 2rpx 4rpx rgba(0,0,0,0.5);
+}
+.ok{
+  width:580rpx;
+  height:120rpx;
+  background:rgba(71,186,187,1);
+  box-shadow:0rpx 4rpx 14rpx 0rpx rgba(108,0,0,0.5),6rpx 10rpx 6rpx 0rpx rgba(255,255,255,0.5),-4rpx -4rpx 6rpx 0rpx rgba(9,120,122,1);
+  border-radius:62rpx;
+  border:6rpx solid rgba(254,221,179,1);
+  margin-bottom: 60rpx;
+}
+.error{
+  width:580rpx;
+  height:120rpx;
+  background:rgba(235,76,85,1);
+  box-shadow:0px 4rpx 14rpx 0px rgba(108,0,0,0.5),6rpx 10rpx 6rpx 0px rgba(245,87,76,1),-4rpx -8rpx 6rpx 0px rgba(154,19,9,1);
+  border-radius:62rpx;
+  border:6rpx solid rgba(254,221,179,1);
+} */
+.btn-img{
+  margin-bottom: 60rpx;
+  width:580rpx;
+  height:120rpx;
+}

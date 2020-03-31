@@ -1,0 +1,42 @@
+<!-- pages/test-game/gift/gift.wxml -->
+<view class="wrap">
+  <view class="top" style="background-image:url('https://img.ishanshan.com/gimg/n/20200119/31d73bd596e2553a5592f1e6ce9fbc67')">
+    <image class="avatar" src="{{userInfo.avatar}}" mode="widthFix" />
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="form-wrap">
+      <view class="form-item">
+        <view class="form-label">奖金总额</view>
+        <view class="form-input">
+          <input class="item-input" type="digit" name="awardTotalAmount" value="{{amount}}" bindblur="handleBlur" placeholder-class="placeholder" placeholder="填写金额" />
+        </view>
+        <view class="suffix">元</view>
+      </view>
+      <view class="form-item">
+        <view class="form-label">奖励个数</view>
+        <view class="form-input">
+          <input class="item-input" type="number" name="awardNumber" bindblur="handleNumber" placeholder-class="placeholder" placeholder="填写数量" />
+        </view>
+        <view class="suffix">个</view>
+      </view>
+      <view class="form-item">
+        <view class="form-label">答对几题可领奖</view>
+        <view class="form-input">
+          <input class="item-input" type="number" name="minAnswerCount" value="{{count}}" bindblur="handleCount" placeholder-class="placeholder" placeholder="填写题数" />
+        </view>
+        <view class="suffix">题</view>
+      </view>
+    </view>
+    <view class="info">
+      <view class="pay">
+        支付
+        <text class="pay-number">¥{{pay}}</text>
+      </view>
+      <view class="remark">含平台2%的服务费</view>
+      <button class="button" form-type="submit">
+        <image class="btn-img" src="/images/test-game/7_but_zf.png" />
+      </button>
+      <view class="remark">注：未领完的红包将在24小时后退回账户余额</view>
+    </view>
+  </form>
+</view>

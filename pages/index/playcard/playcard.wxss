@@ -1,0 +1,505 @@
+/* pages/index/playcard/playcard.wxss */
+@import "../../../template/enter-loading/enter-loading.wxss";
+@import "/template/card-bg/card-bg";
+
+page {
+  background-color: #fff;
+}
+
+.play-card-container {
+  position: relative;
+  /* height: 350rpx; */
+}
+
+.play-card {
+  padding: 0 20rpx;
+  height: 388rpx;
+}
+
+.footer-img {
+  width: 90% !important;
+  margin-left: 35rpx;
+}
+
+.play-card-detail {
+  width: 650rpx;
+  height: 320rpx;
+  padding: 30rpx 30rpx 0;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  position: absolute;
+  top: 24rpx;
+  z-index: 12;
+  overflow: hidden;
+}
+
+.play-card-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -20rpx;
+  width: 750rpx;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.play-card-head {
+  position: relative;
+  padding-right: 200rpx;
+}
+
+.play-card-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  color: #333;
+}
+
+.play-card-desc {
+  color: #333;
+  font-size: 28rpx;
+  display: block;
+}
+
+.play-card-price {
+  padding-right: 20rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  background-color: #ff953c;
+  margin-top: 10rpx;
+  display: inline-block;
+  left: 40rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: -10rpx;
+  position: relative;
+}
+
+.play-card-price .background-image {
+  width: 100%;
+  height: 60rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -40rpx;
+  top: 0;
+  z-index: -1;
+}
+
+.play-card-price text {
+  color: #fff;
+}
+
+.f24 {
+  font-size: 24rpx;
+  font-weight: 400;
+}
+
+.f36 {
+  font-size: 35rpx;
+  font-weight: 500;
+}
+
+.play-card-buy {
+  background: #22323f;
+  border-radius: 42rpx;
+  color: #fff;
+  font-size: 28rpx;
+  width: 200rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  display: block;
+  margin-top: 34rpx;
+}
+
+.play-card-buy text {
+  color: #fff;
+  font-size: 28prx;
+}
+
+.playcard-rights-list {
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.playcard-rights-item {
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+.playcard-rights-item .icon-container {
+  width: 84rpx;
+  height: 84rpx;
+  position: relative;
+  left: 50%;
+  margin-left: -42rpx;
+  border-radius: 50%;
+  background: #ffdea0;
+}
+
+.playcard-rights-item .icon-container .iconfont {
+  font-size: 70rpx;
+  color: #ff9436;
+  position: relative;
+  top: 6rpx;
+}
+
+.playcard-rights-item-title {
+  color: #999;
+  font-size: 22rpx;
+}
+
+.list-container {
+  padding: 0 24rpx;
+}
+
+.list-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+  margin-bottom: 30rpx;
+  padding-left: 15rpx;
+}
+
+.recommendation-container {
+  padding: 0 24rpx;
+}
+
+.privilege-icon {
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 50%;
+}
+
+.privilege-items {
+  display: flex;
+  margin: 20rpx;
+}
+
+.privilege-icon {
+  margin-right: 10rpx;
+}
+
+.privilege-items-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.privilege-items-content text {
+  /* width:478rpx; */
+  line-height: 42rpx;
+  color: #666666ff;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.point-icon {
+  display: inline-block;
+  width: 10rpx !important;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #ddddddff;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.privilege-items-title {
+  color: #333333ff !important;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.main-content {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  display: flex;
+}
+
+image {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 1);
+  height: 200rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px -4rpx 12rpx 0px rgba(33, 37, 52, 0.1);
+  border-radius: 80rpx 80rpx 0px 0px;
+}
+
+.footer-btn-block {
+  margin-top: 21rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-btn {
+  display: block;
+  width: 325rpx;
+  height: 94rpx;
+  border-radius: 47rpx;
+  text-align: center;
+  line-height: 94rpx;
+}
+
+.footer-btn-active {
+  /* border: 2rpx solid rgba(255, 148, 54, 1); */
+  box-shadow: 0 0 0 2rpx #00B600;
+  /* color: rgba(255, 148, 54, 1); */
+  color: #00B600;
+  margin-right: 25rpx;
+}
+
+.footer-btn-buy {
+  background: #00B600;
+  color: #fff;
+}
+
+.supercard-data-detail {
+  position: relative;
+}
+
+.ticket-block {
+  width: 100%;
+  background-image: url("https://img.ishanshan.com/gimg/n/20190627/cb749260697186f317502f036f7b3e17");
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+}
+
+.ticket-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 40rpx;
+}
+
+.scroll-view-block {
+  min-width: 100%;
+}
+
+.ticket-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+
+.ticket-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10rpx 10rpx;
+}
+
+.ticket-content text {
+  margin-top: 22rpx;
+  margin-bottom: 10rpx;
+  width: 205rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.ticket-img {
+  width: 200rpx;
+  height: 243rpx;
+  border-radius: 16rpx;
+}
+
+.ticket-price {
+  text-align: center;
+  position: relative;
+}
+
+.ticket-price-content {
+  text-align: center;
+  position: relative;
+  top: -18rpx;
+}
+
+.ticket-background-image {
+  width: 200rpx;
+  height: 30rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* position: absolute;
+    left: 16rpx;
+    top: 15rpx; */
+  z-index: 0;
+}
+
+.ticke-pricie-money {
+  color: rgba(255, 109, 28, 1);
+  font-size: 40rpx;
+  font-weight: 540;
+}
+
+.card-title {
+  position: absolute;
+  top: 60rpx;
+  left: 109rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 86rpx;
+  font-size: 35rpx;
+  letter-spacing: 4rpx;
+  line-height: 40rpx;
+  font-family: Microsoft YaHei;
+}
+
+.swiper-block {
+  height: 404rpx;
+  overflow: hidden;
+  margin-top: 100rpx;
+}
+
+.poster-btns {
+  background-color: rgba(255, 255, 255, 1);
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 11111;
+  left: 0;
+  display: flex;
+  border-radius: 70rpx 70rpx 0 0;
+  overflow: hidden;
+}
+
+.poster-share, .poster-download {
+  flex: 1;
+  text-align: center;
+}
+
+.poster-btns text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.footer-ispreader {
+  width: 648rpx;
+  height: 94rpx;
+  background:#00B600;
+  border-radius: 47rpx;
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer-havbuy {
+  width: 198rpx;
+  height: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(150, 150, 150, 1);
+  line-height: 30rpx;
+  padding-top:20rpx;
+}
+
+.footer-btn-block-ispreader {
+  margin-top: 21rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-btn-block-no-spreader {
+  margin-top: 21rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-card {
+  width: 236rpx !important;
+  margin-right: 0rpx !important;
+  color:  #00B600 !important;
+  border: 2rpx solid#00B600;
+}
+
+.no-card-buy {
+  width: 313rpx !important;
+  margin-right: 0rpx !important;
+  border: 2rpx solid #00B600;
+  background: #00B600;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.footer-btn-no-card-block {
+  margin-top: 21rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.no-card-no-spread {
+  width: 386rpx;
+  height: 386rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-detail-bg {
+  width: 100%;
+  display: flex;
+}
+
+.top-picture {
+  height: 55.16rpx !important;
+}
+
+.footer-block {
+  height: 260rpx;
+  width: 100%;
+}
+
+.card-bg-top {
+  height: 172rpx;
+}
+
+.agreement-layout {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agreement-layout .checkBox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agreement-layout .checkBox {
+  margin-right: 10rpx;
+  transform: scale(0.6, 0.6);
+}
+
+.agreement-btn {
+  margin-left: 6rpx;
+  font-size: 28rpx;
+  color: #576B95;
+  background-color: #fff;
+}

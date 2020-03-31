@@ -1,0 +1,20 @@
+<!--pages/test-game/evaluation/evaluation.wxml-->
+<view class="wrap">
+  <view class="index" style="background-image:url('http://img.ishanshan.com/gimg/n/20200119/ce837f41e1deafba88c6c9e406d7b8cc')">
+    <view class="list">
+      <view wx:for="{{10}}" class="list-item {{index<=show?'active':''}}">{{item+1}}</view>
+    </view>
+  </view>
+  <view wx:for="{{question}}" wx:key="answerId" hidden="{{index!=show}}">
+    <view class="question" style="background-image:url('http://img.ishanshan.com/gimg/n/20200119/9d47057f2a9d863aac13287ef30bb535')">
+      <view class="question-content">
+        {{item.answerDescription}}
+      </view>
+    </view>
+
+    <view class="action">
+      <image class="btn-img" bindtap="handle" src="/images/test-game/2_but_zq.png" data-question-id="{{item.questionId}}" data-answer-id="{{item.answerId}}" data-answer-choose="1" />
+      <image class="btn-img" bindtap="handle" src="/images/test-game/2_but_cw.png" data-question-id="{{item.questionId}}" data-answer-id="{{item.answerId}}" data-answer-choose="0" />
+    </view>
+  </view>
+</view>

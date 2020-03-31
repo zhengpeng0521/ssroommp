@@ -1,0 +1,134 @@
+<view class="container">
+  <view class="head">
+    <image class="head-img" src="{{cover}}"></image>
+    <view class="head-content">
+      <text class="content-title">{{title}}</text>
+      <view class="content-price">
+        <text class="current-price">￥{{price}}</text>
+        <view class="old-price" wx:if='{{buyType!="playcard"}}'>会员价{{memberPrice}}元</view>
+      </view>
+      <text class="sell-num" wx:if='{{buyType!="playcard"}}'>
+        已售 {{saleNum*1+virtualSaleNum*1}}
+      </text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="list">
+      <text class="category">数量</text>
+      <view class="num-content" wx:if='{{buyType!="playcard"}}'>
+        <view class="num-opt {{animateOfBtnMinus ? 'btnWhiteAnim': ''}}" catchtap="tapChangeNum" data-minus="1">
+          -
+        </view>
+        <input class="num-input" type="number" maxlength="6" value="{{goodsNum}}" bindinput="iptChangeNum" />
+        <view class="num-opt {{animateOfBtnPlus ? 'btnWhiteAnim': ''}}" catchtap="tapChangeNum">
+          +
+        </view>
+      </view>
+      <view class='num-content' style='border:none' wx:if='{{buyType==="playcard"}}'>
+        <text>1</text>
+      </view>
+    </view>
+    <view class="list">
+      <text class="category" wx:if='{{buyType!="playcard"}}'>原价</text>
+      <text class='category' wx:if='{{buyType==="playcard"}}'>价格</text>
+      <text class="sum">￥{{totalPrice}}</text>
+    </view>
+    <view class="list" catchtap="selectCoupon">
+      <text class="category">减免券</text>
+      <view class="sum">
+        <block wx:if="{{reduceAmount}}">
+          <text class="danger">￥{{reduceAmount}}</text>
+        </block>
+        <block wx:else>
+          <text wx:if="{{coupon.length == 0}}">暂无可用</text>
+          <text class="danger" wx:else>{{coupon.length}} 张可用</text>
+        </block>  
+      </view>
+      <text class="iconfont iconright"></text>
+    </view>
+    <view class='list' wx:if='{{userInfo.isSpreader ===1&&buyType!="playcard"}}'>
+      <text class="category">(会员优惠)</text>
+      <text class="discount">-￥{{totalDeductAmount}}</text>
+    </view>
+    <!-- <view class="list {{animateOfBtnCoupon ? 'btnWhiteAnim': ''}}" catchtap="selectCoupon">
+            <text class="category">优惠券</text>
+            <text class="coupon">{{currentCoupon.price ? '-'+currentCoupon.price : '暂无可用'}}</text>
+        </view> -->
+    
+    <!-- <view class="list" wx:if='{{reduceAmount}}'>
+      <text class="category">优惠金额</text>
+      <text class="sum">￥{{reduceAmount}}</text>
+    </view> -->
+    <view class="list">
+      <text class="category">实付金额</text>
+      <text class="sum">￥{{realMoney}}</text>
+    </view>
+  </view>
+  <view class="vipcard-block" hidden="{{!isVipCard}}">
+    <view class="contact-info section">
+      <text class="contact-info-title">持卡人信息</text>
+      <view class="chose-contact" bindtap="navigateToContacts">
+        <text>从“常用联系人”选择</text>
+        <text class="iconfont iconright"></text>
+      </view>
+    </view>
+    <view class="section section-name">
+      <view class="section__title">姓名</view>
+      <input class="name-input" bindinput="bindKeyInput" type="text" value="{{name}}" confirm-type='next' placeholder-class='placeholder-text' placeholder="请输入姓名" />
+    </view>
+    <view class="section">
+      <view class="section__title">身份证</view>
+      <input type="idcard" class="name-input" bindinput="bindCardInput" value="{{id}}" placeholder-class='placeholder-text' placeholder="请输入身份证号码" />
+    </view>
+
+  </view>
+  <view class="vipcard-info">
+    <text>闪闪课堂会员卡为实名制会员卡，会员商品仅允许会员本人使用，请您输入会员本人身份证信息，该信息不可更改，请确保输入准确。</text>
+  </view>
+  <view class="submit {{animateOfBtnSubmit ? 'btnGreenAnim': ''}}" catchtap="submitOrder">
+    ￥{{realMoney}} 提交订单
+  </view>
+</view>
+<view class='lay-out' bindtap='hidePoster' hidden='{{!confirmID}}'></view>
+<view class='poster-dialog' hidden='{{!confirmID}}'>
+  <view class="vip">
+    <view class="vip-head">您当前购买的是{{title}}</view>
+    <view class="vip-title">
+      <view class="confirm-text">请确认您的持卡人信息</view>
+      <view class="section section-name">
+        <view class="section__title2">
+          <text class='confirm-label'>姓名</text>
+          <text class='confirm-content confirm-name'>{{name}}</text>
+        </view>
+      </view>
+      <view class="section section-name">
+        <view class="section__title2">
+          <text class='confirm-label'>身份证</text>
+          <text class='confirm-content'>{{id}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="footer-vip">
+      <view class="footer-btn no-card" bindtap='inputError'>输错了</view>
+      <view class="footer-btn no-card-buy" bindtap='buySuperCard'>确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 显示特权券 -->
+<import src="/template/coupon/coupon" />
+<v-popup show="{{showPopup}}" title="选择减免券" position="bottom" bind:close="handleClose">
+  <scroll-view scroll-y="true" style="max-height: 570rpx;margin-top:0">
+    <view class="coupon">
+      <block wx:if="{{coupon.length > 0}}">
+        <v-coupon wx:for="{{coupon}}" wx:key="{{item.welfareId}}" item="{{item}}" bindselect="onSelect" />
+      </block>
+      <block wx:else>
+        <view class="empty-box" style="padding:20rpx 0;">
+          <image class="empty-image" src="/images/bg/no-data-f.png" />
+          <view class="empty-txt">暂无可使用的减免券</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</v-popup>

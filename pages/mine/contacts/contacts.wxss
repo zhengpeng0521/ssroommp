@@ -1,0 +1,208 @@
+/* pages/mine/contacts/contacts.wxss */
+
+.add-contact {
+  width: 94%;
+  height: 112rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx 0 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-title {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #00b600;
+  line-height: 50rpx;
+}
+
+.add-icon {
+  padding-right: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.owen-card {
+  width: 200rpx;
+  height: 30rpx;
+  background: rgba(0, 182, 0, 0.1);
+  border-radius: 14rpx;
+  border: 1rpx solid #00b600;
+  color: #00b600;
+  font-size: 20rpx;
+  padding: 0 20rpx;
+}
+
+.device-item-img {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.no-contact {
+  width: 244rpx;
+  height: 300rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.no-contact-img {
+  width: 244rpx;
+  height: 244rpx;
+}
+
+.no-contact-txt {
+  color: #999999ff;
+  font-size: 28rpx;
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-radio {
+  margin: 20rpx;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.has-contact {
+  width: 94%;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx 60rpx 20rpx;
+}
+
+.contact-detail {
+  margin-left: 20rpx;
+}
+
+.contact-name {
+  color: #333333ff;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  font-weight: 550;
+}
+
+.contact-id {
+  color: #999999ff;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+
+.device-item-desc {
+  font-size: 28rpx;
+  color: #999;
+  margin: auto 0 auto auto;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 1;
+  right: 20rpx;
+  z-index: 9999999999999999;
+}
+
+.device-item-btn {
+  width: 16rpx;
+  height: 16rpx;
+  color: #c7c7cc;
+  margin: auto 30rpx auto 20rpx;
+  border: 3rpx #c7c7cc solid;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(-45deg);
+}
+
+.c-btn {
+  margin: 0 auto 40rpx;
+  width: 670rpx;
+  height: 94rpx;
+  background:#00b600;
+  border-radius: 47rpx;
+  text-align: center;
+}
+
+.c-text {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 97rpx;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 116rpx;
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 120rpx;
+  z-index: 1;
+  background: #e66671;
+  text-align: center;
+}
+
+.product-list .product-item-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0 20rpx 10rpx;
+  box-sizing: border-box;
+  width: 90vw;
+}
+
+.product-list .product-item-wrap .product-movable-item {
+  flex: 1;
+  overflow: hidden;
+  margin-left: 10rpx;
+}
+
+.product-list .product-item-wrap .product-movable-item-name {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #71747a;
+  line-height: 60rpx;
+  margin-right: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-list .product-item-wrap .product-movable-item-code {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #969aa3;
+}
+
+.product-list .product-item-wrap .product-movable-item-amount {
+  flex: 0 0 auto;
+  padding-right: 80rpx;
+  position: relative;
+}
+
+.product-list .product-item-wrap .product-movable-item-amount .amount {
+  width: 120rpx;
+  font-size: 28rpx;
+  color: #383a3d;
+  line-height: 60rpx;
+}
+
+.product-list .product-item-wrap .product-movable-item-amount .unit {
+  position: absolute;
+  top: 0;
+  right: 30rpx;
+  font-size: 28rpx;
+  color: #969aa3;
+  line-height: 60rpx;
+}

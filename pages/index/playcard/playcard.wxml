@@ -1,0 +1,55 @@
+<view>
+  <NavBar bind:triggerback='handleBack' />
+</view>
+<scroll-view scroll-y="{{true}}"  wx:for="{{imgsList}}"  wx:for-item="item" wx:for-index="index" wx:key="index" class='item item-{{index}}'>
+  <image lazy-load="true" class="{{item.show?'active main-image':''}}"  mode='widthFix' src="{{item.show?item.img : ''}}"></image>
+</scroll-view>
+<view class="footer-block"></view>
+<view class='footer'>
+  <!-- 非会员未购买 -->
+  <view hidden='{{isSpreader}}'>
+    <view class="footer-btn-block">
+      <view class="footer-btn footer-btn-active" bindtap='inviteDialogShow'>分享他人购买</view>
+      <view class="footer-btn footer-btn-buy" bindtap='buySuperCard'>购买会员卡</view>
+    </view>
+    <view class="agreement-layout">
+      <checkbox-group bindchange='checkboxChange'>
+        <label class="checkBox-label">
+          <checkbox value='{{checkAgrement}}' color='#ffaf48' checked='{{false}}' class="checkBox"></checkbox>
+          <text>如购买本卡即表示您同意会员协议</text>
+        </label>
+      </checkbox-group>
+      <navigator class="agreement-btn" url="/pages/index/member-agree/member-agree">会员协议</navigator>
+    </view>
+  </view>
+  <!-- 是会员 -->
+  <view hidden='{{!isSpreader}}'>
+    <view class="footer-btn-block-ispreader" hidden='{{doubleSwitch}}'>
+      <view class="footer-btn footer-ispreader" bindtap='inviteDialogShow'>分享他人购买</view>
+      <view class="footer-havbuy">您已购买过此会员卡</view>
+    </view>
+    <view hidden='{{!doubleSwitch}}'>
+      <view class="footer-btn-block-no-spreader">
+        <view class="footer-btn footer-btn-active" bindtap='inviteDialogShow'>分享他人购买</view>
+        <view class="footer-btn footer-btn-buy" bindtap='buySuperCard'>购买会员卡</view>
+      </view>
+      <view class="agreement-layout">
+        <checkbox-group bindchange='checkboxChange'>
+          <label class="checkBox-label">
+            <checkbox value='{{checkAgrement}}' color='#00B600' checked='{{false}}' class="checkBox"></checkbox>
+            <text>如购买本卡即表示您同意会员协议</text>
+          </label>
+        </checkbox-group>
+        <navigator class="agreement-btn" url="/pages/index/member-agree/member-agree">
+          会员协议
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='lay-out' bindtap='hidePoster' hidden='{{!shareDialogLayout}}'></view> -->
+<view class='poster-dialog' hidden='{{!shareDialogLayout}}'>
+  <view class="no-vip" hidden='{{!isCustomerDialog}}'>
+    <BeforeShare playCardTitle='{{cardDetail.spuName}}' bind:hideDialog='hidePoster' data-btn='{{current}}' bind:continueShate='inviteDialogShow' bind:naviToPlayCard='buySuperCard' />
+  </view>
+</view>

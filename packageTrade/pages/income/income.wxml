@@ -1,0 +1,64 @@
+<!-- <navigator url='/pages/trade/income-record/income-record'>全部收益</navigator> -->
+<import src="/template/card-bg/card-bg" />
+<import src="/template/loading/loading" />
+<import src="/template/income-detail/income-detail" />
+<view class='economical-detail-layout'>
+  <template is="card-bg"></template>
+  <view class='economical-detail'>
+    <text class='economical-detail-title'>今日收益</text>
+    <text class='economical-detail-count'>{{earnings}}</text>
+    <view class='distribute-detail'>
+      <view class='distributed'>
+        <text>{{cancelEarnings}}</text>
+        <text>已核销</text>
+      </view>
+      <view class='distribute-detail-line'></view>
+      <view class='not-distributed'>
+        <text>{{notCancelEarnings}}</text>
+        <text>未核销</text>
+      </view>
+    </view>
+  </view>
+  <view class='economical-detail-navbar-layout'>
+    <view class='economical-detail-navbar'>
+      <text class='title'>总共{{totalOrderNum}}单,共赚钱{{totalEarnings}}元</text>
+      <navigator url='/pages/trade/income-record/income-record' hover-class="none">全部收益
+        <text  class='iconfont iconright'></text>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class='income-content-layout'>
+  <view class='income-content'>
+    <view class='income-content-nav'>
+      <view bindtap='changeTab' data-index='0' class='item {{activeIndex ===0?"active":""}}'>
+        分享奖励
+      </view>
+      <view bindtap='changeTab' data-index='1' class='item {{activeIndex ===1?"active":""}}'>
+        团队奖励
+      </view>
+      <view bindtap='changeTab' data-index='2' class='item {{activeIndex ===2?"active":""}}'>
+        培训奖励
+      </view>
+    </view>
+    <view class='income-content-nav-bottom'>
+      <view class='item {{activeIndex ===0?"active":""}}'></view>
+      <view class='item {{activeIndex ===1?"active":""}}'></view>
+      <view class='item {{activeIndex ===2?"active":""}}'></view>
+    </view>
+    <view class='income-content-list-layout' hidden='{{showLoading}}'>
+      <view class='list-title'>
+        奖励{{todayOrderNum}}单{{todayOrderAmount}}元
+      </view>
+      <template is='income-detail' data='{{data: list}}' tabIndex='{{type:activeIndex}}'></template>
+    </view>
+    
+    <view class='loading' hidden='{{!showLoading}}'>
+      <template is='loading-ui'></template>
+    </view>
+  </view>
+
+  <view wx:if='{{list[0]==null&&!showLoading}}'>
+    <no-data prop-showType='c' />
+  </view>
+</view>

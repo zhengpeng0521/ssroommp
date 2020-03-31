@@ -1,0 +1,198 @@
+.top{
+    width: 100%;
+    height: 88rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF;
+    margin-bottom: 32rpx;
+}
+
+.top text{
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #666666;
+}
+
+.top .switch-coupon{
+    margin-right: 30rpx;
+}
+
+
+.cupon-list{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.cupon-list .coupon{
+    width: 660rpx;
+    height: 180rpx;
+    margin-bottom: 30rpx;
+    background: #FFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    border-top-right-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.cupon-list .coupon .cupon-left{
+    width: 188rpx;
+    height: 140rpx;
+    border-right: 1px solid #DDD;
+}
+
+.cupon-list .coupon .cupon-left .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cupon-list .coupon .cupon-left .left-text1{
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #FF7058;
+    margin-top: 60rpx;
+}
+
+.cupon-list .coupon .cupon-left .left-text1-unuse{
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #F2F2F2;
+    margin-top: 60rpx;
+}
+
+.cupon-list .coupon .cupon-left .left-text2{
+    font-size: 60rpx;
+    font-weight: bolder;
+    letter-spacing: -2rpx;
+    line-height: 140rpx;
+    color: #FF7058;
+}
+
+.cupon-list .coupon .cupon-left .left-text2-unuse{
+    font-size: 60rpx;
+    font-weight: bolder;
+    letter-spacing: -2rpx;
+    line-height: 140rpx;
+    color: #F2F2F2;
+}
+
+.cupon-list .coupon .cupon-left .content .left-text2 .child{
+    font-size: 30rpx;
+    font-weight: 600;
+    letter-spacing: -1rpx;
+    line-height: 140rpx;
+    color: #FF7058;
+}
+
+.cupon-list .coupon .cupon-left .content .left-text2-unuse .child-unuse{
+    font-size: 30rpx;
+    font-weight: 600;
+    letter-spacing: -1rpx;
+    line-height: 140rpx;
+    color: #F2F2F2;
+}
+
+.cupon-list .coupon .cupon-right{
+    margin-left: 50rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.cupon-list .coupon .cupon-right .right-text1{
+    font-size: 28rpx;
+    font-weight: bolder;
+    line-height: 28rpx;
+    color: #333;
+    margin-bottom: 30rpx;
+}
+
+.cupon-list .coupon .cupon-right .right-text1-unuse{
+    font-size: 28rpx;
+    font-weight: bolder;
+    line-height: 28rpx;
+    color: #DDD;
+    margin-bottom: 30rpx;
+}
+
+.cupon-list .coupon .cupon-right .right-text2{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #999;
+    margin-bottom: 12rpx;
+}
+
+.cupon-list .coupon .cupon-right .right-text2-unuse{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #DDD;
+    margin-bottom: 12rpx;
+}
+
+.cupon-list .coupon .cupon-right .right-text3{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #999;
+}
+
+.cupon-list .coupon .cupon-right .right-text3-unuse{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #DDD;
+}
+
+.cupon-list .coupon .select{
+    width: 46rpx;
+    height: 46rpx;
+    margin: auto 40rpx auto auto;
+}
+
+.cupon-list .coupon .select .select-icon{
+    width: 46rpx;
+    height: 46rpx;
+}
+
+.cupon-list .coupon .select-unuse{
+    width: 46rpx;
+    height: 46rpx;
+    border: 1px solid #EEE;
+    background: #DDD;
+    border-radius: 23rpx;
+    margin: auto 40rpx auto auto;
+}
+
+.cupon-list .coupon .circle1{
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: -12rpx;
+    right: 457rpx;
+    background: #EBECF0;
+}
+
+.cupon-list .coupon .circle2{
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -12rpx;
+    right: 457rpx;
+    background: #EBECF0;
+}
+
+.cupon-list .border{
+    width: 10px;
+    height: 180rpx;
+    background: transparent;
+    background: radial-gradient(circle , white 0px, white 5px, transparent 5px, transparent);
+    background-size: 16px 10px;
+    background-position: 0 -5px;
+}
+
+

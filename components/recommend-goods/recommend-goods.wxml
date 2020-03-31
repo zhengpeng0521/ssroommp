@@ -1,0 +1,3 @@
+<!--components/recommend-goods/recommend-goods.wxml-->
+<import src="/template/goods-list/member-goods" />
+<template is="member-goods" data="{{recommendData: recommendData,btnTxt:btnTxt}}"></template>

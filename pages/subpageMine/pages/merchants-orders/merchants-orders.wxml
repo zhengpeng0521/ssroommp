@@ -1,0 +1,35 @@
+<!--pages/subpageMine/pages/merchants-orders/merchants-orders.wxml-->
+<import src="/template/loading/loading" />
+<view class="content-box {{item.appointStatus!='3' ? 'disabled': ''}}" wx:for-items="{{orderData}}" wx:for-index="index" data-text="{{item}}">
+
+  <view class="goods-info">
+    <view class="goods-name"> {{item.goodsName}} </view>
+    <view class="status" wx:if="{{item.appointStatus == '3'}}">待核销</view>
+    <view class="status" wx:elif="{{item.appointStatus == '4'}}">已完成</view>
+    <view class="status" wx:elif="{{item.appointStatus == '5'}}">已过期</view>
+  </view>
+
+  <view class="goods-bd">
+    <view class="info-cust">
+      <view class="name-text">用户</view>
+      <view class="name"> {{item.custName}} </view>
+    </view>
+    <view class="info">
+      <view class="name-text">预约日期</view>
+      <view class="name"> {{item.appointDay}} </view>
+    </view>
+  </view>
+  
+  <!-- <view class="info">
+    <view class="name-text">预约地址</view>
+    <view class="name"> {{item.address}} </view>
+  </view>  -->
+  <view class="link-info">
+    <view class="look-more">更多用户信息请查看管理后台</view>
+    <view class="link" data-mobile="{{item.mobile}}" data-status="{{item.appointStatus}}" catchtap="linkCust" > 联系用户 </view>
+  </view> 
+
+</view>
+<template is='loading-ui' data="{{showLoading:listLoading}}"></template>
+<view style="padding-bottom:20rpx;" class='listBottom'>已经到底啦...</view>
+

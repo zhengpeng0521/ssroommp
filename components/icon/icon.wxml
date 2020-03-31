@@ -1,0 +1,5 @@
+<!--components/icon/icon.wxml-->
+<view class="icon">
+  <text class="icon-class iconfont {{name ? 'icon-'+name:''}}" 
+  style="{{color? 'color:'+ color:''}}"></text>
+</view>

@@ -1,0 +1,10 @@
+<!--template/loading/loading.wxml-->
+<template name='loading-ui'>
+  <view class="spinner" hidden="{{!showLoading}}">
+    <view class="rect1"></view>
+    <view class="rect2"></view>
+    <view class="rect3"></view>
+    <view class="rect4"></view>
+    <view class="rect5"></view>
+  </view>
+</template>

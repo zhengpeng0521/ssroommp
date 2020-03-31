@@ -1,0 +1,93 @@
+/* pages/index/reservation/reservation.wxss */
+
+.reservation-top {
+  background-color: #fff;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.reservation-goods-title {
+  font-size: 32rpx;
+  padding: 30rpx 0 20rpx 0;
+}
+
+.reservation-shop-add {
+  color: #999;
+  font-size: 24rpx;
+  padding-bottom: 30rpx;
+}
+
+.reservation-shop-add text {
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.reservation-bottom {
+  background-color: #fff;
+  padding: 0 30rpx 60rpx 30rpx;
+}
+
+.reservation-time {
+  font-size: 28rpx;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+
+.reservation-time-title {
+  color: #333;
+}
+
+.reservation-time-num {
+  color: #666;
+  position: relative;
+}
+
+.reservation-time-num::after {
+  content: '';
+  position: absolute;
+  left: -20rpx;
+  top: -20rpx;
+  right: -20rpx;
+  bottom: -20rpx;
+}
+
+.reservation-time-num::before {
+  content: '';
+  position: absolute;
+  right: -20rpx;
+  bottom: -20rpx;
+  left: -20rpx;
+  top: -20rpx;
+}
+
+.refund-rules {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.refund-rules .refund-rules-details {
+  width: 560rpx;
+  height: auto;
+  font-size: 24rpx;
+  margin-bottom: 50rpx;
+}
+
+.reservation-btn {
+  height: 94rpx;
+  width: 100%;
+}
+.dialog-index--custom-content .dialog-index--van-dialog__confirm{
+  color:#02BB00!important;
+}
+.dialog-content{
+  padding:20rpx 40rpx;
+}
+.dialog-content text{
+  line-height: 150%;
+  display: block;
+  margin-bottom:20rpx;
+}

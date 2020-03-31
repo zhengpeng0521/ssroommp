@@ -1,0 +1,13 @@
+<view  class="course-item">
+    <view class="img">
+        <image src="http://via.placeholder.com/120x120"></image>
+    </view>
+    <view class="content">
+        <text class="title">嗒咪奇幻乐园自然课堂</text>
+        <view class="price">
+            <text class="currentPrice">￥69.9</text>
+            <text class="oldPrice">￥74.9</text>
+        </view>
+        <text class="scope">使用年龄：0~8岁</text>
+    </view>
+</view>

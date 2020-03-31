@@ -1,0 +1,76 @@
+/* pages/index/get-auth/get-auth.wxss */
+
+.auth-body {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+.auth-content {
+  text-align: center;
+  padding-top: 154rpx;
+}
+
+.auth-content image {
+  width: 230rpx;
+  height: 316rpx;
+}
+
+.auth-text {
+  text-align: center;
+  width: 100%;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: -10rpx;
+  font-weight: 500;
+}
+
+.auth-body .get-user-btn {
+  width: 600rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: #19B329;
+  border-radius: 48rpx;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.bottom-box{
+  position: fixed;
+  bottom: 96rpx;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.close-miniprogram{
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 40rpx;
+  background-color: #fff;
+}
+.close-miniprogram::after {
+  border: none;
+}
+.bg-img-1 {
+  position: absolute;
+  top: 92rpx;
+  left: 0;
+  width: 152.46rpx;
+  height: 313.8rpx;
+}
+.bg-img-1 image {
+  width: 100%;
+  height: 100%;
+}
+.bg-img-2 image {
+  width: 100%;
+  height: 100%;
+}
+.bg-img-2 {
+  position: absolute;
+  top: 274rpx;
+  right: 0;
+  width: 214rpx;
+  height: 430rpx;
+}

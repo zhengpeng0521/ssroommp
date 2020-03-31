@@ -1,0 +1,17 @@
+<view class='auth-body'>
+  <view class="bg-img-1">
+    <image src='http://img.ishanshan.com/gimg/n/20200309/4d142b6192c6f4c232feb7656087df2b'></image>
+  </view>
+  <view class="bg-img-2">
+    <image src='http://img.ishanshan.com/gimg/n/20200309/7b89913d42160fb27012973efce93c34'></image>
+  </view>
+  <view class='auth-content'>
+    <image src='http://img.ishanshan.com/gimg/n/20200309/52817b0a842673c55b7ce345675d90c7'></image>
+    <view class='auth-text'>专注孩子的每一次成长！</view>
+  </view>
+
+  <view class='bottom-box'>
+    <button class='get-user-btn' open-type="getUserInfo" bindgetuserinfo="onGetInfo">立即授权</button>
+    <view class='close-miniprogram' bindtap="dotAuthrize">暂不授权</view>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<import src="/components/enter-loading/enter-loading.wxml" />
+<import src="/components/more-loading/more-loading.wxml" />
+
+
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+
+<view wx:else class="cast-imgs {{isShowQrCode?'noSroll':''}}" scroll-y="true" style="height:100vh">
+
+  <view class="container">
+
+    <block wx:for="{{ticketData}}" wx:key='{{item.id}}'>
+      <view wx:if="{{item.status === '1'}}" class="ticket-available" data-verifyId="{{item.verifyId}}"
+      data-index='{{index}}' bindtap="possVerifyCode">
+        <view class="left">
+          <text>待核销</text>
+        </view>
+        <view class="right">
+          <view class="ticket-info">
+            <view class="title">{{item.goodsName}}</view>
+            <text class="text">有效期至：<text class="text-inside">{{item.expireTime}}</text></text>
+            <text class="text">使用人群：<text class="text-inside">{{item.adultNum ? item.adultNum + '大人' : ''}}{{item.childNum && item.adultNum ? ' ,' : ''}}{{item.childNum? item.childNum + '小孩' : ''}}</text></text>
+            <text class="text">适用游乐园：<text class="text-inside">{{item.shopName}}</text></text>
+          </view>
+          <!-- <image class="right-img" src="/images/icon/erweima-black.png"></image> -->
+        </view>
+      </view>
+
+      <view wx:else class="ticket-used" data-index="{{index}}">
+        <view class="left">
+          <text wx:if="{{item.status === '2'}}">已核销</text>
+          <text wx:else>已过期</text>
+        </view>
+        <view class="right">
+          <view class="ticket-info">
+            <view class="title">{{item.goodsName}}</view>
+            <text class="text">有效期至：<text class="text-inside">{{item.expireTime}}</text></text>
+            <text class="text">使用人群：<text class="text-inside">{{item.adultNum ? item.adultNum + '大人' : ''}}{{item.childNum ? '，' + item.childNum + '小孩' : ''}}</text></text>
+            <text class="text">适用游乐园：<text class="text-inside">{{item.shopName}}</text></text>
+          </view>
+          <!-- <image class="right-img" src="/images/icon/erweima-gray.png" catchtap="onViewQrCode" data-index="{{index}}"></image> -->
+        </view>
+      </view>
+    </block>
+
+    <view class="empty" wx:if="{{ticketData[0] == null}}">
+      <image class="empty-img" src="/images/bg/zhanweitu.png"></image>
+      <view class="empty-text">
+        暂无门票
+      </view>
+    </view>
+
+    <view wx:if="{{isHaveMoreData === false && ticketData[0] != null}}" class="loadOver">数据已加载完毕~</view>
+
+  </view>
+
+</view>
+
+<view hidden="{{!isShowQrCode}}" class="shade" catchtap="onQrCodeHide">
+  <view class="qrcode" catchtap="onVoidHandler">
+    <view class="close" catchtap="onQrCodeHide"></view>
+    <!-- <view class="qrcode-title">
+      <text>核销码：</text>
+      <text class="qrcode-num">{{qrCodeData.verificationCode}}</text>
+    </view> -->
+    <view class="qrcode-img">
+      <canvas style="width: 400rpx;height: 400rpx;background:#f1f1f1;" canvas-id="mycanvas" />
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{isLoadingMore}}">
+  <template is="more-loading" />
+</view>

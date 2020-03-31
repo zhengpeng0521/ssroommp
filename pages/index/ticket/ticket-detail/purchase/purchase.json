@@ -1,0 +1,8 @@
+{   "usingComponents": {
+			"v-popup":"/components/popup/popup",
+			"v-coupon":"/components/coupon/coupon"
+    },
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "订单详情",
+    "navigationBarTextStyle": "black"
+}

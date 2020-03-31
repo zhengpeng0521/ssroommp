@@ -1,0 +1,46 @@
+<import src="/components/more-loading/more-loading.wxml" />
+<import src="/components/stars/stars-template" />
+<import src="/components/enter-loading/enter-loading.wxml" />
+
+
+<view wx:if="{{isLoading}}">
+    <template is="enter-loading" />
+</view>
+
+<view wx:else class="container">
+
+    <view class="header">
+        <text class="desc">用户评价</text>
+        <text class="score">{{averageScore}}分</text>
+    </view>
+
+    <view wx:for="{{userCommentData}}" wx:key="*this" class="comment">
+        <view>
+            <image class="user-avatar" src="{{item.custHeadImg}}"></image>
+        </view>
+        <view class="center">
+            <text class="nickname">{{item.custName}}</text>
+            <template is="starsTemplate" data="{{stars: item.score}}"></template>
+            <text class="content">{{item.evaluation}}</text>
+            <view class="img">
+                <image wx:for="{{item.evalatImgs}}" wx:for-item="img" src="{{img}}"></image>
+            </view>
+        </view>
+        <view class="date">{{item.createTime}}</view>
+    </view>
+
+    <view class="empty" wx:if="{{userCommentData[0] == null}}">
+        <image class="empty-img" src="/images/bg/zhanweitu.png"></image>
+        <view class="empty-text">
+            暂无评价信息
+        </view>
+    </view>
+
+
+    <view wx:if="{{hasMoreData === false && userCommentData[0] != null}}" class="loadOver">数据已加载完毕~</view>
+
+    <view wx:if="{{isLoadingMore}}">
+        <template is="more-loading" />
+    </view>
+
+</view>

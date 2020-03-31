@@ -1,0 +1,28 @@
+<!--pages/mine/customer-service/customer-service.wxml-->
+<view class="top" style="top:{{top}}">
+  <view class="top-title">我的客服</view>
+  <view class="iconfont iconleft" bindtap="navigateBack"></view>
+</view>
+<view class="list-container">
+  <!-- <view class="item" hover-class="list-hover">
+    <official-account></official-account>
+    <image src="/images/icon/guanzhu.png"></image>
+    <text>关注公众号，了解最新惠吧信息</text>
+  </view> -->
+  <view class="item" hover-class="list-hover" bindtap="navigateToProblems">
+    <image src="/images/icon/kf-wt.png"></image>
+    <text>常见问题</text>
+  </view>
+  <button class="no-btn-style item" hover-class="list-hover" open-type="contact">
+    <image src="/images/icon/kf-rg.png"></image>
+    <text>人工客服（10:00~20:00）</text>
+  </button>
+  <!-- <button class="no-btn-style item" hover-class="list-hover" bindtap="navigateToCsWebview">
+    <image src="/images/icon/kf-rg.png"></image>
+    <text>人工客服（10:00~20:00）</text>
+  </button> -->
+  <view class="item" hover-class="list-hover" bindtap="makePhoneCall">
+    <image src="/images/icon/kf-phone.png"></image>
+    <text>电话客服（10:00~20:00）</text>
+  </view>
+</view>

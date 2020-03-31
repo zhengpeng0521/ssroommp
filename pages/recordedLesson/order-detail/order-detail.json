@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-popup": "/components/popup/popup"
+  },
+  "navigationBarTitleText": "订单详情"
+}

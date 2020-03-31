@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Carousel": "/components/carousel-with-index/carousel-with-index",
+    "van-dialog": "/components/vant/dialog/index"
+  },
+  "navigationBarTitleText": "预约详情"
+}

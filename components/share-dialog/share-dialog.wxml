@@ -1,0 +1,14 @@
+<!--components/before-share/before-share.wxml-->
+<view class='lay-out' bindtap='hidePoster'></view>
+<view class='poster-dialog'>
+  <view class="no-vip">
+    <view class="no-vip-title">
+      <text>购买“{{playCardTitle}}”可成为会员哦~</text>
+    </view>
+    <image class='no-card-no-spread' src='../../images/bg/no-card.png'></image>
+    <view class="footer-btn-no-card-block" style="margin-top:70rpx">
+      <view class="footer-btn no-card" bindtap='inviteDialogShow'>继续分享</view>
+      <view class="footer-btn no-card-buy" bindtap='naviToPlayCard'>购买会员卡</view>
+    </view>
+  </view>
+</view>

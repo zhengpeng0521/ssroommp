@@ -1,0 +1,43 @@
+<template name="popular-goods">
+  <view class='products-list-container'>
+    <view class='products-list'>
+      <navigator class='products-item' wx:for="{{data.recommendData}}" wx:key="{{item.id}}" hover-class='no' url='/pages/index/ticket/ticket-detail/ticket-detail?goodsId={{item.id}}&&goodsType={{item.goodsType}}'>
+        <image lazy-load='true' class='products-item-img' src='{{item.cover}}?p=image/format,jpg/quality,q_75/resize,l_750' mode='widthFix'></image>
+        <view class='products-item-detail'>
+          <view class='products-item-title'>
+            <text class='title ellipsis {{item.showCountDown ==="1"?"":"long"}}'> {{item.goodsName}}</text>
+            <view class='count-down' wx:if='{{item.showCountDown ==="1"}}'>
+              距离结束还有
+              <text class='leftTime day'>{{item.leftDay}}</text>
+              <text class='tian'>天</text>
+              <text class='leftTime hour'>{{item.leftHours}}</text>:
+              <text class='leftTime minute'>{{item.leftMinute}}</text>:
+              <text class='leftTime seconds'>{{item.leftSeconds}}</text>
+            </view>
+          </view>
+          <view class='products-item-desc ellipsis'>
+            {{item.shopName}} | {{item.shopAdd}}
+          </view>
+          <view class='products-item-price'>
+            <text style='fontSize:10rpx;color:#FF5100'>￥</text>{{item.price}}
+            <view class='member-price'>会员价 ￥{{item.memberPrice}}</view>
+          </view>
+          <view class='products-item-count' wx:if='{{item.stockType==="1"}}'>
+            <text>剩余<text style='color:#FF5100'>{{item.stocks}}</text>份</text>
+            <view class='count-range-box'>
+              <view class='count-range-line' style='width:{{item.countPecent}}%'></view>
+            </view>
+          </view>
+          <view class='products-item-share' wx:if='{{data.userInfo.isSpreader === 1}}'>
+            分享他人购买可获得
+            <text class='products-item-share-count'>{{item.deductAmount}}元</text> 奖励
+          </view>
+        </view>
+        <text class='products-item-buy {{data.userInfo.isSpreader === 1?"":"noVip"}}'>购买</text>
+      </navigator>
+    </view>
+    <view class='listBottom'>已经到底啦...</view>
+  </view>
+
+
+</template>

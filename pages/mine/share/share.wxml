@@ -1,0 +1,110 @@
+<!-- pages/mine/share/share.wxml -->
+<!-- <View class="nav" style="height:0">
+  <v-navbar title="分享" ext-class="{{nav}}" background="rgba(0,0,0,0)" color='#fff' back="{{true}}" home="{{true}}" iconTheme="back" bindhome="handleHome" bindback="handleBack"></v-navbar>
+</View> -->
+<view class="viewport" style="background-image:url('http://img.ishanshan.com/gimg/n/20191129/d0f0905054cb2bb8b0f3b421bb552715')">
+  <view class="container">
+    <view class="share-header">
+      <view class="user">
+        <image class="avatar" src="{{userInfo.avatar}}" />
+        <view class="nickname">{{userInfo.nickname}}</view>
+      </view>
+      <view class="activity-rule" bindtap="showRule">活动规则</view>
+    </view>
+    <view class="share-content">
+      <image class="quote left" src="/images/bg/quote-left.png" />
+      <text>乐学畅享,尽在闪闪课堂</text>
+      <text>送你购卡减免礼券</text>
+      <text>快来和我一起成为闪闪课堂小达人吧</text>
+      <image class="quote right" src="/images/bg/quote-right.png" />
+    </view>
+    <view class="card">
+      <view class="card-header">领券购买闪闪课堂会员卡 400+乐园免费打卡</view>
+      <view class="rip"></view>
+      <view class="dash-divider"></view>
+      <view class="card-bd">
+        <view wx:for="{{openWelfareList}}" wx:key="{{index}}" class="coupon-bg" style="background-image:url('http://img.ishanshan.com/gimg/n/20191129/ace78da390b6327a34a6539211f02cca')">
+          <image wx:if="{{item.hadTicket}}" class="had-take" src="/images/bg/icon-take.png" />
+          <view class="coupon-price" wx:if="{{item.reduceAmount}}">
+            <view class="symbol">￥</view>
+            <view class="number">{{item.reduceAmount}}</view>
+          </view>
+          <view class="coupon-info">{{item.welfareName}}</view>
+          <view class="coupon-name">我的礼券</view>
+        </view>
+      </view>
+    </view>
+    <view class="record" wx:if="{{openSelf}}">
+      <view class="tag-title">
+        <image class="tag-title-bg" src="/images/bg/tag-title.png" />
+        <view class="tag-title-txt">好友领取记录</view>
+      </view>
+      <v-tabs custom-class="tabs-wrap" tab-active-class="active-class" tabs-nav-class="tabs-nav-wrap" tab-class="nav-item">
+        <v-tab title="领取好友">
+          <block wx:if="{{teamUserList.length>0}}">
+            <view class="list">
+              <view class="list-item" wx:for="{{teamUserList}}" wx:key="{{item.customerId}}">
+                <view class="user">
+                  <image class="avatar" src="{{item.avatar}}" />
+                  <view class="nickname">{{item.nickName}}</view>
+                </view>
+                <view class="meta">已领取</view>
+              </view>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="list-none">
+              还没有好友领取优惠券
+            </view>
+          </block>
+        </v-tab>
+        <v-tab title="使用好友">
+          <view class="list">
+            <block wx:if="{{usedTeamUserList.length>0}}">
+              <view class="list-item" wx:for="{{usedTeamUserList}}" wx:key="{{item.customerId}}">
+                <view class="user">
+                  <image class="avatar" src="{{item.avatar}}" />
+                  <view class="nickname">{{item.nickName}}</view>
+                </view>
+                <view class="meta">已使用</view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="list-none">
+                还没有好友使用优惠券
+              </view>
+            </block>
+          </view>
+        </v-tab>
+      </v-tabs>
+    </view>
+    <view class="btn-wrap {{!openSelf && openWelfareList.length == 1?'fixed':''}}">
+      <button wx:if="{{openSelf}}" class="btn btn-danger" hover-class="button-hover" open-type="share">立即分享</button>
+      <button wx:else class="btn btn-danger" data-can="{{canDraw}}" hover-class="button-hover" bindtap="takeCoupon">{{canDraw?'立刻领取':'查 看'}}</button>
+    </view>
+  </view>
+</view>
+<v-popup offsetTop="{{46}}" show="{{showModal}}" custom-style="background:transparent" closeStyle="top:40rpx;right:50rpx;" bind:close="closeDialog">
+  <view class="dialog-wrap">
+    <image class="dialog-bg" src="/images/bg/modal-bg.png" />
+    <text class="dialog-title">
+      恭喜您 \n 领取礼券成功
+    </text>
+    <view class="dialog-bd" data-content="立即购卡">
+      <image class="buy-text" src="/images/bg/buy-text.png" />
+    </view>
+    <view class="dialog-btn {{system=='android'?'fix-center':''}}" data-id="{{ruleId}}" bindtap="handleBuy">
+      尽享畅玩
+    </view>
+  </view>
+</v-popup>
+
+<!-- 规则说明 -->
+<van-popup show="{{ruleDialog}}" custom-style="border-radius:10rpx;" closeable bind:close="closeRuleDialog">
+  <view class="tip-wrap">
+    <block>
+      <view class="tip-title">活动规则</view>
+      <view class="tip-desc" wx:for="{{taskRule}}" wx:key="{{index}}">{{item}}</view>
+    </block>
+  </view>
+</van-popup>

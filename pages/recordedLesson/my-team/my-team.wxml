@@ -1,0 +1,77 @@
+<!--pages/subpageMine/pages/my-team/my-team.wxml-->
+<import src="/template/loading/loading" />
+<view class="container">
+  <view class="top-bg"></view>
+  <view class="top-content">
+    <view class="top-title">我的团队有{{teamNum.teamNumber}}人</view>
+    <view class="content-bd">
+      <view class="content-bd-view" >
+        <view class="content-num">{{teamNum.juniorNumber}}</view>
+        <view class="content-text">小达人</view>
+      </view>
+      <view class="content-line"></view>
+      <view class="content-bd-view" >
+        <view class="content-num">{{teamNum.middleNumber}}</view>
+        <view class="content-text">大团长</view>
+      </view>
+    </view> 
+    <view class="content-notice" wx:if="{{teamNum.todayJuniorNumber!==0}}">
+      <image class="icon-notice" src="../../../images/icon/icon-team-notice.png" />
+      <view class="notice-text">今日新增 小达人+{{teamNum.todayJuniorNumber}}</view>
+    </view>
+  </view>
+
+  <view class="bottom-container">
+    <view class="tab">
+      <view data-level="1" class="tab-item {{spreadLevel=='1' ? 'active': ''}}" bindtap="changeTab">
+        小达人
+      </view>
+      <view data-level="2" class="tab-item {{spreadLevel=='2' ? 'active': ''}}" bindtap="changeTab">
+        大团长
+      </view>
+    </view>
+    <view class="tab-line"></view>
+    <view wx:if="{{teamData.length>0}}">
+      <view class="list">
+        <view class="team-list" wx:if="{{spreadLevel == '1'}}" >
+          <view class="card" wx:for="{{teamData}}" wx:key="id">
+            <view class="card-avatar">
+              <image class="avatar" src="{{item.avatar}}">
+              </image>
+            </view>
+            <view class="card-content">
+              <view class="nickName">{{item.nickname}}</view>
+              <view class="time-type">
+                {{item.changeTime}} 成为{{spread[item.afterLevel]}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="team-list" wx:elif="{{spreadLevel == '2'}}">
+          <view class="card" wx:for="{{teamData}}" wx:key="index">
+            <view class="card-avatar">
+              <image class="avatar" src="{{item.avatar}}">
+              </image>
+            </view>
+            <view class="card-content">
+              <view class="nickName">{{item.nickname}}</view>
+              <view class="time-type">
+                {{item.changeTime}} 成为{{spread[item.afterLevel]}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view wx:else class="empty-box-wrap">
+      <view class="empty-box">
+        <image class="empty-image" src="/images/bg/no-data-e.png" />
+        <view class="empty-txt">暂无团队信息</view>
+      </view>
+    </view>
+  </view>
+    
+  
+  
+</view>

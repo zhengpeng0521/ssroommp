@@ -1,0 +1,174 @@
+/* pages/test-game/wallet/wallet.wxss */
+page{
+  background:#C92538;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  margin:40rpx 0;
+}
+.g-btn{
+  width:170rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  font-size:28rpx;
+  text-align: center;
+  background:rgba(231,49,59,.6);
+  font-weight:500;
+  color:rgba(254,237,202,1);
+  background-clip:text;
+}
+.lf{
+  border-radius:0px 30rpx 30rpx 0px;
+}
+.rt{
+  border-radius:200rpx 0px 0px 200rpx;
+}
+
+.banner{
+  margin:0 20rpx;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width:700rpx;
+  height:296rpx;
+}
+.info{
+  display: flex;
+  flex:1;
+  padding:60rpx 120rpx;
+}
+.user{
+  width: 80rpx;
+  height: 80rpx;
+}
+.user image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border:3rpx solid #FFDEB3;
+}
+.center{
+  flex: 1;
+  width:160rpx;
+  height:46rpx;
+  font-size:40rpx;
+  color:rgba(255,222,179,1);
+  line-height:46rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.center text{
+font-size:60rpx;
+font-weight: bold;
+color:rgba(254,212,95,1);
+line-height:68rpx;
+}
+
+.btn-play{
+  box-sizing: border-box;
+  width:200rpx;
+  height:80rpx;
+  line-height: 70rpx;
+  font-weight: bold;
+  background:rgba(71,186,187,1);
+  box-shadow:0px 4rpx 14rpx 0px rgba(108,0,0,0.5),6rpx 5rpx 6rpx 0px rgba(255,255,255,0.5),-4rpx 0rpx 6rpx 0px rgba(9,120,122,1);
+  border-radius:62rpx;
+  border:6rpx solid rgba(254,221,179,1);
+  font-size:32rpx;
+  color:rgba(255,227,208,1);
+  text-shadow:0px 2rpx 4rpx rgba(0,0,0,0.5);
+  margin:0;
+}
+.card{
+  box-sizing: border-box;
+  padding:30rpx;
+  margin:40rpx auto;
+  width:630rpx;
+  min-height:454rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx;
+  border:8rpx solid rgba(254,221,179,1);
+}
+.card-hd{
+  border-bottom: 1px solid #eee;
+  padding-bottom:20rpx;
+}
+.hd-row{
+  display: flex;
+  justify-content: space-between;
+  font-size:24rpx;
+}
+.result-label{
+  font-size:24rpx;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+  line-height:34rpx;
+}
+.font-gray{
+  color:#A3A3A3;
+  font-weight: normal;
+}
+.red{
+  color:#FA4816;
+}
+.record{
+  display: flex;
+  margin-top:20rpx;
+}
+.media{
+  width:80rpx;
+  height:80rpx;
+  border-radius: 50%;
+}
+.item{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.item-row{
+  font-size:24rpx;
+  color:#666;
+  display: flex;
+  justify-content: space-between;
+}
+.money{
+  font-size:32rpx;
+  font-weight: bold;
+  color:#FA4816;
+}
+.nickname{
+  font-size:28rpx;
+  color:#333;
+}
+.wallet{
+  display: flex;
+  padding:30rpx;
+}
+.flex{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color:#fff;
+  font-size:28rpx;
+}
+.label{
+  margin-top:10rpx;
+}
+.total{
+  font-size:40rpx;
+  font-weight: bold;
+}
+.card-hd{
+  text-align: center;
+  color:#fb1731;
+}
+.card-bd{
+  margin-top:20rpx;
+}
+.info-list{
+  font-size:26rpx;
+  line-height: 200%;
+  color:#333;
+}

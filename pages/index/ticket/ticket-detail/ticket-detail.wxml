@@ -1,0 +1,250 @@
+<wxs module='goodsTemp'>
+  var leftTime = function(obj) {
+    if (obj.day == '00' && obj.hou == '00' && obj.min == '00' && obj.sec == '00') {
+      return false
+    }
+    return true
+  }
+  var str2Arr = function(str){
+    return str.split(",")
+  }
+  module.exports = {
+    leftTime: leftTime,
+    str2Arr: str2Arr
+  }
+</wxs>
+<import src="/components/stars/stars-template" />
+<import src="/components/enter-loading/enter-loading.wxml" />
+
+<import src="/template/comment-item/comment-item" />
+<view>
+  <NavBar bind:triggerback='handleBack' />
+</view>
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+<view wx:else class="container {{inviteDialogBool?'noSroll':''}}">
+  <view class="head">
+    <Carousel swiperList='{{ticketDetailData.imgs}}' type='{{ticketDetailData.goodsType}}' />
+    <view class="head-center">
+      <view class="head-price">
+        <view class="price-txt">￥<text>{{ticketDetailData.price || 0}}</text></view>
+        <view class="price-amount">原价<text class="price-del">￥{{ticketDetailData.oriPrice}}</text></view>
+      </view>
+      <text class="center-title">{{ticketDetailData.spuName}}</text>
+      <view wx:if="{{userInfo.vipLevel <= 1}}" class="open-adv">
+        <image src="http://img.ishanshan.com/gimg/n/20200318/82d15c516b408573d69507d8c58fdfc2" />
+        <view class="adv-text">
+          <view>开通会员，立享10000+</view>
+          <view>免费课程视频和分享奖励</view>
+        </view>
+        <view class="open-btn" catchtap="clickCard">立即开通</view>
+      </view>
+      <view class="drivder" wx:if='{{ticketDetailData.advanceSale == 1}}'></view>
+      <view class="head-meta-salemode" wx:if='{{ticketDetailData.advanceSale == 1 && goodsTemp.leftTime(timeObj)}}'>
+        <view class="pre-sale">预售倒计时</view>
+        <view class="countdown">
+          <text class="clock">{{timeObj.day}}</text>
+          <text class="clock-day">天</text>
+          <text class="clock">{{timeObj.hou}}</text>
+          <text class="clock-split">:</text>
+          <text class="clock">{{timeObj.min}}</text>
+          <text class="clock-split">:</text>
+          <text class="clock">{{timeObj.sec}}</text>
+        </view>
+      </view>
+      <view class="center-detail" wx:if='{{ticketDetailData.isEquity===0}}'>
+        <view>
+          <text class="current-price">
+            <text>￥</text> {{ticketDetailData.price}}
+          </text>
+          <view class="old-price">会员价￥{{ticketDetailData.memberPrice}}</view>
+          <view class='share-content' wx:if='{{userInfo.isSpreader == 1}}'>
+            分享他人购买可获得
+            <text style='color:#FF5100'>{{ticketDetailData.deductAmount}}元</text> 奖励
+          </view>
+        </view>
+        <!-- {{ticketDetailData.saleNum}} -->
+        <view class='count-box' wx:if='{{ticketDetailData.stockType===1}}'>
+          <view class='text'>
+            已经售出{{ticketDetailData.saleNumVisible}}份，还剩余{{ticketDetailData.stocks}}份
+          </view>
+          <view class='progress-bar'>
+            <view class='progress-bar-line' style='width:{{ticketDetailData.stockPercent}}%'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="head-bottom" wx:if='{{ticketDetailData.showCountDown ==1}}'>
+      <view class='count-down'>
+        距结束\t\t
+        <text>{{leftDay}}</text> \t天\t
+        <text>{{leftHours}}</text> \t:\t
+        <text>{{leftMinute}}</text> \t:\t
+        <text>{{leftSeconds}}</text>
+      </view>
+    </view> -->
+  </view>
+  <!-- <view class="main">
+    <view class="main-top {{indexOfCurrentDevice ? 'btnWhiteAnim': ''}}" catchtap="onNavToShopDetail">
+      <image src='/images/icon/view-shop-icon.png' mode=''></image>
+      <text class="top-title">查看门店</text>
+      <text class="scan-detail"></text>
+      <view class="arrow"></view>
+    </view>
+    <view class="main-center">
+      <view>
+        <image src='/images/icon/shop-icon.png' mode=''></image>
+        <text class="shop-adress text-ellipsis">{{ticketDetailData.shopName}}</text>
+      </view>
+      <image class="icon-phone" src="/images/icon/dianhua.png" catchtap="onPhoneCall"></image>
+    </view>
+    <view class="main-bottom {{indexOfCurrentAddress ? 'btnWhiteAnim': ''}}" catchtap="onOpenMap">
+      <image class="icon-adress" style="margin-right:14rpx;" src="/images/icon/dizhi.png"></image>
+      <text class="bottom-title text-ellipsis">{{ticketDetailData.addr}}</text>
+    </view>
+  </view> -->
+  <view class="bar" />
+  <view class="tabs-container">
+    <!-- tabs选项卡start -->
+    <v-tabs nav-class="goods-tabs-nav" tabs-custom="tabs-line" auto="true">
+      <v-tab title="机构信息">
+        <view class="org-info">
+          <view class="view-shop">
+            <view class="shop-name">
+              <image src="http://img.ishanshan.com/gimg/n/20200310/3085c956770c2eb6f94138fb24d455cf" />
+              <text>{{ticketDetailData.shopName}}</text>
+            </view>
+            <view class="shop-btn" catchtap="onNavToShopDetail">查看门店</view>
+          </view>
+          <view class="org-item">
+            <text>营业时间：</text>
+            <text>{{ticketDetailData.bussTime}}</text>
+          </view>
+          <view class="org-item">
+            <text>商家电话：</text>
+            <text>{{ticketDetailData.tel}}</text>
+          </view>
+          <view class="org-item">
+            <text>商家地址：</text>
+            <text>{{ticketDetailData.addr}}</text>
+          </view>
+        </view>
+      </v-tab>
+      <v-tab title="课程说明">
+        <view class="lesson-intro">
+          <view wx:for="{{ticketDetailData.guideArr}}" class="intro-item">
+            <view class="intro-item-title">{{item.title}}</view>
+            <view class="intro-item-content">{{item.content}}</view>
+          </view>
+        </view>
+      </v-tab>
+      <v-tab title="课程详情">
+        <view class="tips">
+          <view class="tips-list" style='marginLeft:0rpx'>
+            <view class='html-content'>
+              <Parser html='{{ticketDetailData.content}}' />
+            </view>
+          </view>
+        </view>
+      </v-tab>
+      <block wx:if="{{!ticketDetailData.accessAppointFlag}}">
+        <v-tab title="课程目录">
+          <view class="video_content">
+            <view class="title">
+              <text>课程目录</text>
+              <text>·共{{ticketDetailData.videoListNum || 0}}集</text>
+            </view>
+            <view class="section">
+              <view wx:for="{{list}}" wx:for-index="sectionIndex" wx:for-item="sectionItem">
+                <view class="section_item {{(!sectionItem.checked && sectionIndex !== list.length - 1) ? 'border' : ''}}" data-sectionIndex="{{sectionIndex}}" catchtap="toggleSection">
+                  <view class="section_title">{{sectionItem.chapterName}}</view>
+                  <image wx:if="{{sectionItem.checked}}" class="section_img" src="http://img.ishanshan.com/gimg/user/n///8466021425193553920.png"></image>
+                  <image wx:else class="section_img" src="http://img.ishanshan.com/gimg/user/n///8301188934738776064.png"></image>
+                </view>
+                <view class="className" wx:if="{{sectionItem.checked && sectionItem.checked === true}}">
+                  <view class="item_wrap" wx:for="{{sectionItem.videoInfo}}" wx:key="{{id}}" wx:for-index="classIndex" wx:for-item="classItem">
+                    <view class="class_name_item" data-sectionIndex="{{sectionIndex}}" data-classIndex="{{classIndex}}" catchtap="toggleVideo">
+                      <view class="class_name {{classItem.checked? 'class_name_activity' : ''}}">
+                        <view class="index">{{classIndex + 1 < 10 ? 0 : ''}}{{classIndex + 1}}</view>
+                        <view class="class_name_line">|</view>
+                        <view class="videoName">{{classItem.videoName}}</view>
+                      </view>
+                      <image wx:if="{{classItem.checked}}" src="http://img.ishanshan.com/gimg/n/20200313/1ca5d7dd7f3a0883841676bc63181963"></image>
+                      <!-- <image wx:else src="http://img.ishanshan.com/gimg/user/n///3216979448603471872.png"></image> -->
+                    </view>
+                    <view class="item_line" wx:if="{{classIndex !== sectionItem.videoInfo.length - 1}}"></view>
+                  </view>
+                  <view wx:if="{{sectionItem.videoInfo.length === 0 || !sectionItem.videoInfo}}" class="noClass">暂未上传视频课程</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </v-tab>
+      </block>
+    </v-tabs>
+    <!--tabs选项卡end-->
+  </view>
+
+  <view class="footer">
+    <view class='index-box footer-item' bindtap='handleBack'>
+      <image src="http://img.ishanshan.com/gimg/n/20200310/abfbd5ffffc2c68b339eb3f666e250aa" ></image>
+      <text>首页</text>
+    </view>
+    <button class='footer-share footer-item footer-share-btn' open-type="share" bindtap='inviteDialogShow'>
+      <image src="http://img.ishanshan.com/gimg/n/20200310/9df3964517ea2a616f6230e761ed1e0f" mode='widthFix' />
+      <text>分享</text>
+    </button>
+    <view class='share-box footer-item'>
+      <image animation="{{animationUp}}" mode='widthFix' wx:if="{{isCollect}}" src="http://img.ishanshan.com/gimg/n/20200310/72db3ea21f5b99176e7c7accf0a258c4" catchtap="onCollectTicket"></image>
+      <image animation="{{animationUp}}" mode='widthFix' wx:else src="http://img.ishanshan.com/gimg/n/20200310/cba98cda60c62c1ac474f6615662b642" catchtap="onCollectTicket"></image>
+      <text class='{{isCollect?"themeColor":""}}'>收藏</text>
+    </view>
+    <view wx:if="{{ticketDetailData.accessAppointFlag}}" class="purchase {{indexOfCurrentBtn ? 'btnGreenAnim': ''}} {{btnClick ? '' : 'btn-disable'}}" data-reserve='{{ticketDetailData.isEquity===1}}' catchtap="onShowCard">
+      立即预约
+    </view>
+    <view wx:else class="purchase {{indexOfCurrentBtn ? 'btnGreenAnim': ''}} {{btnClick ? '' : 'btn-disable'}}" data-reserve='{{ticketDetailData.isEquity===1}}' catchtap="handleBuy">
+      立即购买
+    </view>
+  </view>
+</view>
+<view class="" hidden="{{!inviteDialogBool}}">
+  <BeforeShare playCardTitle='{{ticketDetailData.vipSpuName}}' bind:hideDialog='hidePoster' bind:continueShate='continueShate' bind:naviToPlayCard='naviToPlayCard' />
+</view>
+
+<!--显示会员卡-->
+<v-popup show="{{showCard}}" title="选择会员卡" position="bottom" bind:close="handleClose">
+  <scroll-view scroll-y="true" style="max-height: 700rpx;">
+    <view class="card-wrap">
+      <block wx:if="{{withCard.length>0}}">
+        <view class="card-title">您当前拥有</view>
+        <view class="card-body">
+          <view class="card-item" wx:for="{{withCard}}" wx:key="{{index}}">
+            <view class="card-info">
+              <view class="card-name">{{item.vipSpuName}}</view>
+              <view class="card-desc" wx:if="{{item.useNotice}}">{{item.useNotice}}</view>
+            </view>
+            <view class="card-extend" bind:tap="onPurchase" data-flag="{{item.existFlag}}" data-reserve='{{ticketDetailData.isEquity===1}}' data-id="{{item.vipSpuId}}" data-type="{{item.vipType}}">
+              <view class="card-button">立即预约</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{withoutCard.length>0}}">
+        <view class="card-title" style="padding-top:10rpx;">暂未拥有</view>
+        <view class="card-body">
+          <view class="card-item" wx:for="{{withoutCard}}" wx:key="{{index}}">
+            <view class="card-info">
+              <view class="card-name">{{item.vipSpuName}}</view>
+              <view class="card-desc" wx:if="{{item.useNotice}}">{{item.useNotice}}</view>
+            </view>
+            <view class="card-extend" bind:tap="onPurchase" data-flag="{{item.existFlag}}" data-reserve='{{ticketDetailData.isEquity===1}}' data-id="{{item.vipSpuId}}" data-type="{{item.vipType}}">
+              <view class="card-button">会员免费</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</v-popup>

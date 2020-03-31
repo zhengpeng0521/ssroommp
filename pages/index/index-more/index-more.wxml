@@ -1,0 +1,96 @@
+<!--pages/index/index-more/index-more.wxml-->
+<import src="/template/member-goods/member-goods" />
+<import src="/template/loading/loading" />
+<view class="fixedTop">
+  <view class="search-container">
+    <view class="search">
+      <text class="iconfont iconsousuo"></text>
+      <input placeholder="请输入您想要的商品" type="text" value="{{keyword}}" bindconfirm="goodsNameSearch" confirm-type="search" bindinput="handleInput"></input>
+    </view>
+    <view class="search-btn" bind:tap="goodsNameSearch">搜索</view>
+  </view>
+  <view class='top-nav'>
+    <picker class="top-nav-item" mode='region' custom-item='全部' value='{{region}}' bindchange="addressChange">
+      <text class='iconfont icondown cityName'>{{locationCity||province||'全部'}} <text wx:if='{{district}}'>-{{district}}</text></text>
+    </picker>
+    <!-- <view class="top-nav-split"></view>
+    <view bindtap="showDistpicker"></view>
+    <view class="top-nav-item {{disabled?'disabled':''}}" data-parameter="goodsType" bindtap='sliderShow' hover-class='circle-hover'>
+      <text class='iconfont {{disabled?"":"icondown"}} cityName {{sliderShowBool?"rotate":""}}'>{{goodsTypeTitle}}</text>
+    </view> -->
+    <view class="top-nav-split"></view>
+    <view class="top-nav-item" bindtap='cardTypeSlideShowAct'>
+      <text class='iconfont icondown cityName {{cardTypeSlideShow?"rotate":""}}'>{{cardTypeTitle}}</text>
+    </view>
+    
+    <view class='slider' hidden='{{!sliderShowBool}}'>
+      <view class='item' bindtap="tabFilter" style="{{selectedTitleIndex===0?'color:#333':''}}" hover-class='list-hover' wx:for='{{selectArr}}' wx:key='{{index}}' data-index='{{index}}' data-type='{{item.type}}' data-para='{{item.typeNum}}' data-title='{{item.title}}'>
+        <view>{{item.title}}</view>
+      </view>
+    </view>
+    <view class='cardTypeSlide slider' hidden='{{!cardTypeSlideShow}}'>
+
+      <view class="item-container">
+        <view class='item' bindtap="choseCardType" style="{{selectedTitleIndex===0?'color:#333':''}}" hover-class='list-hover' wx:for='{{goodsTab}}' wx:key='{{index}}' data-type="{{item.goodsType}}" data-index="{{index}}" data-title='{{item.spuName}}'>
+          <view class=" item-title ">{{item.spuName}}</view>
+          <text class="already-buy" wx:if='{{item.customerHasCurrentCard==1}}'>已购买</text>
+        </view>
+      </view>
+      <view class="cardTypeSlide-bottom ">
+        <view class="cardTypeSlide-bottom-title ">购买情况</view>
+        <view class="cardTypeSlide-bottom-list ">
+          <view class="cardTypeSlide-bottom-item {{activeBuyCardIndex ==0?'active':''}}" hover-class="btn-hover" bindtap="choseAllOrBuy" data-type="" data-index="0">全部卡</view>
+          <view class="cardTypeSlide-bottom-item {{activeBuyCardIndex ==1?'active':''}}" hover-class="btn-hover" bindtap="choseAllOrBuy" data-type="1" data-index="1">已购买</view>
+          <view class="cardTypeSlide-bottom-item {{activeBuyCardIndex ==2?'active':''}}" hover-class="btn-hover" bindtap="choseAllOrBuy" data-type="0" data-index="2">未购买</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="height:2rpx;background:#eee;display:block;"></view>
+  <!-- <view class="cardType-nav " wx:if='{{goodsTab.length > 0}}'>
+    <view class="tab-item {{index==activeTabIndex? 'active': ''}} " data-type="{{item.goodsType}} " data-index="{{index}} " bindtap="choseCardType " wx:for='{{goodsTab}}' wx:key='{{index}}'>
+      <view class="fit-content ">
+        <text class="tab-item-text ">{{item.spuName}}</text>
+        <view class="bottom-border "></view>
+      </view>
+    </view>
+  </view> -->
+  <!-- <view style="box-shadow:0 4rpx 8rpx 0 rgba(0,0,0,0.1);">
+    <segment bindchange="segmentChange" segment="{{segmentData}}" currentActive="{{currentActive}}" tagStyle tab-class="segment-tab" segment-class="segment" />
+  </view> -->
+  
+</view>
+<view class='list-container'>
+  <view class='recommendation-list' wx:if='{{!noData}}'>
+    <template is="member-goods" data="{{recommendData: recommendData,btnTxt:btnTxt}}"></template>
+    <template is='loading-ui' data="{{showLoading:listLoading}}"></template>
+    <view class='listBottom'>已经到底啦...</view>
+  </view>
+  <view class="city-no-goods " wx:if='{{noData}}'>
+    <view class="no-goods-content ">
+      <image src="/images/bg/no-city.png "></image>
+      <view class="no-goods-txt ">
+        您所在的区域的门店正在准备中，敬请期待
+      </view>
+    </view>
+    <view class="no-goods-recommend ">
+      <view class="title ">
+        <view class="line left ">
+          <view class="point "></view>
+        </view>
+        <view class="title-content ">
+          <image src="/images/icon/icon-fire.png "></image>
+          <text>热门推荐</text>
+        </view>
+        <view class="line right ">
+          <view class="point "></view>
+        </view>
+      </view>
+      <view class="list ">
+        <RecomendLists />
+      </view>
+    </view>
+  </view>
+</view>
+<view class='lay-out' bindtap='closeSlide' hidden='{{!sliderShowBool}}'></view>
+<view class='lay-out' bindtap='closeSlide' hidden='{{!cardTypeSlideShow}}'></view>

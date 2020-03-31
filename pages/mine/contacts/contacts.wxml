@@ -1,0 +1,48 @@
+<view class="contacts-box">
+  <view class='add-contact'>
+    <view class="add-icon">
+      <image class="device-item-img" src="http://img.ishanshan.com/gimg/n/20200319/f4efe9a8b9be708ce65371318ebd1897"></image>
+    </view>
+    <view class="add-title" bind:tap="addNewContact">新增常用购买人</view>
+  </view>
+  <view class="has-contact product-list">
+    <radio-group class="contact-group" catchchange="radioChange">
+      <label class="contact-radio product-item " wx:for="{{contactData}}" wx:for-index="index" wx:key="{{item.linkmanId}}">
+        <slide-delete wx:if='{{!item.isOwner}}' pid="{{item.linkmanId}}" bindaction="handleSlideDelete" wx:key="{{item.linkmanId}}">
+          <view class="product-item-wrap">
+            <radio value="{{item.name+'-'+item.idCard}}" checked="{{item.checked}}" color='#FF9436FF' />
+            <view class="product-movable-item" data-radio="{{item}}" catchtap="contactDetail">
+              <view class="product-movable-item-name">{{item.name}}</view>
+              <view class="product-movable-item-code">{{item.idCard}}</view>
+            </view>
+            <view class="arrow-btn">
+              <view class="device-item-btn"></view>
+            </view>
+          </view>
+        </slide-delete>
+        <view wx:if='{{item.isOwner}}' pid="{{item.linkmanId}}" bindaction="handleSlideDelete" wx:key="{{item.linkmanId}}">
+          <view class="product-item-wrap">
+            <radio value="{{item.name+'-'+item.idCard}}" checked="{{item.checked}}" color='#00b600' />
+            <view class="product-movable-item" data-radio="{{item}}">
+              <view class="product-movable-item-name">
+                {{item.name}}
+                <text class='owen-card'>会员卡持有者</text>
+              </view>
+              <view class="product-movable-item-code">{{item.idCard}}</view>
+            </view>
+            <!-- <view class="arrow-btn">
+              <view class="device-item-btn"></view>
+            </view> -->
+          </view>
+        </view>
+      </label>
+    </radio-group>
+  </view>
+  <view class="c-btn" hidden="{{!nocontact}}" bindtap="choseContact">
+    <text class="c-text">确定</text>
+  </view>
+  <view class="no-contact" hidden="{{nocontact}}">
+    <image class="no-contact-img" src="/images/bg/no-contact-bg.png"></image>
+    <text class="no-contact-txt">暂无购买人信息</text>
+  </view>
+</view>

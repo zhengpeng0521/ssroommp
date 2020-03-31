@@ -1,0 +1,70 @@
+/* pages/recordedLesson/withdrawal-record/withdrawal-record.wxss */
+page{
+  background: #FFFFFF;
+  border-top: 1rpx solid #DDDDDD;
+  /* background: rgb(250, 203, 203); */
+  padding-top:12rpx;
+}
+
+.container{
+  padding:0 30rpx;
+}
+
+.card{
+  padding:30rpx 0 20rpx;
+  border-bottom: 1rpx solid #EEE;
+}
+
+.card-hd{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.card-hd-time{
+  color:#333;
+}
+.card-hd-status-ing{
+  color:#FF9436;
+}
+
+.card-hd-status-over{
+  color:#46B6EE;
+}
+
+.card-hd-status-refuse{
+  color:#999;
+}
+
+.card-bd{
+  margin-top:10rpx;
+  font-size: 24rpx;
+  color:#666;
+  line-height: 34rpx;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+
+.empty-box-wrap{
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-box{
+  display: flex;
+}
+.empty-image{
+  width:200rpx;
+  height:244rpx;
+}
+.empty-txt{
+  font-weight: 500;
+  margin-top:40rpx;
+  color:#999;
+  font-size:28rpx;
+}

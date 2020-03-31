@@ -1,0 +1,91 @@
+<!--pages/trade/income-record/income-record.wxml-->
+<import src="../../../template/income-detail/income-detail" />
+<import src="/template/card-bg/card-bg" />
+<import src="/template/loading/loading" />
+
+
+<view class='economical-detail-layout'>
+  <template is="card-bg"></template>
+  <view class='economical-detail'>
+    <text class='economical-detail-title'>全部收益</text>
+    <text class='economical-detail-count'>{{totalEarnings}}</text>
+    <text class='economical-detail-totalOrderCount'>总共{{totalOrderNum}}单</text>
+    <view class='distribute-detail'>
+      <view class='distributed'>
+        <text>{{totalCancelEarnings}}</text>
+        <text>已核销</text>
+      </view>
+      <view class='distribute-detail-line'></view>
+      <view class='not-distributed'>
+        <text>{{totalNotCancelEarnings}}</text>
+        <text>未核销</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='income-content-layout'>
+  <view class='income-content'>
+    <view class='income-content-nav'>
+      <view bindtap='changeTab1' data-index='0' class='item {{activeIndex ===0?"active":""}}'>
+        分享奖励
+      </view>
+      <view bindtap='changeTab1' data-index='1' class='item {{activeIndex ===1?"active":""}}'>
+        团队奖励
+      </view>
+      <view bindtap='changeTab1' data-index='2' class='item {{activeIndex ===2?"active":""}}'>
+        培训奖励
+      </view>
+    </view>
+    <view class='income-content-nav-bottom'>
+      <view class='item {{activeIndex ===0?"active":""}}'></view>
+      <view class='item {{activeIndex ===1?"active":""}}'></view>
+      <view class='item {{activeIndex ===2?"active":""}}'></view>
+    </view>
+    <view hidden='{{showLoading}}'>
+      <view class='income-content-proportion'>
+        <text class='item'>{{radioData.orderAmount}}元</text>
+        <text class='item'>共{{radioData.orderNum}}单</text>
+        <text class='item'>占比{{radioData.ratio}}</text>
+      </view>
+      <view class='income-content-list-layout'>
+        <view class='list-title'>
+          <view class='date-btn' bindtap='showDatePicker'>
+            <view class='angle-text'>{{choseDate}}
+              <text class='iconfont icondown'></text>
+            </view>
+          </view>
+          <view class='list-title-txt'>
+            <text class=''>{{radioData.orderNum}}单  |</text>
+            <text class=''>赚{{radioData.orderAmount}}元</text>
+          </view>
+        </view>
+        <template is='income-detail' data="{{data:list}}"></template>
+      </view>
+    </view>
+    <view class='loading' hidden='{{!showLoading}}'>
+      <template is='loading-ui'></template>
+    </view>
+  </view>
+
+  <view wx:if='{{list[0]==null&&!showLoading}}'>
+    <no-data prop-showType='b' />
+  </view>
+</view>
+
+
+
+
+<view class='dialog-layout' hidden='{{!showDatePickerDialog}}' bindtap='hideDatePicker'></view>
+<view class='data-picker-dialog' hidden='{{!showDatePickerDialog}}'>
+  <picker class='dialog-btn' mode="date" fields='month' bindchange="bindStartTimeChange">
+    <view class="picker">
+      选择开始日期
+    </view>
+  </picker>
+  <picker class='dialog-btn' mode="date" fields='month' bindchange="bindEndTimeChange">
+    <view class="picker">
+      选择结束日期
+    </view>
+  </picker>
+  <view class='dialog-btn'>使用默认日期（查看至今）</view>
+</view>

@@ -1,0 +1,330 @@
+.head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.head .head-img {
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.head .head-content {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.head .head-content .content-title {
+  width: 480rpx;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.head .head-content .content-price {
+  height: 32rpx;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.head .head-content .content-price .current-price {
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 32rpx;
+  color: #ff5100;
+}
+
+.head .head-content .content-price .old-price {
+  padding: 0 10rpx;
+  font-size: 20rpx;
+  /* line-height: 30rpx; */
+  color: #ff5100;
+  border: 1px solid #ff5100;
+  border-radius: 16rpx;
+  margin-left: 10rpx;
+}
+
+.head .head-content .sell-num {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #999;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.main .list {
+  height: 90rpx;
+  /* margin-left: 30rpx;
+   */
+  padding-right: 30rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.main .list:last-of-type{
+  border:none;
+}
+.middle-list {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.section-name {
+}
+
+.main .list .category {
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 32rpx;
+  color: #333;
+}
+.main .list .iconfont{
+  font-size:28rpx;
+  line-height: 1;
+}
+.main .list .num-content {
+  margin: auto 0 auto auto;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #eee;
+  border-radius: 8rpx;
+}
+
+.main .list .num-content .num-opt {
+  width: 60rpx;
+  height: 53rpx;
+  text-align: center;
+}
+
+.main .list .num-content .num-input {
+  width: 100rpx;
+  height: 52rpx;
+  text-align: center;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  font-size: 28rpx;
+}
+
+.main .list .sum {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #999;
+  margin: auto 0 auto auto;
+}
+.main .list .sum text{
+  font-size:32rpx;
+}
+.danger{
+  color:#ff7058
+}
+.main .list .discount {
+  margin: auto 30rpx auto auto;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #999;
+}
+
+.main .list:last-child .sum {
+  color: #ff7058;
+}
+
+.submit {
+  width: 670rpx;
+  margin: 0 auto;
+  background: #00B600;
+  font-size: 32rpx;
+  line-height: 88rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 44rpx;
+}
+
+.vipcard-block {
+  background-color: #fff;
+}
+
+.vip-title {
+  border-top: 1px solid #eee;
+  padding-top: 40rpx;
+}
+
+.vip-title .section {
+  border: none;
+  height: fit-content;
+  margin-bottom: 20rpx;
+}
+
+.confirm-text {
+  color: #999;
+  font-size: 28rpx;
+  padding-left: 60rpx;
+  margin-bottom: 30rpx;
+}
+
+.section {
+  display: flex;
+  background-color: #fff;
+  height: 92rpx;
+  align-items: center;
+  padding-right:30rpx;
+  margin-left:30rpx;
+  /* border-top: 1rpx solid #eee; */
+  border-bottom: 1rpx solid #eee;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section input {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.section__title {
+  color: #999;
+  font-size: 28rpx;
+  line-height: 45rpx;
+  width: 184rpx;
+  /* padding-left: 20rpx; */
+}
+
+.contact-info {
+  color: #333;
+  font-size: 32rpx;
+  line-height: 28rpx;
+  /* padding-left: 20rpx; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.chose-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chose-contact  text {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.vipcard-info {
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+}
+
+.vipcard-info  text {
+  color: #999;
+  font-size: 24rpx;
+  padding:0;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.name-input input {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.poster-dialog .vip {
+  opacity: 0.9593;
+  width: 610rpx;
+  padding-bottom: 40rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  position: fixed;
+  left: 50%;
+  overflow: hidden;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 1);
+  z-index: 111;
+}
+
+.vip-head {
+  color: #333;
+  height: 102rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 102rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.footer-btn {
+  display: block;
+  width: 236rpx;
+  height: 94rpx;
+  border-radius: 47rpx;
+  text-align: center;
+  line-height: 94rpx;
+  margin-right: 0rpx;
+}
+
+.footer-vip {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30rpx;
+}
+
+.no-card {
+  color:#00B600;
+  border: 2rpx solid #00B600;
+}
+
+.no-card-buy {
+  border: 2rpx solid #00B600;
+  background: #00B600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.confirm-content {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.confirm-label {
+  width: 40rpx;
+  padding: 0 40rpx;
+}
+
+.confirm-name {
+  padding-left: 25rpx;
+}
+
+.placeholder-text{
+  font-size:28rpx;
+  color:#ccc;
+}
+.coupon{
+  padding:30rpx;
+}

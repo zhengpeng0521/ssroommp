@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "全部收益",
+  "usingComponents": {
+    "no-data": "../../../components/no-data-notice/no-data-notice"
+  }
+}

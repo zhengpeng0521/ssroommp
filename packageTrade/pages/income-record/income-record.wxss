@@ -1,0 +1,188 @@
+/* pages/trade/income-record/income-record.wxss */
+@import "/template/card-bg/card-bg";
+@import "/template/loading/loading";
+@import "/template/income-detail/income-detail";
+
+.card-bg-layout {
+  height: 350rpx;
+  border-radius: 0;
+}
+
+.economical-detail-layout {
+  position: relative;
+  height: 350rpx;
+}
+
+.economical-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.economical-detail text {
+  display: block;
+  color: #fff;
+}
+
+.economical-detail-title {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}
+
+.economical-detail-count {
+  font-size: 80rpx;
+  font-weight: 500;
+  margin: 5rpx;
+}
+
+.economical-detail-totalOrderCount {
+  font-size: 28rpx;
+  margin: 5rpx 0;
+}
+
+.distribute-detail {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  width: 434rpx;
+  margin: 5rpx auto;
+  justify-content: space-between;
+}
+
+.distribute-detail-line {
+  width: 4rpx;
+  height: 44rpx;
+  margin: 15rpx;
+  background-color: #fff;
+}
+
+.income-content-layout {
+  padding: 0 20rpx;
+}
+
+.income-content {
+}
+
+.income-content-nav, .income-content-nav-bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.income-content-nav .item {
+  width: 120rpx;
+  font-size: 28rpx;
+  color: #999;
+  padding: 30rpx 30rpx 20rpx;
+  white-space: nowrap;
+}
+
+.income-content-nav-bottom {
+  border-bottom: 1rpx solid #ddd;
+}
+
+.income-content-nav-bottom .item {
+  width: 80rpx;
+  height: 4rpx;
+}
+
+.income-content-nav .item.active {
+  color: #ff9436;
+}
+
+.income-content-nav-bottom .item.active {
+  background-color: #ff9436;
+}
+
+.income-content-proportion {
+  margin-top: 20rpx;
+  width: 710rpx;
+  height: 146rpx;
+  line-height: 146rpx;
+  background: #fff;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.income-content-proportion .item {
+  color: #666;
+  font-weight: 500;
+  font-size: 32rpx;
+}
+
+.income-content-list-layout {
+  padding: 15rpx 0;
+}
+
+.income-content-list-layout .list-title {
+  color: #666;
+  margin-top: 15rpx;
+  font-size: 28rpx;
+  margin-bottom: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.income-content-list-layout .list-title .date-btn {
+  padding: 0 20rpx;
+  line-height: 56rpx;
+  background: #ccc;
+  border-radius: 56rpx;
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.income-content-list-layout .list-title .angele-box {
+  border-top: 12rpx solid #fff;
+  border-bottom: 12rpx solid transparent;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  position: relative;
+  top: 22rpx;
+  left: 6rpx;
+}
+.income-content-list-layout .list-title .icondown{
+  font-size: 26rpx;
+  color: #fff;
+}
+.list-title-txt {
+  display: flex;
+}
+
+.list-title-txt text {
+  color: #999;
+}
+
+.list-title-txt text:last-child {
+  margin-left: 10rpx;
+}
+
+.income-content-list {
+}
+
+.dialog-layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 12;
+}
+
+.data-picker-dialog {
+  width: 500rpx;
+  height: 400rpx;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-top: 50rpx;
+  z-index: 30;
+}

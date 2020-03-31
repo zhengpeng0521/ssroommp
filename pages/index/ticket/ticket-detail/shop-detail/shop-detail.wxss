@@ -1,0 +1,145 @@
+@import "/components/enter-loading/enter-loading.wxss";
+
+swiper {
+  width: 100%;
+  height: 280rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 280rpx;
+}
+
+.shop-info {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  margin-bottom: 32rpx;
+}
+
+.shop-info .title {
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 90rpx;
+  color: #333;
+}
+
+.shop-info .item {
+  width: 100%;
+  padding: 20rpx 0;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .shop-info .itemAfter:after{
+    content: '';
+    width: 16rpx;
+    height: 16rpx;
+    display: inline-block;
+    color: #C7C7CC;
+    margin: auto 30rpx auto auto;
+    border: 3rpx #C7C7CC solid;
+    border-top-color:transparent;
+    border-left-color:transparent;
+    transform: rotate(-45deg);
+} */
+
+.shop-info .item .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.shop-info .item .icon-adress {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+.shop-info .item .content {
+  margin-left: 18rpx;
+  font-size: 28rpx;
+  color: #333;
+  max-width: 550rpx;
+  display: inline-block;
+}
+
+.summary {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary .title {
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 32rpx;
+  color: #333;
+}
+
+.summary .text {
+  font-size: 24rpx;
+  line-height: 54rpx;
+  color: #666;
+}
+
+.summary .img1 {
+  width: 100%;
+  height: 280rpx;
+}
+
+.summary .img2 {
+  width: 100%;
+  height: 368rpx;
+}
+
+.feture {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+
+.feture .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 32rpx;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+
+.feture .content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.feture .content .item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feture .content .item .img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+
+.feture .content .item .text {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #999;
+}

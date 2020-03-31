@@ -1,0 +1,54 @@
+<!--pages/recordedLesson/withdrawal-record/withdrawal-record.wxml-->
+<view class="container">
+  <view wx:if="{{drawRecordeList.length>0}}">
+    <view class="card" wx:if="{{item.withdrawalStatus == '1'}}" wx:for="{{drawRecordeList}}" wx:key="index">
+      <view class="card-hd">
+        <view class="card-hd-time">
+          {{item.applyTime}}
+        </view>
+        <view class="card-hd-status-ing">
+          申请中
+        </view>
+      </view>
+      <view class="card-bd">
+        你正在申请{{item.applyAmount}}元提现，手续费{{item.charge}}元
+      </view>
+    </view>
+
+    <view class="card"  wx:if="{{item.withdrawalStatus == '2'}}" wx:for="{{drawRecordeList}}" wx:key="index">
+      <view class="card-hd">
+        <view class="card-hd-time">
+          {{item.applyTime}}
+        </view>
+        <view class="card-hd-status-over">
+          已到账
+        </view>
+      </view>
+      <view class="card-bd">
+        你正在申请{{item.applyAmount}}元提现已经到账，手续费{{item.charge}}元
+      </view>
+    </view>
+
+    <view class="card"  wx:if="{{item.withdrawalStatus == '9'}}" wx:for="{{drawRecordeList}}" wx:key="index">
+      <view class="card-hd">
+        <view class="card-hd-time">
+          {{item.applyTime}}
+        </view>
+        <view class="card-hd-status-refuse">
+          已拒绝
+        </view>
+      </view>
+      <view class="card-bd">
+        你正在申请{{item.applyAmount}}元提现被拒绝了，拒绝原因“{{item.auditDescription}}”
+      </view>
+    </view>
+
+  </view>
+  <view wx:else class="empty-box-wrap">
+    <view class="empty-box" style="padding:20rpx 0;">
+      <image class="empty-image" src="/images/bg/no-data-e.png" />
+      <view class="empty-txt">暂无提现记录</view>
+    </view>
+  </view>
+
+</view>

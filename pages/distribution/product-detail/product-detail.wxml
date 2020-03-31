@@ -1,0 +1,133 @@
+<!-- pages/distribution/product-detail/product-detail.wxml -->
+<import src="/components/enter-loading/enter-loading.wxml" />
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+<view wx:else class="container {{inviteDialogBool?'noSroll':''}}">
+  <view class="head">
+    <Carousel swiperList='{{ticketDetailData.imgs}}' type='{{ticketDetailData.goodsType}}' />
+    <view class="head-center">
+      <view class="head-price">
+        <text class="price-txt">￥{{ticketDetailData.price}}</text>
+        <view class="price-amount">
+          <text class="price-del">￥{{ticketDetailData.oriPrice}}</text>
+        </view>
+      </view>
+      <text class="center-title">{{ticketDetailData.spuName}}</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="main-top {{indexOfCurrentDevice ? 'btnWhiteAnim': ''}}" catchtap="onNavToShopDetail">
+      <image src='/images/icon/view-shop-icon.png' mode=''></image>
+      <text class="top-title">查看门店</text>
+      <text class="scan-detail"></text>
+      <view class="arrow"></view>
+    </view>
+    <view class="main-center">
+      <view>
+        <image src='/images/icon/shop-icon.png' mode=''></image>
+        <text class="shop-adress text-ellipsis">{{ticketDetailData.shopName}}</text>
+      </view>
+      <image class="icon-phone" src="/images/icon/dianhua.png" catchtap="onPhoneCall"></image>
+    </view>
+    <!-- <text class="shop-distance">{{ticketDetailData.distance}}km</text> -->
+    <view class="main-bottom {{indexOfCurrentAddress ? 'btnWhiteAnim': ''}}" catchtap="onOpenMap">
+      <image class="icon-adress" style="margin-right:14rpx;" src="/images/icon/dizhi.png"></image>
+      <text class="bottom-title text-ellipsis">{{ticketDetailData.addr}}</text>
+    </view>
+  </view>
+  <view class="tabs-container">
+    <view class="tips" style="padding-bottom:0">
+      <!-- <text class="list-title">使用说明</text> -->
+      <view wx:if='{{ticketDetailData.guideArr.length == 0}}'>
+        <view class="tips-list" wx:if='{{ticketDetailData.isEquity===0}}'>
+          <text class="list-title">购买须知</text>
+          <text wx:for="{{ticketDetailData.bookNotice}}" wx:key="index" class="list-rule">
+            {{item}}
+          </text>
+        </view>
+        <view class="tips-list">
+          <text class="list-title">使用说明</text>
+          <text wx:for="{{ticketDetailData.useNotice}}" wx:key="index" class="list-rule">
+            {{item}}
+          </text>
+        </view>
+        <view class="tips-list" wx:if='{{ticketDetailData.isEquity===0}}'>
+          <text class="list-title">退款规则</text>
+          <text wx:for="{{ticketDetailData.backNotice}}" wx:key="index" class="list-rule">
+            {{item}}
+          </text>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="tips-list" wx:for='{{ticketDetailData.guideArr}}' wx:key='index'>
+          <text class="list-title">{{item.title}}</text>
+          <text class="list-rule">{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="tips">
+      <view class="tips-list" style='marginLeft:0rpx'>
+        <text class="list-title title-solid">商品详情</text>
+        <view class='html-content'>
+          <Parser html='{{ticketDetailData.content}}' />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="action-tool">
+      <view class='index-box footer-item' bindtap='handleBack'>
+        <image src="/images/icon/index-icon-1.png" mode='widthFix'></image>
+        <text>首页</text>
+      </view>
+      <view class='share-box footer-item'>
+        <image animation="{{animationUp}}" mode='widthFix' wx:if="{{isCollect}}" src="/images/icon/dianzan-1.png" catchtap="onCollectTicket"></image>
+        <image animation="{{animationUp}}" mode='widthFix' wx:else src="/images/icon/dianzan-2.png" catchtap="onCollectTicket"></image>
+        <text class='{{isCollect?"themeColor":""}}'>收藏</text>
+      </view>
+    </view>
+    <view wx:if="{{spreadLevel == 0}}" class="purchase {{indexOfCurrentBtn ? 'btnGreenAnim': ''}} {{btnClick ? '' : 'btn-disable'}}" data-reserve='{{ticketDetailData.isEquity===1}}' bindtap="handleBuy">
+      立即购买
+    </view>
+    <view wx:else class="btn-group">
+      <view class="flex-btn btn-warning" bindtap="toggleActionSheet">
+        <view class="price">
+          <text class="price-prefix">赚</text>
+          <text class="price-num">￥{{ticketDetailData.selfBenefit}}</text>
+        </view>
+        <view class="action">推广</view>
+      </view>
+      <view class="flex-btn btn-danger" bindtap="handleBuy">
+        <view class="price">
+          <text class="price-prefix">赚</text>
+          <text class="price-num">￥{{ticketDetailData.selfBenefit}}</text>
+        </view>
+        <view class="action">抢购</view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" cancel-text="取消" bind:close="toggleActionSheet" bind:cancel="toggleActionSheet" bind:select="handleSelect" />
+<van-overlay show="{{ showDialog }}" z-index="9999" custom-style="background:#7b7b7b;">
+  <view class="wrapper">
+    
+    <view class="painter" style="position:relative;">
+      <view class="dialog--close" bindtap="onClickHide"></view>
+      <image src="{{posterUrl}}" class="poster-img" mode="widthFix" />
+      <view class="share-action">
+        <button class="share-btn share-friend" open-type="share">
+          <image class="share-friend-img" src="/images/icon/share-wx.png" />
+          <view class="share-friend-text">分享好友</view>
+        </button>
+        <view class="share-btn" catchtap="saveShareImage">
+          <image class="share-friend-img" src="/images/icon/share-download.png" />
+          <view class="share-friend-text">下载图片</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</van-overlay>
+<view class="placeholder">
+  <painter style="position:fixed;top:-9999rpx" palette="{{template}}" bind:imgOK="onImgOK" />
+</view>

@@ -1,0 +1,12 @@
+<template name="enter-loading">
+
+    <view class="shade-loading">
+        <view class="enterLoading">
+            <image src="/images/bg/logo.png" mode="aspectFit"></image>
+            <view class="loading-text">
+                <text class="text">努力加载中</text>
+                <text class="dot">……</text>
+            </view>
+        </view>
+    </view>
+</template>

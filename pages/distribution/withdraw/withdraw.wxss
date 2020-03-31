@@ -1,0 +1,156 @@
+/* pages/distribution/withdraw/withdraw.wxss */
+page{
+  background-color:#f7f7f7;
+  margin-top:20rpx;
+}
+
+.withdraw-head{
+  width:690rpx;
+  height:114rpx;
+  background:#FFF;
+  margin-top:20rpx;
+  padding:30rpx;
+  color:#333;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.head-text{
+  font-size:32rpx;
+  font-weight:500;
+  line-height:44rpx;
+  margin-bottom: 30rpx;
+}
+
+.amount-prefix{
+  font-size: 40rpx;
+  line-height: 40rpx;
+  font-weight: 500;
+}
+
+.withdraw-body{
+  height:216rpx;
+  margin-top: 20rpx;
+  background:#FFF;
+  padding:30rpx 0 40rpx;
+}
+
+.body-content{
+  display: flex;
+  padding:0 30rpx 30rpx;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee
+}
+
+.content-tips{
+  font-size:32rpx;
+  font-weight:500;
+  color:#333;
+  line-height:44rpx;
+}
+
+.content-info{
+  font-size:24rpx;
+  font-weight:500;
+  color:#999;
+  margin-top: 8rpx ;
+  line-height:34rpx;
+}
+
+.iconright{
+  color:#999;
+  font-size:24rpx;
+  margin-left:10rpx;
+}
+
+.set-withdraw{
+  height:92rpx;
+  padding:0 20rpx;
+  margin:38rpx 30rpx 0;
+  background:#F7F7F7;
+  border-radius:10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.set-prefix{
+  font-size: 52rpx;
+  color:#333;
+}
+
+.input-number{
+  height:60rpx;
+  width: 540rpx;
+  margin:16rpx 10rpx 20rpx 0;
+  font-size: 60rpx;
+  line-height: 60rpx;
+  color:#333;
+  font-family:'PingFang-SC-Medium,PingFang-SC';
+}
+
+.set-all{
+  font-size:28rpx;
+  font-weight:500;
+  color:#FF9436;
+  line-height:92rpx;
+}
+
+.withdraw-foot{
+  padding:108rpx 40rpx 0;
+}
+
+.confirm-submit{
+  height:94rpx;
+  text-align: center;
+  line-height: 94rpx;
+  color:#FFF;
+  font-size:36rpx;
+  background:linear-gradient(322deg,rgba(255,148,54,1) 0%,rgba(255,188,58,1) 100%);
+  border-radius:47rpx;
+}
+
+.foot-check{
+  margin-top:14rpx;
+  padding:0 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkbox{
+  color:#BBB;
+  transform: scale(0.6,0.6);
+}
+
+.check-view{
+  padding:0;
+  display:none;
+}
+
+.foot-check-text{
+  font-size:24rpx;
+  font-weight:500;
+  color:#999;
+  line-height:34rpx;
+  margin-left:-5rpx;
+}
+
+.foot-check-info{
+  font-size:24rpx;
+  font-weight:500;
+  color:#FF9436;
+  line-height:50rpx;
+}
+
+.tip-title-bold{
+  text-align: center;
+  font-size:32rpx;
+  font-weight: bold;
+}
+.tip-desc{
+  padding:20rpx 20rpx 0;
+  line-height:1.5;
+  text-indent: 48rpx;
+  text-align: justify;
+}

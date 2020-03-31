@@ -1,0 +1,139 @@
+<!-- pages/index/index.wxml -->
+<import src="/template/enter-loading/enter-loading.wxml" />
+<import src="/template/goods-list/member-goods" />
+<import src="/template/card-bg/card-bg" />
+<import src="/template/loading/loading" />
+<import src="/template/horizontal-loading/horizontal-loading" />
+<CollectPop />
+<view class='top-nav {{cityNavFixed ? "cityNavFixed": ""}}' id="cityNav">
+  <navigator url='/pages/index/address/address'>
+    <view class="currentPos">
+      <text>{{ locationCity }}</text>
+      <text class="iconfont icondown"></text>
+    </view>
+  </navigator>
+  <view class="search-container">
+    <view class="search">
+      <text class="iconfont iconsousuo"></text>
+      <input placeholder-style="font-size:28rpx;color:#B8C0CB" placeholder="请输入您想要的商品" type="text" bindblur='goodsNameSearch'></input>
+    </view>
+  </view>
+</view>
+<swiper wx:if="{{superCardList.length>0}}" class="banner-swiper" current="{{bannerCurrent}}" indicator-dots='true' indicator-color='rgba(255,255,255,0.6)' indicator-active-color='#fff' autoplay="{{true}}">
+  <block wx:for="{{superCardList}}" wx:key="id" wx:for-item="data">
+    <swiper-item style="border-radius:8rpx" id="{{data.id}}">
+      <view id="{{data.id}}" bindtap="clickAd" data-id="{{data.id}}" data-url="{{data.url}}"  class='play-card-container'>
+        <!-- <view class='play-card-detail' style='background-image:url("{{data.cover}}?p=image/format,jpg/quality,q_75/resize,l_750")'>
+        </view> -->
+        <image class="play-card-detail" src="{{data.cover}}?p=image/format,jpg/quality,q_75/resize,l_750"></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 领取优惠券提示 -->
+<!-- <view class="notice {{noticeClass}}" wx:if="{{showNotice}}" bindtap="onNavToPrivilege">
+  <view class="notice-icon">
+    <custom-icon name="card" icon-class="icon-popup" color="#ff9436" />
+  </view>
+  <view class="notice-msg">恭喜您获得一张绿色通道特权券，前往领取</view>
+  <custom-icon name="arrow_header" icon-class="icon-arrow" />
+</view> -->
+<!-- <view class="cities-container">
+  <view class='list-title {{cityNavFixed ? "cityNavFixed": ""}}'>
+    <text class='title-text'>热门城市</text>
+    <navigator url='/pages/index/index-more/index-more?showOnlineEdu={{showOnlineEdu}}' class='more'>
+      <text class="more-text">更多城市</text>
+      <text class="iconfont iconright"></text>
+    </navigator>
+  </view>
+  <view class='cities-list {{cityNavFixed ? "paddingTop": ""}}'>
+    <scroll-view scroll-x>
+      <view wx:if='{{citiesArr.length>0}}' class="cities-item" data-city='{{item.aliasName}}' data-province='{{item.upAreaName}}' bindtap="choseCity" wx:for='{{citiesArr}}' wx:key='index'>
+        <view class="cities-item-bg" style="background-image:url('{{item.cover}}')"></view>
+        <text class="citie-item-name">{{item.aliasName}}</text>
+      </view>
+      <view class="loading" wx:if='{{citiesArr.length==0}}'>
+        <template is='horizontal-loading'></template>
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
+<!-- 广告位 -->
+<!-- <view class="adv-wrap" wx:if="{{adv.length>0}}">
+  <swiper indicator-dots="{{adv.length>1}}" autoplay="{{true}}" indicator-color="#ffffff" indicator-active-color="#FF9436">
+    <block wx:for="{{adv}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.cover}}?p=image/format,jpg/quality,q_90/resize,m_fill,h_190,w_690" bindtap="clickAd" data-id="{{item.id}}" data-url="{{item.url}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view> -->
+<!-- <view class="list-container" style="margin-bottom:40rpx;" wx:if='{{weekNewArr.length>0}}'>
+  <view class='list-title' style="margin-bottom:0">
+    <text class='title-text'>本月上新</text>
+    <view class="special-swiper-num">
+      <text style="color:#333">{{specialSwiperCurIndex}}</text>
+      /{{weekNewArr.length}}
+    </view>
+  </view>
+</view> -->
+<!-- <SpecialSwiper title='本月上新' list='{{weekNewArr}}' currentProp="{{current}}" bind:swiperCurIndexChange='swiperCurIndexChange' /> -->
+<!-- <view class="goods-nav">
+  <view class='list-title' id="goodsType">
+    <text class='title-text'>商品类型</text>
+  </view>
+</view> -->
+<view class="segment-sticky {{isFixedTop?'fixed':''}}">
+  <view class="segment-title">
+    <view class="title-bar"/>
+    <view class="title">商品类型</view>
+  </view>
+  <segment bindchange="segmentChange" segment="{{segmentData}}" tagStyle segment-class="segment" observeRef="#goodsType" offsetTop="{{cityNavHeight}}" />
+</view>
+<view class='list-container'>
+  <!-- 原商品类型位置 -->
+  <block wx:if="{{recommendData && recommendData.length > 0}}" >
+    <view class='recommendation-list {{goodsNavFixed ? "fixed": ""}}' style="padding-top:{{goodsNavFixed?goodsListPadTop:'0'}}rpx;">
+      <template is="member-goods" data="{{recommendData: recommendData,btnTxt:btnTxt}}"></template>
+      <template is='loading-ui' data="{{showLoading:listLoading}}"></template>
+      <view class='listBottom'>已经到底啦...</view>
+    </view>
+  </block>
+  <!-- 空数据提示 -->
+  <block wx:if="{{!listLoading && recommendData && recommendData.length == 0}}">
+    <view class="city-no-goods">
+      <view class="no-goods-content ">
+        <image src="http://img.ishanshan.com/gimg/n/20200313/14bced8f8a91e60cf926573912b01b14"></image>
+        <view class="no-goods-txt ">
+          您所在的区域的门店正在准备中，敬请期待
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 悬浮按钮 -->
+<view class="fab-wrap {{fabFloat?'fab-float':''}}">
+  <button class="fab-button" open-type="contact">
+    <image class="fab-icon" src="/images/icon/index-service.png" />
+  </button>
+</view>
+<view class="fab-wrap fab-entry {{fabFloat?'fab-float':''}}">
+  <navigator url="/pages/subpageMine/pages/merchants-settled/merchants-settled">
+    <view class="fab-button">
+      <image class="fab-icon" src="/images/icon/index-entry.png" />
+    </view>
+  </navigator>
+</view>
+<!-- 压屏 -->
+<v-popup offsetTop="{{45}}" show="{{vshow}}" bind:close="handleClose">
+  <view class="dialog-wrap">
+    <image style="width:440rpx;height:384rpx;" src="/images/icon/dialog@tips.png" />
+    <view class="dialog-title">您有订单可以打卡核销</view>
+    <view class="dialog-content">在对应订单里打卡核销 立刻退还保证金</view>
+  </view>
+</v-popup>
+<v-popup offsetTop="{{45}}" show="{{dialogAdShow}}" custom-style="background:transparent" bind:close="dialogAdClose">
+  <view>
+    <image style="width:560rpx;height:680rpx;" src="{{dialogAd.cover}}" bindtap="clickAd" data-id="{{dialogAd.id}}" data-url="{{dialogAd.url}}" />
+  </view>
+</v-popup>

@@ -1,0 +1,33 @@
+/* pages/trade/withdraw-record/withdraw-record.wxss */
+.ul{
+  padding: 0 20rpx;
+  margin-top: 42rpx;
+}
+.list-item{
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.list-item .item-time{
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.list-item .item-content{
+  color: #666;
+  font-size: 24rpx;
+}
+.list-item .state-1{
+  color: #FF9436;
+}
+.list-item .state-2{
+  color: #46B6EE;
+}
+.list-item .state-3{
+  color: #999999;
+}
+.ul .nomore {
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+}

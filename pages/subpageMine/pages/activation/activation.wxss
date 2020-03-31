@@ -1,0 +1,186 @@
+/* pages/mine/activation/activation.wxss */
+
+.card-img {
+  width: 100%;
+  height: 260rpx;
+}
+
+/* page {
+background-color: #ffffff;
+
+} */
+
+.card-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.section__title {
+  color: #999;
+  font-size: 28rpx;
+  line-height: 45rpx;
+  width: 184rpx;
+  font-weight: 500;
+  /* padding-left: 20rpx; */
+}
+
+.active-form {
+  background-color: #fff;
+  /* padding: 0 40rpx; */
+}
+
+.active-form .input-box {
+  /* position: relative; */
+  display: flex;
+  background-color: #fff;
+  height: 92rpx;
+  align-items: center;
+  margin-left: 30rpx;
+  /* padding: 20rpx 46rpx; */
+}
+
+.box-first {
+  border-bottom: 1px solid #eee;
+}
+
+.placeholder-text {
+  font-size: 28rpx;
+  color: #cccccc;
+}
+
+.check-box {
+  display: flex;
+  justify-content: center;
+  margin: 20rpx 0 60rpx;
+  align-items: center;
+}
+.check-box text {
+  color: #9B9B9B;
+  line-height: 36rpx;
+}
+
+.cb {
+  transform: scale(0.6, 0.6);
+}
+
+.block-title {
+  padding: 40rpx 0 20rpx 30rpx;
+  background: #F7F7F7;
+  /* border-bottom: 1rpx solid #eee; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-title text {
+  color:rgba(153,153,153,1);
+  line-height:24rpx;
+  font-size: 24rpx;
+  /* padding-left: 20rpx; */
+}
+
+.chose-contact {
+  font-size: 28rpx;
+}
+
+.chose-contact text {
+  color: #666;
+}
+
+.chose-contact-text {
+  margin-right: 10rpx;
+}
+
+.chose-contact .iconfont {
+}
+
+.dec_info {
+  padding: 20rpx 30rpx 76rpx;
+}
+
+.dec_txt {
+  font-size: 24rpx;
+  color: #999;
+  font-weight:500;
+  line-height:34rpx;
+}
+
+.active-form .input-box image {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.active-form .input-box input {
+  color: #333;
+  font-size: 28rpx;
+  /* font-weight: 500; */
+}
+
+.btn-primiray {
+  width: 670rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: #19B329;
+  border-radius: 47rpx;
+  text-align: center;
+}
+
+.btn-primiray text {
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.dialog-success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 21;
+  transition: transform 0.4s;
+}
+
+.dialog-success.scale {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.dialog-success image {
+  height: 680rpx;
+}
+
+.congratulation-title, .congratulation-content, .congratulation-btn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+
+.congratulation-title {
+  top: 168rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.congratulation-content {
+  top: 320rpx;
+  color: #e46a01;
+  font-size: 32rpx;
+}
+
+.congratulation-btn {
+  bottom: 100rpx;
+  color: #fff;
+  font-size: 36rpx;
+  width: 405rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 47rpx;
+}
+
+.member-agree {
+  color: #576B95 !important;
+}

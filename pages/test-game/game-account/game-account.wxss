@@ -1,0 +1,52 @@
+/* pages/test-game/game-account/game-account.wxss */
+page{
+  background: #C72333;
+}
+.header{
+  padding:120rpx 122rpx 0;
+}
+.hd-hb{
+  width:506rpx;
+  height:588rpx;
+  position: relative;
+}
+.avatar{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:162rpx;
+  left:193rpx;
+  border:8rpx solid #FFDEB3 ;
+}
+.account{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom:164rpx;
+  text-align: center;
+  font-size:60rpx;
+  font-family:Reeji-CloudYuanCu-GBK,Reeji-CloudYuanCu;
+  font-weight:normal;
+  color:#FFDEB3;
+  line-height:68rpx;
+}
+.text{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom:72rpx;
+  text-align: center;
+  font-size:34rpx;
+  font-weight:normal;
+  color:#FFDEB3;
+  line-height:72rpx;
+}
+
+.foot{
+  padding:50rpx 85rpx 0;
+}
+.view-sq{
+  width:580rpx;
+  height: 120rpx;
+}

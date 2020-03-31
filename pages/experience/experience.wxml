@@ -1,0 +1,5 @@
+<!--pages/experience/experience.wxml-->
+<view>
+  <flowLayout wx:if="{{commentList.length>0}}"
+  dataSet="{{commentList}}" />
+</view>

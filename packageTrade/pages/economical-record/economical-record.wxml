@@ -1,0 +1,34 @@
+<!--pages/trade/economical-record/economical-record.wxml-->
+<import src="/template/loading/loading" />
+<view class='record-layout'>
+  <view class='record-title'>总共{{totalOrderNum}}单，省钱{{totalSaveMoney}}元</view>
+  <view class='record-header'>
+
+    <picker fields='month' mode="date" class='chose-date-box' start="2015-09-01" bindchange='choseDate'>
+      <text>{{month}}月</text>
+      <text class='iconfont icondown'></text>
+    </picker>
+
+    <view class='record-month-total'>
+      {{todayOrderNum}}单|省{{todayOsaveMoney}}元
+    </view>
+  </view>
+  <view class='record-body'>
+    <view class='record-item' wx:for='{{list}}' wx:key='{{item.id}}' hidden='{{showLoading}}'>
+      <view class='record-item-top'>
+        <text class='date'>{{item.obtainTime}} </text>
+        <text class='price'>省{{item.deductShouldAmount}}元</text>
+      </view>
+      <view class='record-item-bottom'>
+        购买{{item.goodsName}}，原价{{item.orderTotalAmount}}元，购买价{{item.orderAmount}}元
+      </view>
+    </view>
+    <view wx:if='{{!hasMoreData&&list[0]!=null}}' class='loadOver'>数据已加载完毕~</view>
+    <view class='loading-template' hidden='{{!showLoading}}'>
+      <template is='loading-ui'></template>
+    </view>
+    <view wx:if='{{list[0]==null&&!showLoading}}'>
+      <no-data prop-showType='b' />
+    </view>
+  </view>
+</view>

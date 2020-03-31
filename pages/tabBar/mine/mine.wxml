@@ -1,0 +1,421 @@
+<view class="container">
+  <!-- <view class='palce-holder-nav' style="height: {{navHeight}}px;"></view> -->
+  <!-- <view class="mine-title">我的</view> -->
+  <!-- 非分销 -->
+  <block wx:if="{{userInfo.spreadLevel ==0 || !userInfo.spreadLevel}}">
+    <view class="container-top {{userInfo.vipLevel > 1 ? 'spread' : ''}}">
+      <view class='container-content'>
+        <view class="head head-spread">
+          <view class="head-right">
+            <view class="head-user" catchtap="navToUserInfo">
+              <image class="user-avatar" src="{{userInfo.avatar}}"></image>
+            </view>
+            <view class="head-info">
+              <block wx:if="{{userInfo.registStatus === 1}}">
+                <view class="user-name">
+                  {{userInfo.name}}
+                  <!-- 会员 -->
+                  <image wx:if="{{userInfo.vipLevel > 1}}" src="../../../images/icon/vip-icon.png" mode="aspectFit" class="nick-icon" />
+                </view>
+                <view class="user-cellphone" wx:if='{{userInfo.mobile}}'>{{userInfo.mobile}}</view>
+              </block>
+              <block wx:else>
+                <navigator url="/pages/mine/bind-mobile/bind-mobile">
+                  <view class="register">注册</view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+          <!-- 会员 -->
+          <view wx:if="{{userInfo.vipLevel > 1}}" class="share-poster">
+            <navigator url="/pages/recordedLesson/recruit-poster/recruit-poster" hover-class="navigator-hover" open-type="navigate">
+              <custom-icon name="fenxiang" icon-class="icon-share" />
+              <view class="share-text">招募海报</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <!-- 会员 -->
+      <view wx:if="{{userInfo.vipLevel > 1}}" class="panel">
+        <view class="panel-head">
+          <view class="panel-head-title">我的收入</view>
+          <navigator class="withdrawal-btn"  url="/pages/recordedLesson/withdraw/withdraw">
+            <image src="http://img.ishanshan.com/gimg/n/20200311/411976995fa7a69acf8fd3d9cddba2ae" />
+            <text>提现</text>
+            <van-icon style="font-size:26rpx;color:#666;line-height:34rpx" custom-class="explain-arrow" name="arrow" />
+          </navigator>
+        </view>
+        <view class="money">
+          <view class="account">
+            <view class="account-num">{{benefitOverview.totalAmount}}</view>
+            <view class="account-text">累计</view>
+          </view>
+          <view class="line"/>
+          <view class="account">
+            <view class="account-num">{{benefitOverview.frozenBenefit}}</view>
+            <view class="account-text">待到账</view>
+          </view>
+          <view class="line"/>
+          <view class="account">
+            <view class="account-num">{{benefitOverview.freeBenefit}}</view>
+            <view class="account-text">可提现</view>
+          </view>
+        </view>
+      </view>
+      <!-- 非会员 -->
+      <view wx:else class="open-adv">
+        <image src="http://img.ishanshan.com/gimg/n/20200318/82d15c516b408573d69507d8c58fdfc2" />
+        <view class="adv-text">
+          <view>开通会员，立享10000+</view>
+          <view>免费课程视频和分享奖励</view>
+        </view>
+        <view class="open-btn" catchtap="clickCard">点击了解</view>
+      </view>
+    </view> 
+  </block> 
+  <!-- 分销 -->
+  <blcok wx:else>
+    <view class='container-top spread'>
+      <view class='container-content'>
+        <view class="head head-spread">
+          <view class="head-right">
+            <view class="head-user" catchtap="navToUserInfo">
+              <image class="user-avatar" src="{{userInfo.avatar}}"></image>
+            </view>
+            <view class="head-info">
+              <block wx:if="{{userInfo.registStatus === 1}}">
+                <view class="user-name">
+                  {{userInfo.name}}
+                  <!-- 后期需求 暂时注释 -->
+                  <!-- <view class="vip-badge" wx:if="{{userInfo.spreadLevel==0}}">
+                    <view class="badge-lt">{{spreadName || '小达人'}}</view>
+                    <view class="badge-rt">查看升级</view>
+                  </view> -->
+                  <!-- end -->
+                  <!-- <view  wx:if="{{userInfo.spreadLevel == 2}}" class="spread-level-flag">
+                    <image src="../../images/icon/spread-level2.png" mode="aspectFit" class="spreadlevel-icon" />
+                    <text class="flag-text">{{spread[2]}}</text>
+                  </view>
+                  <view  wx:if="{{userInfo.spreadLevel == 1}}" class="spread-level-flag">
+                    <image src="../../images/icon/spread-level1.png" mode="aspectFit" class="spreadlevel-icon" />
+                    <text class="flag-text">{{spread[1]}}</text>
+                  </view> -->
+                </view>
+                <view class="user-cellphone" wx:if='{{userInfo.mobile}}'>{{userInfo.mobile}}</view>
+              </block>
+              <block wx:else>
+                <navigator url="bind-mobile/bind-mobile">
+                  <view class="register">注册</view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+          <view class="share-poster">
+            <navigator url="/pages/recordedLesson/recruit-poster/recruit-poster" hover-class="navigator-hover" open-type="navigate">
+              <custom-icon name="fenxiang" icon-class="icon-share" />
+              <view class="share-text">招募海报</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <view class="panel">
+        <view class="panel-head">
+          <view class="panel-head-title">我的收入</view>
+          <navigator class="withdrawal-btn"  url="/pages/recordedLesson/withdraw/withdraw">
+            <image src="http://img.ishanshan.com/gimg/n/20200311/411976995fa7a69acf8fd3d9cddba2ae" />
+            <text>提现</text>
+            <van-icon style="font-size:26rpx;color:#666;line-height:34rpx" custom-class="explain-arrow" name="arrow" />
+          </navigator>
+        </view>
+        <view class="money">
+          <view class="account">
+            <view class="account-num">{{benefitOverview.totalAmount}}</view>
+            <view class="account-text">累计</view>
+          </view>
+          <view class="line"/>
+          <view class="account">
+            <view class="account-num">{{benefitOverview.frozenBenefit}}</view>
+            <view class="account-text">待到账</view>
+          </view>
+          <view class="line"/>
+          <view class="account">
+            <view class="account-num">{{benefitOverview.freeBenefit}}</view>
+            <view class="account-text">可提现</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="spread-panel spread-mt" wx:if="{{userInfo.spreadLevel<2}}">
+      <van-progress pivot-text="" percentage="{{upgrade.radio}}" stroke-width="6px" track-color="#F0F0F0" color="linear-gradient(142deg,rgba(255,148,54,1) 0%,rgba(255,188,58,1) 100%)" />
+      <view class="up-text">
+        <text>{{spread[1]}}</text>
+        <text>{{spread[2]}}</text>
+      </view>
+      <view class="spread-panel-ft">
+        <view class="up-info">
+          <block wx:if="{{upgrade.triggerAmount!=0}}">您的自返金额达到{{upgrade.triggerAmount}}元</block>
+          <block wx:if="{{upgrade.triggerAmount!=0 && upgrade.triggerNumber!=0}}">和</block>
+          <block wx:if="{{upgrade.triggerNumber!=0}}">邀请招募{{upgrade.triggerNumber}}个好友成为闪闪课堂达人</block>，自动升级{{spread[2]}}
+        </view>
+        <view class="explain" bindtap="onViewRule">
+          查看权益说明
+          <van-icon custom-class="explain-arrow" name="arrow" />
+        </view>
+      </view>
+    </view> -->
+
+    <!-- <view class="user-center">
+      <view class="center-title">会员中心</view>
+      <view class="movable-area">
+        <movable-area style='width:100vw;height:360rpx;'>
+          <movable-view catchtouchstart='touchStart' catchtouchmove='touchMove' catchtouchend='touchEnd' class="movable-component" direction='horizontal' x='{{cardOffsetX}}rpx' style='width:{{moveableViewWidth}}rpx;'>
+            <view class="card-container {{pad?'pad':''}}" wx:if='{{cardList.length > 0}}'>
+              <view class="card-item center card-{{item.goodsType}}" wx:for='{{cardList}}' wx:key='{{index}}' bindtap="clickCard" data-index='{{index}}' data-id="{{item.id}}" data-expiretime="{{item.expireTime}}">
+                <image wx:if='{{!item.specialImg}}' class="card-bg" src="/images/bg/card-{{item.goodsType%2}}.png"></image>
+                <image wx:if='{{item.specialImg}}' class="card-bg" src="{{item.specialImg}}"></image>
+                <view class="hasThisCard" wx:if='{{item.expireTime}}'>
+                  <image src="/images/icon/vip-icon1.png"></image>
+                  <view class="member-mess">
+                    <view class="member-title">{{item.spuName}}</view>
+                    <view class="expire-time">会员{{item.expireTime}}到期</view>
+                  </view>
+                  <view class="rights">
+                    <view class="rights-title">会员权益</view>
+                    <view class="rights-item" wx:for='{{item.rights}}' wx:for-index='innerIndex' wx:key='{{innerIndex}}' wx:for-item='inner'>
+                      {{inner}}
+                    </view>
+                  </view>
+                </view>
+                <view wx:else>
+                  <view class="title">{{item.spuName}}</view>
+                  <view class="line-container">
+                    <view class="line left">
+                      <view class="circle"></view>
+                    </view>
+                    <view class="line-text">会员权益</view>
+                    <view class="line right">
+                      <view class="circle"></view>
+                    </view>
+                  </view>
+                  <view class="member-rights">
+                    <view class="rights-item" wx:for='{{item.rights}}' wx:for-index='innerIndex' wx:key='{{innerIndex}}' wx:for-item='inner'>
+                      {{inner}}
+                    </view>
+                    <view class="button">立即领取</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="card-container" wx:if='{{cardList.length === 0}}'>
+              <view class="card-item center card-0">
+                <image class="card-bg" src="/images/bg/card-1.png"></image>
+              </view>
+            </view>
+          </movable-view>
+        </movable-area>
+      </view>
+    </view> -->
+  </blcok>
+  
+  <view class="gird-container {{userInfo.spreadLevel&&userInfo.spreadLevel>0?'spread-container':''}}">
+    <view class="gird-content">
+      <view class="grid-title">常用功能</view>
+      <view class="grid">
+        <block wx:for="{{mineMenu}}" wx:key="index">
+          <view class="grid-inner" data-index="{{index}}" bindtap="handleRouter">
+            <view class="grid-hd">
+              <image class="grid-thumb" src="{{item.icon}}" />
+              <!-- <view wx:if="{{item.badge}}" class="badge-wrap">
+                <image class="badge-hot" src="/images/icon/badge-hot.png" />
+              </view> -->
+              <!-- <view wx:if="{{item.badge}}" class="badge">HOT</view> -->
+            </view>
+            <view class="gird-bd">{{item.text}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="device-container">
+    <view class="device">
+      <view class="device-title">其他功能</view>
+      <!-- 购买了非教育卡的会员 -->
+      <block>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="navigateToIndexMore" data-index="{{index}}">
+          <image class="device-item-img" src="http://img.ishanshan.com/gimg/n/20200325/9fdbf234243463a1747068c54268bd0b"></image>
+          <view class="device-meta">
+            <text class="device-item-title">预约乐园</text>
+            <view class="device-item-btn"></view>
+          </view>
+        </view>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="navigateToMyCardPackage" data-index="{{index}}">
+          <image class="device-item-img" src="http://img.ishanshan.com/gimg/n/20200325/823278589197c127706862100847320c"></image>
+          <view class="device-meta">
+            <text class="device-item-title">我的卡包</text>
+            <view class="device-item-btn"></view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{userInfo.isCounter ===1}}">
+        <!-- 待修改 -->
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="canQrcode" data-index="{{index}}">
+          <image class="device-item-img" src="http://img.ishanshan.com/gimg/n/20200325/eaafddb6a27559cceb85c075ccd75dae"></image>
+          <view class="device-meta">
+            <text class="device-item-title">商家核销</text>
+            <view class="device-item-btn"></view>
+          </view>
+        </view>
+      </block>
+      <block>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="navigateToMerchantsSettled" data-index="{{index}}">
+          <image class="device-item-img" src="http://img.ishanshan.com/gimg/n/20200325/7c80bc9afec7ef3d2ec2ad3bdb5a5d8f"></image>
+          <view class="device-meta">
+            <text class="device-item-title">商家入驻</text>
+            <view class="device-item-btn"></view>
+          </view>
+        </view>
+      </block>
+      <block>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="navigateToMyVideoLesson" data-index="{{index}}">
+          <image class="device-item-img" src="http://img.ishanshan.com/gimg/n/20200311/a806c5563885410c14c825ef7bb29a89"></image>
+          <view class="device-meta">
+            <text class="device-item-title">我的录播课</text>
+            <view class="device-item-btn"></view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{userInfo.isCounter ===1 && userInfo.counterLevel === 9}}">
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="navigateToMerchantsOrders" data-index="{{index}}">
+          <image class="device-item-img" src="http://img.ishanshan.com/gimg/n/20200325/69c8c7fb30e5f983624066eb8ead5f79"></image>
+          <view class="device-meta">
+            <view class="device-item-title">
+              <text class="device-item-title">商家订单</text>
+              <view class="badge-number" wx:if="{{unread>0}}">{{unread}}</view>
+            </view>
+            <view class="device-item-btn"></view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="device-container" hidden="true">
+    <view class="device">
+      <!-- <block>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" bindtap="showPlayCardListAction" data-index="{{index}}">
+          <image class="device-item-img" src="/images/icon/1_pk@2x.png"></image>
+          <text class="device-item-title">我的票卡</text>
+          <text class="device-item-desc"></text>
+          <view class="device-item-btn"></view>
+        </view>
+      </block> -->
+      <!-- <block wx:for="{{device}}" wx:key="*this">
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="onNavToDevice" data-index="{{index}}">
+          <image class="device-item-img" src="{{item.iconUrl}}"></image>
+          <text class="device-item-title">{{item.title}}</text>
+          <text class="device-item-desc">{{item.desc}}</text>
+          <view class="device-item-btn"></view>
+        </view>
+      </block>
+      <block>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="contactsAction" data-index="{{index}}">
+          <image class="device-item-img" src="/images/icon/icon-child.png"></image>
+          <view class="device-meta">
+            <text class="device-item-title">常用联系人</text>
+            <view class="device-item-btn"></view>
+          </view>
+        </view>
+      </block>
+      <block class='device-item'>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="onNavToCustomerService" data-index="{{index}}">
+          <image class="device-item-img" src="/images/icon/icon-kefu.png"></image>
+          <text class="device-item-title">我的客服</text>
+          <text class="device-item-desc"></text>
+          <view class="device-item-btn"></view>
+        </view>
+      </block>
+      <block>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="onNavToGuidepage" data-index="{{index}}">
+          <image class="device-item-img" src="/images/icon/guide_icon.png"></image>
+          <text class="device-item-title">预约操作指南</text>
+          <text class="device-item-desc"></text>
+          <view class="device-item-btn"></view>
+        </view>
+      </block>
+      <block wx:if="{{userInfo.isCounter ===1}}">
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="canQrcode" data-index="{{index}}">
+          <image class="device-item-img" src="/images/icon/icon-sjhx.png"></image>
+          <text class="device-item-title">商家核销</text>
+          <text class="device-item-desc"></text>
+          <view class="device-item-btn"></view>
+        </view>
+      </block>
+      <block>
+        <view class="device-item {{indexOfCurrentDevice === index ? 'btnWhiteAnim': ''}}" catchtap="navigateToMerchantsSettled" data-index="{{index}}">
+          <image class="device-item-img" src="/images/icon/icon_sjhx.png"></image>
+          <text class="device-item-title">商家入驻</text>
+          <text class="device-item-desc"></text>
+          <view class="device-item-btn"></view>
+        </view>
+      </block> -->
+    </view>
+  </view>
+</view>
+<view class='lay-out play-card-layout' bindtap='hidePlaycardList' hidden='{{!showPlayCardList}}'></view>
+<view class='playcard' hidden='{{!showPlayCardList}}' bindtap='toPlaycardDetail'>
+  <navigator url='/pages/mine/my-playcard/my-playcard?id={{item.id}}' wx:for='{{playCardList}}' wx:key='{{item.id}}' data-id='{{item.id}}' class='playcard-item {{activePlaycard===0?"animateToPlaycard":""}}'>
+    <view class='playcard-item-left'>
+      <text class='name'>{{item.name}}</text>
+      <text class='channel'>
+        <text wx:if='{{item.type ==="1"}}'>平台购买</text>
+        <text wx:if='{{item.type ==="2"}}'>他人赠送</text>
+        <text wx:if='{{item.type ==="3"}}'>激活获得</text>
+        <text wx:if='{{item.type ==="4"}}'>平台赠送</text>
+      </text>
+      <text class='time'>{{item.buyTime}}</text>
+    </view>
+    <!-- <input type='radio' class=''></input> -->
+    <!-- <view class='playcard-item-right {{choseAnimate?"animateBtn":""}}'></view> -->
+  </navigator>
+</view>
+<view class="platform-agreement" bindtap="viewPlatformAgreement">
+  查看
+  <text>平台协议</text>
+</view>
+<!-- <view class='lay-out play-card-layout' hidden='{{!showCustomerServicr}}' bindtap='hideCS'></view>
+<view class='customer-service' bindlongtap='downloadImage' hidden='{{!showCustomerServicr}}'>
+  <image src='/images/bg/customer-service.png'></image>
+  <view class='cs-qrcode'>
+    <image src='{{customerServiceImg}}' mode='aspectFit'></image>
+  </view>
+  <view class='footer'>长按保存二维码，在微信里面添加客服微信</view>
+</view> -->
+<!-- 规则说明 -->
+<van-popup show="{{ruleDialog}}" custom-style="border-radius:10rpx;" closeable bind:close="onViewRule">
+  <view class="tip-wrap">
+    <view class="dialog-title">
+      闪闪课堂平台晋升等级：小达人—大团长
+    </view>
+    <view class="tip-content">
+      <view class="tip-bold">小达人：</view>
+      <view class="">
+        自己购买或分享他人购买可获得推广佣金（按产品实际成交金额结算）
+      </view>
+    </view>
+    <view class="tip-content">
+      <view class="tip-bold">大团长：</view>
+      <view class="">
+        （小达人成功邀请招募15个好友，系统自动升级）
+      </view>
+      <view class="">
+        <text>1.更高比例推广佣金</text>
+        <text>2 享受下级团队佣金分成</text>
+        <text>3.优先免费赠票或探店特权</text>
+        <text>4.每月不定期业绩奖励</text>
+        <text>5.大团长内部专属礼品及群秒杀抢购特权</text>
+      </view>
+      <view class="">
+        更多权益请联系小程序在线客服咨询
+      </view>
+    </view>
+  </view>
+</van-popup>

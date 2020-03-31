@@ -1,0 +1,7 @@
+{
+  "disableScroll":true,
+  "usingComponents": {
+    "painter":"/components/painter/painter"
+  },
+  "navigationBarTitleText": "分享商品"
+}

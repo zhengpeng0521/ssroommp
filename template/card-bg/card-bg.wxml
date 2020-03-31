@@ -1,0 +1,8 @@
+<!--template/card-bg/card-bg.wxml-->
+<template name="card-bg">
+    <view class='card-bg-layout'>
+          <view class='bg-box bg-box1'></view>
+          <view class='bg-box bg-box2'></view>
+          <view class='bg-box bg-box3'></view>
+    </view>
+</template>

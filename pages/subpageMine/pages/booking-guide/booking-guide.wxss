@@ -1,0 +1,30 @@
+/* pages/mine/booking-guide/booking-guide.wxss */
+
+image {
+  width: 100%;
+  height: 9438rpx;
+}
+
+.bottom {
+  height: 114rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 2rpx solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-btn {
+  width: 670rpx;
+  height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 47rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 36rpx;
+}

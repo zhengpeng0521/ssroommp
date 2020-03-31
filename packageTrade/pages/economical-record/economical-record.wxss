@@ -1,0 +1,65 @@
+/* pages/trade/economical-record/economical-record.wxss */
+
+.record-layout {
+  padding: 0 20rpx;
+}
+
+.record-title {
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+
+.record-header {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.chose-date-box {
+  padding: 0 10rpx;
+  line-height: 56rpx;
+  background: #ccc;
+  border-radius: 56rpx;
+  text-align: center;
+}
+.chose-date-box text{
+  color: #fff;
+  margin-right: 10rpx;
+}
+.chose-date-box .icondown{
+  font-size: 22rpx;
+}
+.record-month-total{
+  color: #999;
+}
+.record-body{
+  padding-bottom: 10rpx;
+}
+.record-item{
+  padding: 30rpx 0 20rpx 0;
+  border-bottom: 2rpx solid #eee;
+}
+.record-item-top{
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.record-item-top .price{
+  color: #46B6EE;
+}
+.record-item-bottom{
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.date-chose-layout{
+  width: 400rpx;
+  height: 400rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

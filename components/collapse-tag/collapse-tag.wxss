@@ -1,0 +1,44 @@
+/* components/collapse-tag/collapse-tag.wxss */
+.item-column{
+  display: flex;
+  flex:0 1 auto;
+  width:530rpx;
+  flex-direction: column;
+}
+.item-slide{
+  display: flex;
+  justify-content: space-between;
+}
+.toggle-btn{
+  padding-right:18rpx;
+  vertical-align: top;
+}
+.icon-wrap{
+  display: inline-block;
+  line-height: 16rpx;
+  vertical-align: 10rpx;
+}
+.icon-toggle{
+  font-size:16rpx;
+  color:#bbb;
+}
+.item-card{
+  display: flex;
+  flex-wrap: wrap;
+  height:40rpx;
+  overflow: hidden;
+}
+.item-card.is-expand{
+  height:auto;
+}
+.item-card-tag{
+  background:rgba(0, 182, 0, .1);
+  display: inline-block;
+  font-size: 22rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  padding:0 10rpx;
+  color:#00B600;
+  margin:0 10rpx 10rpx 0;
+  border-radius: 8rpx;
+}

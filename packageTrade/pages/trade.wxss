@@ -1,0 +1,373 @@
+/* pages/trade/trade.wxss */
+@import "../../template/enter-loading/enter-loading.wxss";
+@import "/template/card-bg/card-bg";
+
+.user-detail {
+  height: 630rpx;
+}
+
+.user-detail.highest-level {
+  height: 490rpx;
+}
+
+.member-detail-layout {
+  padding: 0 20rpx;
+  width: 100%;
+}
+
+.member-detail {
+  width: 650rpx;
+  height: 474rpx;
+  padding: 30rpx 30rpx 0;
+  background: #fff;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  position: absolute;
+  top: 86rpx;
+  z-index: 12;
+}
+
+.member-detail.highest-level {
+  height: 314rpx;
+}
+
+.member-detail-top {
+  height: 162rpx;
+  border-bottom: 2px dashed #eee;
+}
+
+.user-mess {
+  position: relative;
+}
+
+.user-mess image {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.user-name {
+  float: left;
+}
+
+.user-name-txt {
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8rpx;
+  margin-top: 8rpx;
+}
+
+.user-id-txt {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.user-level {
+  width: 148rpx;
+  height: 64rpx;
+  line-height: 62rpx;
+  padding-left: 20rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 0.2) 0%, rgba(255, 188, 58, 0.2) 100%);
+  border-radius: 32rpx 0px 0px 32rpx;
+  position: absolute;
+  right: 0;
+  top: 64rpx;
+}
+.user-level-img{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 14rpx;
+}
+.user-level-txt{
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+.user-level .iconfont{
+  font-size: 26rpx;
+}
+.member-detail-bottom {
+}
+
+.progress-bar-container {
+  margin-top: 80rpx;
+  height: 12rpx;
+  background-color: #f0f0f0;
+  border-radius: 8rpx;
+  position: relative;
+  padding: 0 16rpx;
+}
+
+.progress-bar-start {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: -4rpx;
+}
+
+.left-circle {
+  left: 0;
+  background: #ff9436;
+}
+
+.right-circle {
+  right: 0;
+  background: #f0f0f0;
+}
+
+.progress-bar-line {
+  background: linear-gradient(142deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 4px;
+  height: 12rpx;
+  position: absolute;
+  top: 0;
+}
+
+.progress-bar-num {
+  width: 96rpx;
+  height: 42rpx;
+  text-align: center;
+  line-height: 32rpx;
+  background: #ff9436;
+  border-radius: 8rpx;
+  position: absolute;
+  right: -48rpx;
+  top: -50rpx;
+}
+
+.progress-bar-num text {
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.progress-bar-num-point {
+  border-top: 10rpx solid #ff9436;
+  border-bottom: 10rpx solid transparent;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  position: absolute;
+  bottom: -15rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.progress-bar-desc {
+  overflow: hidden;
+}
+
+.progress-bar-desc text {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  margin-top: 8rpx;
+}
+
+.progress-bar-desc-left {
+  float: left;
+}
+
+.progress-bar-desc-right {
+  float: right;
+}
+
+.upgrade-rule {
+  margin-top: 20rpx;
+}
+
+.upgrade-rule-item {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.upgrade-rule-item-point {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: rgba(255, 148, 54, 0.7);
+  display: inline-block;
+  position: relative;
+  top: -6rpx;
+}
+
+.menu-btns {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 24rpx;
+  justify-content: space-between;
+  padding-bottom: 100rpx;
+}
+
+.menu-item {
+  width: 344rpx;
+  height: 264rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.menu-item:last-child {
+  margin-right: 0;
+}
+
+.menu-item-icon {
+  margin-top: 30rpx;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 84rpx;
+  height: 84rpx;
+}
+
+.menu-item-txt {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 10rpx;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.menu-item-detail {
+  font-size: 40rpx;
+  color: #ff9436;
+}
+
+.menu-item-detail .yuan {
+  font-size: 28rpx;
+  color: #ff9436;
+}
+
+.member-detail-notice {
+  padding-top: 30rpx;
+  position: relative;
+}
+
+.member-detail-notice {
+  text-align: center;
+}
+
+.circle-one, .circle-two {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle-one {
+  width: 18rpx;
+  height: 18rpx;
+  background: linear-gradient(153deg, rgba(255, 181, 59, 1) 0%, rgba(255, 122, 82, 0) 100%);
+  top: 52rpx;
+}
+
+.circle-one.left {
+  left: 180rpx;
+}
+
+.circle-one.right {
+  right: 180rpx;
+}
+
+.circle-two {
+  width: 14rpx;
+  height: 14rpx;
+  background: linear-gradient(153deg, rgba(255, 130, 59, 1) 0%, rgba(255, 122, 82, 0) 100%);
+  opacity: 0.4;
+  top: 54rpx;
+}
+
+.circle-two.left {
+  left: 160rpx;
+}
+
+.circle-two.right {
+  right: 160rpx;
+}
+
+.notice-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.invite-btn {
+  width: 670rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 48rpx;
+  color: #fff;
+  background-color: #fff;
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
+}
+
+.poster-dialog {
+}
+
+.canvas-container {
+  width: 610rpx;
+  height: 814rpx;
+  position: fixed;
+  top: 100rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 21;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.poster-btns {
+  background-color: #fff;
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 11111;
+  left: 0;
+  display: flex;
+  border-radius: 70rpx;
+  overflow: hidden;
+}
+
+.poster-share, .poster-download {
+  flex: 1;
+  text-align: center;
+}
+
+.poster-btns text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.poster-share {
+  background-color: #fff;
+}
+
+.poster-share text {
+  position: relative;
+  top: -20rpx;
+}
+
+.poster-share .poster-btns-icon {
+  background-color: #46c01b;
+}
+
+.poster-download .poster-btns-icon {
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+}
+
+.poster-btns-icon {
+  margin-top: 20rpx;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

@@ -1,0 +1,22 @@
+<!--pages/trade/date-picker/date-picker.wxml-->
+<view class='date-picker-layout'>
+  <picker class='date-btn-item' mode="date" fields='day' bindchange="bindStartTimeChange">
+    <view class="text">
+      选择开始日期
+    </view>
+    <view class='startTime'>{{startTime}}</view>
+  </picker>
+  <picker class='date-btn-item' mode="date" fields='day' bindchange="bindEndTimeChange">
+    <view class="text">
+      选择结束日期
+    </view>
+    <view class='startTime'>{{endTime}}</view>
+  </picker>
+  <view class='date-btn-item' mode="date" fields='day' bindtap="choseToday">
+    <view class="text">
+      使用默认日期（查看今日）
+    </view>
+    <view class='startTime'>{{nowDate}}</view>
+  </view>
+  <view class='btn btn-primiary submit-btn' bindtap='submit'>完成</view>
+</view>

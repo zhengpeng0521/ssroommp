@@ -1,0 +1,16 @@
+<!--pages/index/theme-page/theme-page.wxml-->
+<import src="/template/member-goods/member-goods" />
+<view class="theme-container">
+  <view class="theme-header">
+    <image class="theme-header-img" mode="widthFix" src="{{themeData.headImg}}" />
+  </view>
+  <view class='list-container'>
+    <view class='recommendation-list' style="margin-top:10rpx">
+      <template is="member-goods" data="{{recommendData: themeData.themeItemList,hideBtn:true}}"></template>
+    </view>
+  </view>
+  <view class="theme-footer" wx:if="{{themeData.tailImg}}">
+    <image lazy-load="true" class="theme-footer-img" mode="widthFix" src="{{themeData.tailImg}}" />
+  </view>
+</view>
+

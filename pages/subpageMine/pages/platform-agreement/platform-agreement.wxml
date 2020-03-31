@@ -1,0 +1,6 @@
+<!--pages/mine/platform-agreement/platform-agreement.wxml-->
+<view class="member-agree">
+  <view>
+    <Parser html='{{nodes}}' />
+  </view>
+</view>

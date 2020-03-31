@@ -1,0 +1,78 @@
+<!--pages/distribution/benefit-details/benefit-details.wxml-->
+<view class="benefit-head">
+  <view class="benefit-card" style="background-image:url('http://img.ishanshan.com/gimg/n/20200107/2d00b893ec1eab22c84b046d792e25f4');background-size:100%;">
+    <view class="benefit-card-hd">
+      总佣金(元)
+    </view>
+    <view class="benefit-card-bd">
+      <view class="card-bd-amount">
+        <text class="amount-prefix">￥</text>
+        <text class="amount">{{amountDetail.totalAmount}}</text>
+      </view>
+      <view class="card-bd-info">
+        (含{{amountDetail.frozenBenefit}}元未到账)
+      </view>
+    </view>
+    <view class="benefit-card-ft">
+      <view class="card-ft-total">
+        <image class="icon-order-detail" src="/images/icon/icon-order-detail.png" />总共{{amountDetail.totalOrder}}单
+      </view>
+      <view class="card-ft-info" bindtap="onViewRule">
+        收益说明<text class="iconfont iconright"></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="tab">
+    <view class="tab-item {{active == 1? 'active':''}}" data-index="1" bindtap="changeTab">
+      自返收益
+    </view>
+    <view class="tab-item {{active == 2? 'active':''}}" data-index="2" bindtap="changeTab">
+      团返收益
+    </view>
+  </view>
+</view>
+
+<view class="benefit-list" wx:if="{{list.length>0}}">
+  <view class="card" wx:for="{{list}}" wx:key="index">
+    <view class="card-bd">
+      <view class="card-bd-header">
+        <text class="buyer">{{item.buyerName}}</text> 购买 <text class="goods-name">{{item.goodsName}}</text>
+      </view>
+      <view class="card-bd-content">
+        你赚取{{item.benefit}}元（{{item.status==1?'待清算':item.status==2?'已清算':'已作废'}}）
+      </view>
+    </view>
+    <view class="card-ft">
+      <view class="time-wrap">
+        <view class="badge badge-pink">购买时间</view>
+        <view class="time">
+          {{item.orderTime}}
+        </view>
+      </view>
+      <view class="time-wrap">
+        <view class="badge badge-orange">完成时间</view>
+        <view class="time">
+          {{item.verifyTime?item.verifyTime:'暂未核销'}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="empty-box" wx:else>
+  <image class="empty-image" src="/images/bg/no-data-f.png" />
+  <view class="empty-txt" style="margin-top:0">暂无收益</view>
+</view>
+<van-popup show="{{ruleDialog}}" custom-style="border-radius:10rpx;" closeable bind:close="onViewRule">
+  <view class="tip-wrap">
+    <view class="h2-title">
+      收益说明
+    </view>
+    <view>
+      <text>自返收益：</text>自己购买或分享他人购买所获得推广收益
+    </view>
+    <view style="margin-top:20rpx;">
+      <text>团返收益：</text>下级团队佣金分成收益
+    </view>
+  </view>
+</van-popup>

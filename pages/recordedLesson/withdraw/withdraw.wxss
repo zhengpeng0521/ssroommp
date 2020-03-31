@@ -1,0 +1,181 @@
+/* pages/recordedLesson/withdraw/withdraw.wxss */
+page{
+  background-color:#f7f7f7;
+  margin-top:20rpx;
+}
+.tip-wrap {
+  height: 632rpx;
+  width: 560rpx;
+  padding: 44rpx 0 0 0;
+}
+.sure-btn {
+  color: #02BB00;
+  font-size: 36rpx;
+  line-height:50rpx;
+  border-top: 2rpx solid #D2D3D5;
+  text-align: center;
+  padding: 18rpx 0;
+}
+.withdraw-head{
+  width:690rpx;
+  height:114rpx;
+  background:#FFF;
+  margin-top:20rpx;
+  padding:30rpx;
+  color:#333;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.head-text{
+  font-size:32rpx;
+  font-weight:500;
+  line-height:44rpx;
+  margin-bottom: 30rpx;
+}
+
+.amount-prefix{
+  font-size: 40rpx;
+  line-height: 40rpx;
+  font-weight: 500;
+}
+
+.withdraw-body{
+  height:216rpx;
+  margin-top: 20rpx;
+  background:#FFF;
+  padding:30rpx 0 40rpx;
+}
+
+.body-content{
+  display: flex;
+  padding:0 30rpx 30rpx;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee
+}
+
+.content-tips{
+  font-size:32rpx;
+  font-weight:500;
+  color:#333;
+  line-height:44rpx;
+}
+
+.content-info{
+  font-size:24rpx;
+  font-weight:500;
+  color:#999;
+  margin-top: 8rpx ;
+  line-height:34rpx;
+}
+
+.iconright{
+  color:#999;
+  font-size:24rpx;
+  margin-left:10rpx;
+}
+
+.set-withdraw{
+  height:92rpx;
+  padding:0 20rpx;
+  margin:38rpx 30rpx 0;
+  background:#F7F7F7;
+  border-radius:10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.set-prefix{
+  font-size: 52rpx;
+  color:#333;
+}
+
+.input-number{
+  height:60rpx;
+  width: 540rpx;
+  margin:16rpx 10rpx 20rpx 0;
+  font-size: 60rpx;
+  line-height: 60rpx;
+  color:#333;
+  font-family:'PingFang-SC-Medium,PingFang-SC';
+}
+
+.set-all{
+  font-size:28rpx;
+  font-weight:500;
+  color:#00b600;
+  line-height:92rpx;
+}
+
+.withdraw-foot{
+  padding:108rpx 40rpx 0;
+}
+
+.confirm-submit{
+  height:94rpx;
+  text-align: center;
+  line-height: 94rpx;
+  color:#FFF;
+  font-size:36rpx;
+  background:#00b600;
+  border-radius:47rpx;
+}
+
+.foot-check{
+  margin-top:14rpx;
+  padding:0 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkbox{
+  color:#BBB;
+  transform: scale(0.6,0.6);
+}
+
+.check-view{
+  padding:0;
+  display:none;
+}
+
+.foot-check-text{
+  font-size:24rpx;
+  font-weight:500;
+  color:#999;
+  line-height:34rpx;
+  margin-left:-5rpx;
+}
+
+.foot-check-info{
+  font-size:24rpx;
+  font-weight:500;
+  color:#00b600;
+  line-height:50rpx;
+}
+
+.tip-title-bold{
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 400;
+  color: #000;
+  line-height: 50rpx;
+}
+.tip-desc{
+  padding:20rpx 30rpx 30rpx;
+  line-height: 40rpx;
+  text-align: justify;
+  font-size: 28rpx;
+  color: #666;
+}
+.desc-item {
+  margin-bottom: 20rpx;
+}
+.desc-item:last-child {
+  margin-bottom: 0;
+}
+.desc-item text {
+  font-size: 28rpx;
+  color: #00B600;
+}

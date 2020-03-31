@@ -1,0 +1,45 @@
+<!--components/coupon/coupon.wxml-->
+<!--未过期-->
+
+<view class="coupon-item {{item.status==1?'':'overdue'}}" data-item="{{item}}" data-id="{{item.welfareId}}" bindtap="onTicket">
+  <view class="coupon-hd">
+    <view class="coupon-info">
+      <view class="coupon-info-name">{{item.title}}</view>
+      <view class="coupon-info-desc" wx:if="{{!item.reduceAmount}}">{{item.desc?item.desc:'部分商品可用'}}</view>
+      <view class="coupon-info-desc" wx:else>￥{{item.reduceAmount}}</view>
+    </view>
+    <view>
+    <!--
+      id:券id，领券用
+      welfare:用户所拥有
+      rule:使用券的规则id
+    -->
+      <view wx:if="{{item.status==1 && operateText!=''}}" class="coupon-btn" data-item="{{item}}" data-welfare="{{item.customerWelfareId}}" data-rule="{{item.ruleId}}" data-id="{{item.welfareId}}" data-scope="{{item.goodsScope}}" bindtap="operate">{{operateText}}</view>
+    </view>
+  </view>
+  <view class="coupon-bd" wx:if="{{item.status==1 && item.expireTime}}">{{item.expireTime}} 到期</view>
+  <image wx:if="{{item.status == 1}}" class="coupon-bg" mode="aspectFill" src="{{item.welfareCover}}" />
+  <image wx:else class="coupon-bg" mode="aspectFill" src="/images/bg/popup-gray-bg.png" />
+  <view class="overdue-flag" wx:if="{{item.status == 9}}">
+    <image class="overdue-img" mode="aspectFill" src="/images/bg/icon-overdue.png" />
+  </view>
+  <view class="overdue-flag" wx:if="{{item.status == 2}}">
+    <image class="overdue-img" mode="aspectFill" src="/images/bg/icon-used.png" />
+  </view>
+</view>
+<!--已过期-->
+<!--首次预约特权不显示-->
+<!-- <view class="coupon-item overdue">
+  <image class="coupon-bg" mode="aspectFill" src="/images/bg/popup-gray-bg.png" />
+  
+  <view class="coupon-hd">
+    <view class="coupon-info">
+      <view class="coupon-info-name">首次预约特权券</view>
+      <view class="coupon-info-desc">亲子卡可用</view>
+    </view>
+    <view hidden="{{true}}">
+      <view class="coupon-btn">查看</view>
+    </view>
+  </view>
+  <view class="coupon-bd">2019.9.12 到期</view>
+</view> -->

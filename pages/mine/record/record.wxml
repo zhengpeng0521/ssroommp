@@ -1,0 +1,22 @@
+
+<!--pages/mine/record/record.wxml-->
+
+<view class="record" wx:if="{{flowList.length>0}}">
+  <view class="list-item" wx:for="{{flowList}}" wx:key="{{index}}">
+    <view class="item-info">
+      <view class="item-name">
+        {{item.remark}}
+      </view>
+      <view class="item-frag" wx:if="{{item.obtainType == 1}}">+{{item.obtainFrag}}</view>
+      <view class="item-frag reduce" wx:else>-{{item.obtainFrag}}</view>
+    </view>
+    <view class="item-type">
+      {{item.sourceType==11?'预约教育机构':item.sourceType==12?'分享他人':'兑换福利奖品'}}
+    </view>
+    <view class="item-time">{{item.obtainTime}}</view>
+  </view>
+</view>
+<view class="empty-box" style="padding:200rpx 0;" wx:else>
+  <image class="empty-image" src="/images/bg/blank_no_zf@2x.png" />
+  <view class="empty-txt">暂无喵币记录</view>
+</view>

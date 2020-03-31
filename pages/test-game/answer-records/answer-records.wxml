@@ -1,0 +1,47 @@
+<!--pages/test-game/answer-records/answer-records.wxml-->
+<view class="wrap">
+  <view class="top">
+    <view class="g-btn lf" bindtap="toIndex">
+      返回首页
+    </view>
+    <view class="g-btn rt" bindtap="toQuestion">
+      常见问题
+    </view>
+  </view>
+  <view
+    class="content"
+    style="background-image:url('http://img.ishanshan.com/gimg/n/20200119/7e2210522be0ff1aa9c709e49515fa1e')"
+  >
+    <view class="title">
+      <image style="width:320rpx;height:98rpx;" src="/images/test-game/dtxq.png" />
+    </view>
+    <scroll-view scroll-y class="scroll" bindscrolltolower="loadMore">
+      <view class="scroll-content">
+        <block wx:if="{{record.length>0}}">
+          <view class="record" wx:for="{{record}}" wx:key="index" data-topicMaker="{{item.topicMaker}}" data-topicId="{{item.topicId}}" bindtap="toResult">
+            <image class="media" src="{{item.avatar}}" mode="aspectFill"  />
+            <view class="item">
+              <view class="item-row">
+                <view class="label nickname">
+                  {{item.nickname}}
+                </view>
+              </view>
+              <view class="item-row">
+                <view class="label">
+                  {{item.answerComment}}
+                </view>
+              </view>
+            </view>
+            <view class="media-action">
+              <view class="media-money">{{item.awardAmount}}元</view>
+              <view class="media-num" data-id="{{item.topicMaker}}" >答对{{item.answerCount}}题</view>
+            </view>
+          </view>
+        </block>
+        <view wx:else class="empty" style="text-align:center">
+          暂无记录
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

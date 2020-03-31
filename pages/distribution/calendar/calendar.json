@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "calendar":"/components/calendar/calendar",
+    "van-dialog": "/components/vant/dialog/index"
+  },
+  "navigationBarTitleText": "选择日期"
+}

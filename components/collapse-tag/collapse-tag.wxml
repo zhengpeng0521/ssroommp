@@ -1,0 +1,9 @@
+<!--components/collapse-tag/collapse-tag.wxml-->
+<view class="item-slide custom-class" catchtap="toggle" data-id="{{idx}}">
+  <view class="item-card {{isExpand?'is-expand':''}}" id="card{{idx}}">
+    <view wx:for="{{num}}" wx:key="index" class="item-card-tag" data-tag="{{idx}}">{{item}}</view>
+  </view>
+  <view class="toggle-btn" wx:if="{{showToggle}}" catchtap="toggle">
+    <custom-icon name="{{isExpand?'arrow-up':'arrow-down'}}" class="icon-wrap" icon-class="icon-toggle" />
+  </view>
+</view>

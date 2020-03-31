@@ -1,0 +1,19 @@
+<!--custom-tab-bar/index.wxml-->
+<view class='tab-bar-bottom {{isIphoneX?"iphoneX":""}}'>
+  <view bindtap='switchToIndex' class='tab-bar-item {{active=="index" ? "active": ""}}'>
+    <text class='content iconfont iconicon_tab_sy'></text>
+    <text class='content index-title'>首页</text>
+  </view>
+  <view bindtap='switchToOrder' class='tab-bar-item {{active=="order" ? "active": ""}}'>
+    <text class='content iconfont iconicon_tab_dd'></text>
+    <text class='content content'>订单</text>
+  </view>
+  <view bindtap='switchToMember' class='tab-bar-item {{active=="trade" ? "active": ""}}'>
+    <text class='content iconfont iconicon_tab_hy'></text>
+    <text class='content text'>会员</text>
+  </view>
+  <view bindtap='switchToMine' class='tab-bar-item {{active=="mine" ? "active": ""}}'>
+    <text class='content iconfont iconicon_tab_wd'></text>
+    <text class='content ext'>我的</text>
+  </view>
+</view>

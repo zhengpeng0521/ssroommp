@@ -1,0 +1,246 @@
+/* pages/index/customerForm/customerForm.wxss */
+
+.customerFomr-top {
+  position: relative;
+  padding-bottom: 100rpx;
+}
+
+.top {
+  height: 290rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-bottom-right-radius: 410rpx 30rpx;
+  border-bottom-left-radius: 410rpx 30rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 58rpx;
+  left: 20rpx;
+  font-size: 40rpx;
+  color: #fff;
+  z-index: 100;
+}
+
+.iconfont::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+}
+
+.top-title {
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+  margin-top: 58rpx;
+}
+
+.customerFomr-top-title {
+  width: 670rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  position: absolute;
+  top: 188rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.customerFomr-top-title-1 {
+  color: #333;
+  font-size: 32rpx;
+}
+
+.customerFomr-top-title-2 {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 30rpx;
+}
+
+.customerFomr-top-title-2 .warning {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 4rpx;
+}
+
+.customerForm {
+  padding: 0 20rpx;
+  background-color: #fff;
+  margin-bottom: 22rpx;
+}
+
+.customerForm .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 32rpx 0;
+  font-size: 28rpx;
+}
+
+.customerForm .title .mess {
+  color: #333;
+  font-weight: 500;
+}
+
+.customerForm .title .action {
+  color: #666;
+}
+
+.customerForm .item {
+  display: flex;
+  justify-content: left;
+  padding: 26rpx 0;
+  border-top: 2rpx solid #eee;
+}
+
+.customerForm .item-title {
+  width: 180rpx;
+  margin-right: 20rpx;
+  color: #999;
+}
+
+.customerForm .item-input {
+  width: 580rpx;
+}
+
+.customerForm .item-input input {
+  width: 100%;
+}
+
+.customerForm .item-input .date-view {
+  width: 100%;
+  height: 50rpx;
+}
+
+.date-picker {
+  width: 100%;
+  height: 50rpx;
+}
+
+.item-bottom {
+  color: #999;
+  padding: 26rpx 0;
+  font-size: 28rpx;
+  border-top: 2rpx solid #eee;
+}
+
+.submit {
+  width: 670rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 47rpx;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  margin-top: 62rpx;
+}
+
+.btn-hover {
+  color: #eee;
+}
+
+.confirm-dialog {
+  width: 610rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 21;
+}
+
+.confirm-dialog-title {
+  color: #333;
+  font-size: 32rpx;
+  padding: 30rpx 0;
+  text-align: center;
+  border-bottom: 2rpx solid #eee;
+  font-weight: bold;
+}
+
+.scroll-list {
+  max-height: 800rpx;
+  overflow-y: scroll;
+}
+
+.confirm-list {
+  padding: 40rpx 40rpx 0 40rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.confirm-item {
+  display: flex;
+  justify-content: left;
+  font-size: 28rpx;
+}
+
+.confirm-item-key {
+  color: #666;
+  width: 120rpx;
+  margin-right: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.confirm-item-val {
+  color: #333;
+}
+
+.appointTips {
+  color: #257ce9;
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.appointTips-title {
+  margin-bottom: 10rpx;
+}
+
+.appointTips-content {
+  line-height: 40rpx;
+  padding: 0 40rpx;
+  text-align: left;
+  display: inline-block;
+}
+
+.btn-container {
+  padding: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cancel {
+  width: 254rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 47px;
+  border: 2rpx solid rgba(255, 148, 54, 1);
+  color: #ff9436;
+}
+
+.btn-confirm {
+  width: 254rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 47rpx;
+  color: #fff;
+}
+.form-tips{
+  color:#999;
+  text-align: left;
+  padding:30rpx 20rpx;
+  font-size:24rpx;
+  line-height: 150%;
+}
+.form-tips .tips-title{
+  color:#666;
+}

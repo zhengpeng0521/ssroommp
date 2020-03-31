@@ -1,0 +1,7 @@
+<!--components/tabs/tab/tab.wxml-->
+<view 
+  wx:if="{{inited}}"
+  style="{{active?'':'display:none;'}}"
+>
+  <slot/>
+</view>

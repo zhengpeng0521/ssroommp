@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "CollectPop": "/components/collect-pop/collect-pop",
+    "SpecialSwiper": "/components/swiper-special/swiper-special",
+    "v-popup": "/components/popup/popup",
+    "collapse-tag":"/components/collapse-tag/collapse-tag",
+    "custom-icon":"/components/icon/icon",
+    "segment":"/components/new-segment/segment"
+  },
+  "navigationBarBackgroundColor": "#00B600",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "闪闪课堂",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 25
+}

@@ -1,0 +1,57 @@
+<!--pages/index/ticket/ticket-detail/comment/detail/detail.wxml-->
+<import src="/components/enter-loading/enter-loading.wxml" />
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+<view class="comment-wrap" wx:else>
+  <navigator url="/pages/tabBar/index/index" open-type="switchTab">
+    <view class="icon-wrap">
+      <custom-icon name="home" icon-class="home" />
+    </view>
+  </navigator>
+  <view class="comment-header">
+    <view>
+      <image class="comment-avatar" src="{{commentData.custAvatar}}" />
+    </view>
+    <view class="comment-extend">
+      <text class="comment-name">{{commentData.custNickName}}</text>
+      <text class="comment-time">{{commentData.createTime}}</text>
+    </view>
+    <button class="comment-share" open-type="share" hover-class="active-share">
+      <custom-icon name="fenxiang" icon-class="icon-share" />
+    </button>
+  </view>
+  <view class="comment-location">
+    <custom-icon name="dingwei" icon-class="icon-location" />
+    <view class="comment-goods" data-id="{{commentData.goodsId}}" bindtap="navigate">{{commentData.goodsName}}</view>
+  </view>
+  <view class="comment-detail">
+    <text class="comment-detail-content">{{commentData.content}}</text>
+  </view>
+  <block wx:for="{{commentData.imgs}}" wx:key="index">
+    <image mode="widthFix" src="{{item}}" class="comment-image-item" />
+  </block>
+</view>
+<!-- <view wx:else>
+  <view class="swiper-wrap">
+    <swiper bind:change="handleChange" class="comment-swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{commentData.imgs}}">
+        <swiper-item>
+          <image mode="aspectFill" src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="indicator">
+      <text>{{current}}/</text>
+      <text>{{commentData.imgs.length}}</text>
+    </view>
+  </view>
+  <view class="comment-info">
+    <image class="comment-avatar" src="{{commentData.custAvatar}}" />
+    <text class="comment-name">{{commentData.custNickName}}</text>
+    <text class="comment-time">{{commentData.createTime}}</text>
+  </view>
+  <view class="comment-detail">
+    <text>{{commentData.content}}</text>
+  </view>
+</view> -->

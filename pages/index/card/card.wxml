@@ -1,0 +1,32 @@
+<!-- pages/index/card/card.wxml -->
+<view class="wrap" wx:if="{{cardList.length>0}}">
+  <view class="coupon-item" 
+  wx:for="{{cardList}}" 
+  wx:key="{{item.spuId}}" 
+  data-own="{{item.own}}"
+  data-spu="{{item.spuId}}"
+  data-sku="{{item.skuId}}"
+  bindtap="handleTap">
+    <!-- <div wx:if="{{item.own}}" class="ribbon ribbon-badge ribbon-reverse">
+      <span class="ribbon-inner">已购</span>
+    </div> -->
+    <view class="coupon-hd">
+      <view class="coupon-info">
+        <view class="coupon-info-name">{{item.spuName}}</view>
+        <view class="coupon-info-desc" wx:for="{{item.desc}}" wx:key="index" wx:for-item="inner">{{inner}}</view>
+      </view>
+    </view>
+    <view class="coupon-bd"></view>
+    <!-- <image class="coupon-bg" wx:if="{{index==0}}" mode="aspectFill" src="https://img.ishanshan.com/gimg/n/20190907/53869d4e8aaa03e6c0f5dd8acba38ea2?p=image/format,jpg/quality,q_90/crop,h_220,g_se" />
+    <image class="coupon-bg" wx:if="{{index==1}}" mode="aspectFill" src="https://img.ishanshan.com/gimg/n/20190907/7dac5823b6fa6a17af0148b78b20aea2?p=image/format,jpg/quality,q_90/crop,h_220,g_se" />
+    <image class="coupon-bg" wx:if="{{index==2}}" mode="aspectFill" src="https://img.ishanshan.com/gimg/n/20191109/18a2706aee752e74759bd19126e23059?p=image/format,jpg/quality,q_90/crop,h_220,g_se" /> -->
+    <image class="coupon-bg" mode="aspectFill" src="{{item.specialImg}}?p=image/format,jpg/quality,q_90/crop,h_220,g_se" />
+    <view class="overdue-flag" wx:if="{{item.own}}">
+      <image class="overdue-img" mode="aspectFill" src="/images/bg/icon-buy.png" />
+    </view>
+  </view>
+</view>
+<view class="empty-box" wx:else>
+  <image class="empty-image" src="/images/bg/no-data-f.png" />
+  <view class="empty-txt">暂无会员卡</view>
+</view>

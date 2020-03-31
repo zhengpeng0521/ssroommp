@@ -1,0 +1,61 @@
+<view class="address-header">
+  <view class="search-layout">
+    <text class="iconfont iconsousuo searchIcon"></text>
+    <input class="search-input" bindinput="getSearchContext" confirm-type="search" placeholder="输入城市名称或首字母"></input>
+  </view>
+  <!-- <view class="position-city">
+    <text class="iconfont icondizhi positionIcon"></text>
+    <text class="position-text">当前定位城市 {{positionCity}}</text>
+  </view> -->
+</view>
+<view class="address-content">
+  <!-- <view class='letter-bar'>
+    <view bindtap='choseLetter' bindtouchstart="touchStart" bindtouchmove="touchMove" class='letter-bar-item {{activeIndex===index?"active":""}}' wx:for='{{letterArr}}' wx:key='{{item}}' data-index='{{index}}' data-letter='{{item}}'>
+      <view class=''>{{item==='hot'?'热':item}}</view>
+    </view>
+  </view> -->
+  <block wx:if="{{!searchContext}}">
+    <scroll-view class="cities-scroll" style='height:100vh' scroll-y="true" scroll-into-view="{{toView}}">
+      <view class="hot-cities" id="hot">
+        <view class="hot-cities-title">当前城市</view>
+        <view class="hot-cities-list">
+          <view hover-class="circle-hover" class="hot-cities-item" data-city='{{positionCity}}' bindtap="choseCity">
+            {{positionCity}}
+          </view>
+        </view>
+      </view>
+      <view class="hot-cities" id="hot">
+        <view class="hot-cities-title">历史城市</view>
+        <view class="hot-cities-list">
+          <view wx:for='{{searchRecord}}' hover-class="circle-hover" wx:key='{{index}}' data-city='{{item}}' class="hot-cities-item {{positionCity===item?'active':''}}" bindtap="choseCity">
+            {{item}}
+          </view>
+        </view>
+      </view>
+      <view class="hot-cities" id="hot">
+        <view class="hot-cities-title">热门城市</view>
+        <view class="hot-cities-list">
+          <view wx:for='{{hotCities}}' hover-class="circle-hover" wx:key='{{index}}' data-city='{{item.aliasName}}' class="hot-cities-item {{positionCity===item?'active':''}}" bindtap="choseCity">
+            {{item.aliasName}}
+          </view>
+        </view>
+      </view>
+      <view id='{{item.title}}' wx:for='{{cityList}}' wx:key='{{item.title}}'>
+        <view class='citylist-item'>{{item.title}}</view>
+        <view class="citylist-item" bindtap="choseCity" data-city='{{item}}' hover-class="list-hover" wx:for='{{item.lists}}' wx:key='{{item}}'>
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+  <block wx:else>
+    <scroll-view class="search-scroll" style='height:100vh' scroll-y="true" scroll-into-view="{{toView}}">
+      <block wx:if="{{searchResult && searchResult.length > 0}}">
+        <view class="search-city" wx:for="{{searchResult}}" data-city='{{item}}' bindtap="choseCity">{{item}}</view>
+      </block>
+      <block wx:else>
+        <view>抱歉，未找到相关位置，请尝试修改后重试</view>
+      </block>
+    </scroll-view>
+  </block>
+</view>

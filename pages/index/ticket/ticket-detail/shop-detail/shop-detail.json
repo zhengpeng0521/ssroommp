@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Carousel": "/components/carousel-with-index/carousel-with-index"
+  },
+  "navigationBarTitleText": "门店详情"
+}

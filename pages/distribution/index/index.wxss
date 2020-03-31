@@ -1,0 +1,164 @@
+/* pages/distribution/index/index.wxss */
+@import "/template/loading/loading";
+page{
+  background:#fff;
+  padding-top:114rpx;
+}
+.drp-header{
+  position: fixed;
+  background:#fff;
+  width: 100%;
+  box-sizing: border-box;
+  top:0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:20rpx 30rpx;
+  border-top:1rpx solid #eee;
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,0.1);
+}
+.search-container {
+  box-sizing: border-box;
+  width: 568rpx;
+}
+.search-container .search {
+  background-color: #f7f7f7;
+  border-radius: 37rpx;
+  border: 2rpx solid #eee;
+  box-sizing: border-box;
+  height: 72rpx;
+  padding-left: 94rpx;
+  position: relative;
+}
+
+.search-container .search .iconfont {
+  position: absolute;
+  top: 50%;
+  left: 40rpx;
+  transform: translate(0, -50%);
+  font-size: 45rpx;
+}
+.iconsousuo{
+  color:#ccc;
+}
+.search-placeholder{
+  color:#aaa;
+  font-size:28rpx;
+}
+.search-container input {
+  width: 100%;
+  height: 100%;
+}
+
+.city-name{
+  display: block;
+  font-size: 26rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 110rpx;
+  height:34rpx;
+}
+.city-name::before {
+  float: right;
+  font-size: 16rpx;
+  position: relative;
+  top: 12rpx;
+  color: #ccc;
+  margin-left: 8rpx;
+}
+.banner-swiper{
+  height:422rpx;
+}
+.play-card-detail{
+  width:100%;
+  height:422rpx;
+}
+.product-wrap{
+  padding:0 30rpx;
+  margin-top:30rpx;
+}
+.title{
+  font-weight: 600;
+  font-size: 36rpx;
+  margin-bottom:40rpx;
+}
+.product-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item{
+  margin-bottom: 40rpx;
+  width:324rpx;
+}
+.navigator-hover{
+  transform: scale(0.99);
+  transition: all 0.1s;
+  background: none;
+}
+.product-img{
+  width:324rpx;
+  height:324rpx;
+  border-radius: 10rpx;
+  display: block;
+}
+.product-name{
+  font-size:32rpx;
+  color:#333;
+  font-weight: 600;
+  line-height: 34rpx;
+  margin-top:20rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.location{
+  font-size:24rpx;
+  color:#666;
+  font-weight: 500;
+  margin:20rpx 0;
+  width:100%;
+  height:34rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.price{
+  font-weight: 500;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.discount-price{
+  color:#FD492C;
+  font-size:32rpx;
+  margin-right:12rpx;
+  font-weight: bold;
+}
+.origin-price{
+  font-size:24rpx;
+  color:#999;
+  text-decoration: line-through;
+}
+.benefit-amount{
+  line-height:30rpx;
+  background:rgba(245,108,108,0.1);
+  color:#F56C6C;
+  border-radius:4rpx;
+  font-size:22rpx;
+  font-weight: bold;
+  letter-spacing: -1rpx;
+  padding:3rpx 11rpx 1rpx;
+  margin-left:22rpx;
+}
+.no-goods-content{
+  padding-top:100rpx;
+  text-align: center;
+}
+.no-goods-content image{
+  width:246rpx;
+  height:246rpx;
+}

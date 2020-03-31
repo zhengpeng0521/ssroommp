@@ -1,0 +1,5 @@
+/* components/member-agree/member-agree.wxss */
+
+.member-agree{
+margin: 40rpx  20rpx;
+}

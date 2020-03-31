@@ -1,0 +1,20 @@
+<view class='share'>
+  <view class='canvas-container' bind:longpress="openDialog">
+    <painter style="position:fixed;top:-9999rpx" palette="{{template}}" bind:imgOK="onImgOK" widthPixels="750" />
+    <image src="{{posterUrl}}" class="poster-img"  mode="widthFix" />
+  </view>
+  <view class='poster-btns'>
+    <view class='poster-share'>
+      <button open-type="share" class="share-btn">
+        <image class='poster-btns-icon' src='/images/icon/share-wx.png'></image>
+      </button>
+      <text>分享好友</text>
+    </view>
+    <view class='poster-download' bindtap='downloadPoster'>
+      <view>
+        <image class='poster-btns-icon' src='/images/icon/share-download.png'></image>
+      </view>
+      <text>保存图片</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的特权",
+  "usingComponents": {
+    "v-tabs":"/components/tabs/tabs",
+    "v-tab": "/components/tabs/tab/tab",
+    "v-popup":"/components/popup/popup",
+    "v-coupon":"/components/coupon/coupon",
+    "van-popup":"/components/vant/popup/index",
+    "custom-icon":"/components/icon/icon"
+  }
+}

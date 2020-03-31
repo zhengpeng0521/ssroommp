@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "惠选",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

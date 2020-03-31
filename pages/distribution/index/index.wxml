@@ -1,0 +1,49 @@
+<!-- pages/distribution/index/index.wxml -->
+<import src="/template/loading/loading" />
+<view class="">
+  <view class="drp-header">
+    <view class="city">
+      <picker class="top-nav-item" mode='region' custom-item='全部' value='{{region}}' bindchange="addressChange">
+        <text class="iconfont icondown city-name">{{locationCity||province||'全部'}}</text>
+      </picker>
+    </view>
+    <view class="search-container">
+      <view class="search">
+        <text class="iconfont iconsousuo"></text>
+        <input placeholder="请输入您想要的商品" placeholder-class="search-placeholder" type="text" bindblur='goodsNameSearch'></input>
+      </view>
+    </view>
+  </view>
+  <!-- <swiper wx:if="{{banner.length>0}}" class="banner-swiper" current="{{bannerCurrent}}" indicator-dots='true' indicator-color='#eee' indicator-active-color='#FF9436' autoplay="{{true}}">
+    <block wx:for="{{banner}}" wx:key="{{data.id}}" wx:for-item="data">
+      <swiper-item id="{{data.id}}">
+        <view id="{{data.id}}" bindtap="clickAd" data-id="{{data.id}}" data-url="{{data.url}}" class='play-card-container'>
+          <image class="play-card-detail" mode="scaleToFill" src="{{data.cover}}"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper> -->
+  <view class="product-wrap">
+    <view class="title">精选推荐</view>
+    <view class="product-list" wx:if="{{list.length>0}}">
+      <navigator wx:for="{{list}}" wx:key="id" class="item" url="/pages/distribution/product-detail/product-detail?goodsId={{item.id}}" hover-class="navigator-hover" open-type="navigate">
+        <image class="product-img" mode="widthFix" src="{{item.cover}}?p=image/format,jpg/quality,q_95/resize,w_324,h_324,g_center" />
+        <view class="product-name">{{item.spuName}}</view>
+        <view class="location">{{item.shopAdd}}</view>
+        <view class="price">
+          <text class="discount-price">¥{{item.price}}</text>
+          <text class="origin-price">¥{{item.oriPrice}}</text>
+          <text class="benefit-amount" wx:if="{{distributorFlag}}">赚￥{{item.benefitAmount}}</text>
+        </view>
+      </navigator>
+    </view>
+    <block  wx:else>
+      <view wx:if="{{!listLoading}}" class="no-goods-content ">
+        <image src="/images/bg/no-city.png "></image>
+        <view class="no-goods-txt ">您所在的区域的门店正在准备中，敬请期待</view>
+      </view>
+    </block>
+    <template is='loading-ui' data="{{showLoading:listLoading}}"></template>
+    <view class='listBottom' style="padding-bottom:10rpx;" wx:if="{{list.length>0}}">已经到底啦...</view>
+  </view>
+</view>

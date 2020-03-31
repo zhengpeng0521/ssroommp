@@ -1,0 +1,4 @@
+/* pages/experience/experience.wxss */
+page{
+  background:#f8f8f8;
+}

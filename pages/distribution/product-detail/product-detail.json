@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "Parser": "/Parser/index",
+    "van-action-sheet": "/components/vant/action-sheet/index",
+    "Carousel": "/components/carousel-with-index/carousel-with-index",
+    "van-overlay": "/components/vant/overlay/index",
+    "painter":"/components/painter/painter"
+  },
+  "navigationBarTitleText": "商品详情"
+}

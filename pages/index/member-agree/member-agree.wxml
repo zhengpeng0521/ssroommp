@@ -1,0 +1,6 @@
+<!-- components/member-agree/member-agree.wxml -->
+<view class="member-agree">
+  <view>
+    <Parser html='{{newNodes}}' />
+  </view>
+</view>

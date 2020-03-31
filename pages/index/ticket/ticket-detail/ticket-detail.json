@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "商品详情",
+    "usingComponents": {
+        "Parser": "/Parser/index",
+        "Carousel": "/components/carousel-with-index/carousel-with-index",
+        "BeforeShare": "/components/share-dialog/share-dialog",
+        "v-tabs": "/components/tabs/tabs",
+        "v-tab": "/components/tabs/tab/tab",
+        "custom-icon": "/components/icon/icon",
+        "collapse-tag": "/components/collapse-tag/collapse-tag",
+        "v-popup": "/components/popup/popup"
+    },
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,94 @@
+/* pages/test-game/answer-question/answer-question.wxss */
+page{
+  background:#C5212F;
+}
+.index{
+  padding:40rpx;
+  height:88rpx;
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+.list{
+  display: flex;
+  justify-content: space-around;
+}
+.list-item{
+  width:50rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background:rgba(235,76,85,1);
+  border:4rpx solid rgba(254,221,179,1);
+  border-radius: 50%;
+  color:#B20F1C;
+  font-weight: bold;
+}
+.question{
+  position: relative;
+  margin:0 auto 40rpx;
+  width:638rpx;
+  height:566rpx;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.question-title{
+  margin-top:40rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.question-box{
+  padding:40rpx 30rpx;
+  color:#FFE8CB;
+}
+.question-content{
+  padding:40rpx;
+  font-size:34rpx;
+  font-weight:600;
+  color:rgba(255,232,203,1);
+  line-height:72rpx;
+  text-align: center;
+}
+.action{
+  padding:90rpx 0;
+  text-align: center;
+}
+.action-btn{
+  width:580rpx;
+  height:120rpx;
+}
+.question-answer{
+  display: flex;
+  font-weight: bold;
+  margin-top:40rpx;
+  padding:0 10rpx;
+}
+.answer-no{
+  margin-right: 20rpx;
+  line-height: 60rpx;
+}
+.answer-content{
+  line-height: 60rpx;
+  min-height: 120rpx;
+  font-size:32rpx;
+}
+.change{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right:30rpx;
+  top:30rpx;
+  font-size:26rpx;
+  color:#C5212F;
+}
+.change-img{
+  width:32rpx;
+  height:34rpx;
+}
+.selected{
+  background-color: #C5212F;
+}
+.active{
+  background-color: #FEDDB3;
+}

@@ -1,0 +1,41 @@
+<!--pages/trade/my-team/my-team.wxml-->
+<import src="/template/card-bg/card-bg" />
+<import src="/template/loading/loading" />
+<view class='my-team-header'>
+  <template is="card-bg"></template>
+  <view class='user-detail'>
+    <view class='avatar'>
+      <image src='{{userInfo.avatar}}'></image>
+    </view>
+    <text class='user-text'>当前我的团队有{{teamNum}}人</text>
+  </view>
+</view>
+<view class='my-team-content'>
+  <view class='my-team-container' wx:for-index="outerIndex" wx:for='{{list}}' wx:key='{{outer.id}}' wx:for-item="outer">
+    <view class='first' bindtap='expandItem' data-index='{{outerIndex}}'>
+      <image mode='aspectFill' src='../../../images/icon/icon-userlevel-{{outer.currentLevel}}.png'></image>
+      <text class='level-title' wx:if='{{outer.currentLevel ==="1"}}'>掌柜</text>
+      <text class='level-title' wx:if='{{outer.currentLevel ==="2"}}'>主管</text>
+      <text class='level-title' wx:if='{{outer.currentLevel ==="3"}}'>经理</text>
+      <text class='level-num'>({{outer.teamList?outer.teamList.length:''}})</text>
+      <view class='user-detail'>
+        <image src='{{outer.avatar}}'></image>
+        <text class='username'>{{outer.name}}</text>
+      </view>
+      <text class='right-arrow iconfont iconjiantou {{activeIndex===outerIndex?"active":""}}'></text>
+    </view>
+    <view class='inner-item {{activeIndex===outerIndex?"active":""}}' wx:for='{{outer.teamList}}' wx:key='{{inner.id}}' wx:for-item="inner">
+
+      <image class='inner-user-img' src='{{inner.avatar}}'></image>
+      <view class='inner-user-text'>
+        <text class='name'>{{inner.name}}</text>
+        <view class='inner-content-detail'>
+          {{inner.changeTime}}成为
+          <text class='level-title' wx:if='{{inner.currentLevel ==="1"}}'>掌柜</text>
+          <text class='level-title' wx:if='{{inner.currentLevel ==="2"}}'>主管</text>
+          <text class='level-title' wx:if='{{inner.currentLevel ==="3"}}'>经理</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

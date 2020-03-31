@@ -1,0 +1,54 @@
+<import src="/components/enter-loading/enter-loading.wxml" />
+
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+<view wx:else class="container">
+  <Carousel swiperList='{{shopData.imgs}}' />
+  <view class="shop-info">
+    <text class="title">{{shopData.name}}</text>
+    <!-- {{animateOfAddress ? 'btnWhiteAnim': ''}} -->
+    <view class="item" catchtap="onOpenMap" hover-class="btn-hover">
+      <view style="display: flex;align-items: center;">
+        <image class="icon-adress" src="/images/icon/view-shop-icon.png"></image>
+        <text class="content">门店位置: {{shopData.address}}</text>
+      </view>
+      <image style="margin-right:26rpx" class="icon-adress" src="http://img.ishanshan.com/gimg/n/20200318/be5c08ec9ed79baed14c5c8abd9a98e7"></image>
+    </view>
+    <view class="item itemAfter {{animateOfPhone ? 'btnWhiteAnim': ''}}" catchtap="onPhoneCall">
+      <view style="display: flex;align-items: center;">
+        <image class="icon" src="/images/icon/shop-icon.png"></image>
+        <text class="content">商家电话: {{shopData.tel}}</text>
+      </view>
+      <image style="margin-right:22rpx" class="icon-adress" src="http://img.ishanshan.com/gimg/n/20200318/1a14b54446aade43832b806b7ff679b8"></image>
+    </view>
+    <view class="item itemAfter {{animateOfPhone ? 'btnWhiteAnim': ''}}">
+      <view style="display: flex;align-items: center;">
+        <image class="icon" src="/images/icon/bustime.png"></image>
+        <text class="content">营业时间: {{shopData.bussTime}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="summary">
+    <text class="title">品牌简介</text>
+    <text class="text">{{shopData.intro}}</text>
+    <!--<text class="text">1.上课须知</text>-->
+    <!--<text class="text">购买之后，请安装上课时间准时上课；上课前请出示核销码，进行核销，方可上课。</text>-->
+    <!--<text class="text">2.课程介绍</text>-->
+    <!--<text class="text">Tami自然课堂是针对0-8岁的孩子专门开设的一直课程。</text>-->
+    <!--<image class="img1" src="http://via.placeholder.com/690x280"></image>-->
+    <!--<text class="text">Tami自然课堂是针对0-8岁的孩子专门开设的一直课程。</text>-->
+    <!--<image class="img2" src="http://via.placeholder.com/690x368"></image>-->
+  </view>
+
+  <view class="feture">
+    <text class="title">配套设施</text>
+    <view class="content">
+      <view wx:for="{{device}}" wx:key="*this" class="item">
+        <image class="img" src="{{item.img}}"></image>
+        <text class="text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

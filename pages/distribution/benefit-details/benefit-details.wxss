@@ -1,0 +1,169 @@
+/* pages/distribution/benefit-details/benefit-details.wxss */
+page{
+  padding-top:402rpx;
+}
+.benefit-head{
+  position: fixed;
+  top:0;
+  width: 100%;
+  box-sizing: border-box;
+  padding:30rpx 30rpx 0;
+  background:#fff
+}
+.benefit-card{
+  height:270rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  background:#FF9943;
+  color:#fff;
+  border-radius: 20rpx;
+  font-size:28rpx;
+}
+.benefit-card-hd{
+  font-size:28rpx;
+}
+.benefit-card-bd{
+  display: flex;
+  padding-top:16rpx;
+  padding-bottom:26rpx;
+  border-bottom: 1rpx solid #fff;
+}
+.amount-prefix{
+  color:#fff;
+}
+.amount{
+  font-size:60rpx;
+  font-weight: 600;
+  color:#fff;
+}
+.card-bd-info{
+  display: flex;
+  align-items: flex-end;
+  font-size:24rpx;
+  margin-left:12rpx;
+  padding-bottom:14rpx;
+}
+.benefit-card-ft{
+  display: flex;
+  font-size:24rpx;
+  padding-top:16rpx;
+  justify-content: space-between;
+}
+.icon-order-detail{
+  width: 24rpx;
+  height:24rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
+}
+.iconright{
+  color:#fff;
+  font-size:24rpx;
+  margin-left:10rpx;
+}
+.tab{
+  display: flex;
+  justify-content: center;
+  margin-top:12rpx;
+}
+.tab-item{
+  position: relative;
+  color:#999;
+  font-size:28rpx;
+  height:90rpx;
+  margin:0 60rpx;
+  display: flex;
+  align-items: center;
+}
+.tab-item.active{
+  color:#333;
+  font-weight: 600;
+}
+.tab-item.active:after{
+  position: absolute;
+  left:50%;
+  bottom:0;
+  display: inline-block;
+  content:' ';
+  width:80rpx;
+  height:8rpx;
+  background:rgba(255,148,54,1);
+  border-radius:4rpx;
+  transform: translateX(-50%);
+}
+.benefit-list{
+  padding:30rpx;
+}
+.card{
+  border-radius: 10rpx;
+  background:#fff;
+  font-size:28rpx;
+}
+.card+.card{
+  margin-top:20rpx;
+}
+.buyer{
+  font-size:28rpx;
+  color:#333;
+  font-weight: 400;
+}
+.goods-name{
+  font-size:28rpx;
+  color:#333;
+  font-weight: bold;
+}
+.card-bd-header{
+  color:#333;
+  line-height: 40rpx;
+}
+.card-bd{
+  padding:20rpx 20rpx 0;
+  color:#666;
+}
+.card-bd-content{
+  padding:20rpx 0;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+.card-ft{
+  border-top:1rpx solid #eee;
+  display: flex;
+  padding:20rpx;
+  justify-content: space-between;
+}
+.time-wrap{
+  color:#999;
+  font-size:24rpx;
+  display: flex;
+  line-height: 34rpx;
+  flex: 1;
+}
+.badge{
+  display: inline;
+  padding:0 5rpx;
+  font-size:22rpx;
+  font-weight: 500;
+  border-radius:4rpx;
+  margin-right:10rpx;
+  font-weight: bold;
+}
+.badge-pink{
+  color:#F56C6C;
+  background:rgba(245,108,108,.2);
+}
+.badge-orange{
+  color:#FF9436;
+  background:rgba(255,148,54,.2);
+}
+.tip-wrap{
+  font-size:28rpx;
+}
+.h2-title{
+  text-align: center;
+  font-weight: 600;
+  font-size:30rpx;
+  margin-bottom:20rpx;
+}
+.tip-wrap text{
+  font-weight: 600;
+  font-size:28rpx;
+}

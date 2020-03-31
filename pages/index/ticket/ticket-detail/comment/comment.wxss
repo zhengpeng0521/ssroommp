@@ -1,0 +1,2 @@
+/* pages/index/ticket/ticket-detail/comment/comment.wxss */
+@import "/template/comment-item/comment-item.wxss";

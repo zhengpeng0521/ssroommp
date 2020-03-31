@@ -1,0 +1,93 @@
+/* pages/test-game/enter-share/enter-share.wxss */
+/* pages/test-game/game-share/game-share.wxss */
+page{
+  background: #C72333;
+}
+.header{
+  padding:62rpx 71rpx 0;
+}
+.hb-wrap{
+  width:608rpx;
+  height:756rpx;
+  position: relative;
+}
+.hd-hb{
+  width:608rpx;
+  height:756rpx;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.avatar{
+  width: 100rpx;
+  height:100rpx;
+  position: absolute;
+  border:8rpx solid #FFDEB3;
+  border-radius: 50%;
+  top:194rpx;
+  left:252rpx
+}
+.text{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom:378rpx;
+  text-align: center;
+  font-size:28rpx;
+  color:#FFDEB3;
+  line-height:40rpx;
+}
+.account{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom:292rpx;
+  text-align: center;
+  font-size:60rpx;
+  font-family:Reeji-CloudYuanCu-GBK,Reeji-CloudYuanCu;
+  font-weight:normal;
+  color:#FFE23C;
+  line-height:68rpx;
+}
+.erweiImage{
+  width:160rpx;
+  height:160rpx;
+  border-radius: 50%;
+  position: absolute;
+  left:230rpx;
+  bottom:82rpx;
+  border:6rpx solid #fff;
+}
+
+.foot{
+  padding:40rpx 85rpx 0;
+}
+.foot-image{
+  width: 580rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+}
+.btn{
+  font-size:50rpx;
+  font-weight:normal;
+  color:rgba(255,227,208,1);
+  line-height:108rpx;
+  text-shadow:0px 2rpx 4rpx rgba(0,0,0,0.5);
+}
+.ok{
+  width:580rpx;
+  height:120rpx;
+  background:rgba(71,186,187,1);
+  box-shadow:0rpx 4rpx 14rpx 0rpx rgba(108,0,0,0.5),6rpx 10rpx 6rpx 0rpx rgba(255,255,255,0.5),-4rpx -4rpx 6rpx 0rpx rgba(9,120,122,1);
+  border-radius:62rpx;
+  border:6rpx solid rgba(254,221,179,1);
+  margin-bottom: 60rpx;
+}
+.error{
+  width:580rpx;
+  height:120rpx;
+  background:rgba(235,76,85,1);
+  box-shadow:0px 4rpx 14rpx 0px rgba(108,0,0,0.5),6rpx 10rpx 6rpx 0px rgba(245,87,76,1),-4rpx -8rpx 6rpx 0px rgba(154,19,9,1);
+  border-radius:62rpx;
+  border:6rpx solid rgba(254,221,179,1);
+}

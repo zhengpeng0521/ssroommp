@@ -1,0 +1,76 @@
+/* pages/test-game/game-share/game-share.wxss */
+page{
+  background: #fff;
+}
+.header{
+  padding:62rpx 71rpx 0;
+}
+.hb-wrap{
+  width:608rpx;
+  height:756rpx;
+  position: relative;
+}
+.hd-hb{
+  width:608rpx;
+  height:756rpx;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.avatar{
+  width: 100rpx;
+  height:100rpx;
+  position: absolute;
+  border:8rpx solid #FFDEB3;
+  border-radius: 50%;
+  top:194rpx;
+  left:252rpx
+}
+.text{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom:378rpx;
+  text-align: center;
+  font-size:28rpx;
+  color:#FFDEB3;
+  line-height:40rpx;
+}
+.account{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom:292rpx;
+  text-align: center;
+  font-size:60rpx;
+  font-family:Reeji-CloudYuanCu-GBK,Reeji-CloudYuanCu;
+  font-weight:normal;
+  color:#FFE23C;
+  line-height:68rpx;
+}
+.erweiImage{
+  width:160rpx;
+  height:160rpx;
+  border-radius: 50%;
+  position: absolute;
+  left:230rpx;
+  bottom:82rpx;
+  border:6rpx solid #fff;
+}
+
+.foot{
+  padding:40rpx 85rpx 0;
+}
+.foot-image{
+  width: 580rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+}
+.poster-img{
+  margin:0 auto;
+  width:628rpx;
+  height:766rpx;
+}
+.share-btn{
+  background:none;
+}

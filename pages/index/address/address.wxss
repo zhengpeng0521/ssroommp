@@ -1,0 +1,140 @@
+/* pages/index/address/address.wxss */
+
+page {
+  height: 100%;
+  background-color: #fff;
+}
+
+.address-header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 20rpx;
+  /* border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.address-header .search-layout {
+  height: 68rpx;
+  width: 100%;
+  background-color: #eee;
+  padding: 13rpx 16rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-header .searchIcon {
+  font-size: 45rpx;
+}
+
+.address-header .search-input {
+  width: 600rpx;
+  caret-color: peru;
+}
+
+.address-header .position-city {
+  display: flex;
+  align-items: center;
+  color: #888;
+  margin-top: 30rpx;
+}
+
+.address-header .positionIcon {
+  font-size: 40rpx;
+  margin-right: 6rpx;
+}
+
+.address-header .position-text {
+  font-size: 28rpx;
+}
+
+.address-content {
+  padding: 0 22rpx;
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  top: 145rpx;
+  left: 0;
+  font-size: 28rpx;
+}
+
+.letter-bar {
+  position: fixed;
+  top: 230rpx;
+  right: 0;
+  z-index: 11;
+  font-size: 26rpx;
+}
+
+.letter-bar-item {
+  width: 30rpx;
+  height: 30rpx;
+  padding: 5rpx;
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter-bar-item.active {
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.cities-scroll {
+  color: #888;
+}
+
+.hot-cities {
+  font-size: 26rpx;
+}
+
+.hot-cities-title {
+  margin-bottom: 54rpx;
+}
+
+.hot-cities-list {
+  overflow: hidden;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap:wrap;
+}
+
+.hot-cities-item {
+  padding: 12rpx 44rpx;
+  background-color: #f9f9f9;
+  margin-right: 25rpx;
+  white-space: nowrap;
+  margin-bottom: 36rpx;
+  color: #7d7d7d;
+}
+.hot-cities-item:last-child {
+  margin-right: 0;
+}
+
+.hot-cities-item.active {
+  border: 1px solid #eee;
+}
+
+.citylist-item {
+  line-height: 80rpx;
+  border-bottom: 1px solid #ddd;
+}
+/* 搜索列表 */
+.search-scroll {
+  color: #999;
+}
+.search-scroll .search-city:first-child {
+  padding: 0 0 20rpx;
+}
+.search-scroll .search-city {
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #eee;
+}

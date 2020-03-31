@@ -1,0 +1,59 @@
+.enterLoading{
+    width: 260rxpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -87rpx;
+    margin-top: -60rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.enterLoading image{
+    width: 150rpx;
+    height: 115rpx;
+    margin-bottom: 20rpx;
+    transform: rotateY(180deg);
+    animation: imageMarginLeft 1.6s steps(6) infinite;
+}
+
+.enterLoading .loading-text{
+    display: flex;
+}
+
+.enterLoading .loading-text .text{
+    font-size: 28rpx;
+    font-weight: 600;
+    line-height: 28rpx;
+    color: #666;
+}
+
+.enterLoading .loading-text .dot{
+    width: 54rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    line-height: 28rpx;
+    color: #227253;
+    overflow: hidden;
+    animation: stretchdelay 1.6s steps(6) infinite;
+}
+
+@-webkit-keyframes stretchdelay{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 54rpx;
+    }
+}
+
+@-webkit-keyframes imageMarginLeft{
+    0%{
+        margin-left: -10rpx;
+    }
+    100%{
+        margin-left: 37rpx;
+    }
+}
+
+

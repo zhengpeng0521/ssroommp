@@ -1,0 +1,49 @@
+/* pages/distribution/poster/poster.wxss */
+.painter{
+  padding:0;
+  margin:0;
+  height:100vh;
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+  overflow-y: auto;
+}
+.poster-img{
+  width:750rpx;
+  height:100vh;
+  display: block;
+}
+
+.share-action{
+  box-sizing: border-box;
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:calc(100vw - 180rpx);
+  height:84rpx;
+  padding:0 30rpx;
+  display: flex;
+  background:#fff;
+  justify-content: space-between;
+}
+.share-btn{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color:#333;
+  font-weight: 500;
+}
+.share-friend{
+  background: none;
+  padding:0;
+  margin:0;
+  line-height: normal;
+}
+.share-friend-img{
+  display: block;
+  width:60rpx;
+  height:60rpx;
+  margin-right: 10rpx;
+}

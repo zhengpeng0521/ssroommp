@@ -1,0 +1,77 @@
+<!--pages/index/customerForm/customerForm.wxml-->
+<view class="customerFomr-top">
+  <view class="top">
+    <view class="top-title">信息完善</view>
+    <view class="iconfont iconleft back" bindtap="navigateBack"></view>
+  </view>
+  <view class="customerFomr-top-title">
+    <view class="customerFomr-top-title-1">请提供信息</view>
+    <view class="customerFomr-top-title-2">
+      <image class="warning" src="/images/icon/warning.png"></image>
+      <text>信息错误可能无法成行，请您务必准确填写</text>
+    </view>
+  </view>
+</view>
+<form bindsubmit="formSubmit">
+  <!-- <view class="customerForm">
+    <view class="title">
+      <text class="mess">孩子信息</text>
+      <view class="action">从“常用联系人”选择
+        <text class="iconfont iconright"></text>
+      </view>
+    </view>
+    <view class="item" wx:for='{{childInputArr}}' wx:key='{{index}}'>
+      <view class="item-title">{{item.fieldLabel}}</view>
+      <view class="item-input">
+        <input type="{{item.vtype}}" data-test="12" name='{{item.fieldName}}' placeholder-style="color:#CCCCCC;" placeholder="{{item.fieldLabel}}"></input>
+      </view>
+    </view>
+  </view> -->
+  <view class="customerForm" wx:if='{{normalInputArr.length > 0}}'>
+    <view class="title">
+      <text class="mess">补充信息</text>
+    </view>
+    <view class="item" wx:for='{{normalInputArr}}' wx:key='{{index}}'>
+      <view class="item-title">{{item.fieldLabel}}</view>
+      <view class="item-input">
+        <input wx:if='{{item.vtype==="text"}}' type="text" name='{{item.fieldName}}' placeholder-style="color:#CCCCCC;" placeholder="{{item.fieldLabel}}"></input>
+        <input wx:if='{{item.vtype==="mobile"}}' type="number" name='{{item.fieldName}}' placeholder-style="color:#CCCCCC;" placeholder="{{item.fieldLabel}}"></input>
+        <input wx:if='{{item.vtype==="number"}}' type="number" name='{{item.fieldName}}' placeholder-style="color:#CCCCCC;" placeholder="{{item.fieldLabel}}"></input>
+        <picker value="2015-09-01" class="date-picker" data-name='{{item.fieldName}}' wx:if='{{item.vtype==="date"}}' mode='date' bindchange='dateChange'>
+          <!-- <view class="date-view">{{date[item.fieldName]?date[item.fieldName]:item.fieldLabel}}</view> -->
+          <input disabled="true" type="number" value="{{date[item.fieldName]}}" name='{{item.fieldName}}' placeholder-style="color:#CCCCCC;" placeholder="{{item.fieldLabel}}"></input>
+        </picker>
+      </view>
+    </view>
+    <!-- <view class="item-bottom">如果在本机构在读，将会被机构拒绝</view> -->
+    
+  </view>
+  <view class="form-tips">
+    <view class="tips-item" wx:if='{{appointTips.length > 0}}' wx:for='{{appointTips}}' wx:key='{{index}}'>
+      <view class="tips-title">{{item.title}}</view>
+      <view class="tips-content">{{item.content}}</view>
+    </view>
+  </view>
+  <button class="submit" form-type="submit" hover-class="btn-hover">确定</button>
+  
+</form>
+<view class="lay-out" wx:if="{{showDialog}}"></view>
+<view class="confirm-dialog" wx:if='{{showDialog}}'>
+  <view class="confirm-dialog-title">请确认信息</view>
+  <view class="scroll-list">
+    <view class="confirm-list">
+      <view class="confirm-item" wx:for='{{formArr}}' wx:key='{{index}}'>
+        <view class="confirm-item-key">{{item.name}}</view>
+        <view class="confirm-item-val">{{item.val}}</view>
+      </view>
+    </view>
+    <view class="appointTips" wx:if='{{appointTips.length > 0}}' wx:for='{{appointTips}}' wx:key='{{index}}'>
+      <view class="appointTips-title">【{{item.title}}】</view>
+      <view class="appointTips-content">{{item.content}}</view>
+    </view>
+  </view>
+  <view class="btn-container">
+    <button class="btn-cancel" bindtap="closeDialog" hover-class="btn-hover">输错了</button>
+    <button class="btn-confirm" bindtap="confirm" hover-class="btn-hover">确定</button>
+  </view>
+</view>

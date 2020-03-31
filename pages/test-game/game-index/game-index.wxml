@@ -1,0 +1,35 @@
+<!--pages/test-game/game-index/game-index.wxml-->
+<view class="container">
+  <view class=" header">
+    <image class="banner" src="https://img.ishanshan.com/gimg/n/20200206/1c372d1defa60256b6b2fd67c202f632" />
+  </view>
+  <view class="body">
+    <button class="start" data-url="/pages/test-game/answer-question/answer-question" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      <image class="start-button" src="/images/test-game/start-button.png" />  
+    </button>
+  </view>
+  <view class="foot">
+    <view class="list">
+      <image class="item-bg" src="/images/test-game/index-list.png" >
+        <button class="list-item" data-url="/pages/test-game/record/record" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          出题记录
+        </button>
+      </image>
+      <image class="item-bg" src="/images/test-game/index-list.png" >
+        <button class="list-item" data-url="/pages/test-game/answer-records/answer-records" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          答题记录
+        </button>
+      </image>
+      <image class="item-bg" src="/images/test-game/index-list.png" >
+        <button class="list-item" bindtap="toQuestion" data-url="/pages/test-game/faq/faq" >
+          常见问题
+        </button>
+      </image>
+      <image class="item-bg" src="/images/test-game/index-list.png" >
+        <button class="list-item" data-url="/pages/test-game/wallet/wallet" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          我的钱包
+        </button>
+      </image>
+    </view>
+  </view>
+</view>

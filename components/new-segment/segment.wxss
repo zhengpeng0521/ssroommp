@@ -1,0 +1,116 @@
+/* components/segment/segment.wxss */
+/** 分段器 **/
+.goods-tab {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  border-bottom: 2rpx solid #ddd;
+}
+
+.tab-item-tap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-item {
+  /* background-color: pink; */
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: relative;
+  width: max-content;
+  /* transition: all .3s; */
+}
+
+.tab-item .tab-item-text {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.tab-item.active .bottom-border {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background-color: #19B329;
+}
+
+.tab-item.active .tab-item-text {
+  color: #fff;
+}
+.goodsNavFixed {
+  position: fixed;
+  top: 80rpx;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-shadow:0 4rpx 8rpx 0 rgba(0,0,0,0.1);
+}
+.tag{
+  /* height: 90rpx;
+  line-height: 90rpx;
+  justify-content: flex-start; */
+  border-bottom:none;
+}
+.tag .tab-item.active{
+  background:#19B329;
+}
+.tag .tab-item-tap{
+  /* flex:0 1 auto; */
+  /* flex: 0 0 22%; */
+  /* margin-right: 40rpx; */
+  /* padding:0 6rpx; */
+}
+.tag .tab-item-tap:last-child{
+  /* flex:0 1 auto; */
+  margin-right: 0;
+  /* padding:0 6rpx; */
+}
+
+.tag .bottom-border{
+  display: none;
+}
+.tag .tab-item{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  height:52rpx;
+  background:#F5F5F5;
+  min-width: 0;
+  width:136rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tag .tab-item-tap:first-child .tab-item {
+  border-radius:30rpx 0px 0px 30rpx;
+}
+.tag .tab-item-tap:last-child .tab-item {
+  border-radius:0rpx 30rpx 30rpx 0rpx;
+}
+.tag .tab-item .tab-item-text{
+  box-sizing: border-box;
+  padding:8rpx 20rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.tag .tab-item .tab-item-text.android{
+  padding:0;
+}
+.tag .tab-item.active .tab-item-text{
+  color: #fff;
+  font-weight: 600;
+}
+.scroll{
+  display: flex;
+}

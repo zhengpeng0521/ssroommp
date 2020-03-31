@@ -1,0 +1,17 @@
+<!--components/carousel-with-index/carousel-with-index.wxml-->
+<view class="carousel-container">
+  <swiper indicator-dots="{{false}}" autoplay="true" bindchange='carouselChange' interval="5000" class="carousel">
+    <swiper-item wx:for="{{swiperList}}" wx:key="index" class='carousel-item'>
+      <image src="{{item}}?p=image/format,jpg/quality,q_75/resize,l_750" data-postId="index" mode='widthFix'></image>
+    </swiper-item>
+  </swiper>
+  <!-- <view class="carousel-title" wx:if='{{type}}'>
+    <text wx:if='{{type===101}}'>门票</text>
+    <text wx:if='{{type===102}}'>医美</text>
+    <text wx:if='{{type===103}}'>课程</text>
+  </view> -->
+  <view class='num-container'>
+    <text>{{current}}/</text>
+    <text>{{swiperList.length}}</text>
+  </view>
+</view>

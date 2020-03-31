@@ -1,0 +1,44 @@
+<view class="container">
+
+    <view class="paystate">
+        <view class="top">
+            <view class="top-circle">
+                <image src="/images/icon/yiquxiao.png"></image>
+            </view>
+            <text class="top-title">订单已取消</text>
+        </view>
+        <view class="center">
+            <text class="center-title">{{orderData.title}}</text>
+            <view class="category">
+                <text class="left">原价</text>
+                <text class="right">￥{{orderData.oriPrice}} x {{orderData.goodsNum}}</text>
+            </view>
+            <view class="category">
+                <text class="left">(优惠)</text>
+                <text class="right">10元</text>
+            </view>
+            <!-- <view class="category">
+                <text class="left">优惠</text>
+                <text class="right">{{orderData.discount && orderData.discount !== 'null' ? '-'+orderData.discount+'元' : '暂无优惠'}}</text>
+            </view> -->
+            <view class="category">
+                <text class="left">实付款</text>
+                <text class="right green">￥{{orderData.realMoney}}</text>
+            </view>
+            <view class="category">
+                <text class="left">订单号</text>
+                <text class="right">{{orderData.purId}}</text>
+            </view>
+            <view class="category">
+                <text class="left">下单时间</text>
+                <text class="right">{{orderData.orderDate}}</text>
+            </view>
+        </view>
+        <view class="bottom">
+            <view class="bottom-btn {{animateOfBtn ? 'btnGreenAnim': ''}}" catchtap="navToIndexPage">返回首页</view>
+        </view>
+    </view>
+
+</view>
+
+

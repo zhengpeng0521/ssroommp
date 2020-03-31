@@ -1,0 +1,75 @@
+<!--pages/distribution/generalize/generalize.wxml-->
+<view class="content">
+  <view class="top-title">惠吧用户推广协议</view>
+  <text class="" selectable="false" space="false" decode="false">
+    欢迎“您”与惠吧平台经营者“杭州惠吧网络科技有限公司”（简称“惠吧”或“惠吧网络”）共同签署《惠吧用户推广协议》，惠吧将按照本协议约定内容为您提供服务支持，请您在同意本协议前仔细阅读各条款内容，本协议对您与惠吧具有同等合同效力。如您对协议有任何疑问，请咨询惠吧小程序客服。如您不同意本协议，请立即停止使用惠吧提供的全部服务。
+  </text>
+  <view class="box">
+    <view class="title">一、用户服务条款</view><text class="" selectable="false" space="false" decode="false">
+      1.您本人自愿并享有权利通过图片、文字、音频、视频等不同形式推广惠吧平台上商品或服务，消费者下单购买后，您可在惠吧平台获得相应推广收入或其他推广奖励，推广收入结算及返现周期，具体以页面公示规则为准，惠吧平台为推广用户提供包括但不限于推广报酬、后台使用、技术信息等综合服务。
+    </text>
+    <text class="" selectable="false" space="false" decode="false">
+      2.请您确保推广账号提供的信息真实准确，如因您提供虚假信息，产生的损失由您本人承担；推广宣传时，请自行保管好您的个人推广账号及密码，如推广账号因您主动泄露或遭受他人攻击、诈骗等行为导致损失后果，惠吧平台不承担责任，您可通过法律途径向侵权者追究赔偿。如发现任何未经授权使用您账号登录惠吧平台或其他安全问题，请您立即通知惠吧小程序在线客服。
+    </text>
+    <text class="" selectable="false" space="false" decode="false">
+      3.您有权利通过惠吧提供的服务，复制文案素材、生成推广海报图片等形式在惠吧平台获取产品或服务信息，并在自有渠道推广获得收入。推广宣传时，您需遵守诚实信用原则，开展合法合理推广活动，不得存在对商品或服务恶意夸大、恶意诱导、虚假宣传等损害消费者权益行为，且不得以任何方式干扰惠吧平台的正常运作，惠吧会根据情节严重程度要求您停止推广甚至取消您的推广资格（包括但不限于关闭推广订单、冻结、注销推广账户等）；当您在推广过程中与惠吧平台发生争议，请你在第一时间通知惠吧工作人员，并协助妥善解决。
+      如您冒充惠吧工作人员，并给惠吧平台造成损失行为（含经济损失、名誉损失及对外支付赔偿金、律师费、诉讼费等间接经济损失），您应承担产生损失的一切费用。
+    </text>
+  </view>
+  <view class="box">
+    <view>二、用户规范说明</view>
+    <text class="" selectable="false" space="false" decode="false">
+      1.您应使用合法、合规、合理的方式推广惠吧平台产品或服务，如您的推广行为触犯了中华人民共和国法律、法规、规范性文件，一切后果由您自行承担；
+    </text>
+    <text class="" selectable="false" space="false" decode="false">
+      2.您承诺不会使用惠吧提供的网络服务发布或传播敏感信息及违反国家法律法规政策的信息，此类信息包括但不限于：
+    </text>
+    <text class="list-item">（1）反对宪法所确定的基本原则的；</text>
+    <text class="list-item">（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</text>
+    <text class="list-item">（3）损害国家荣誉和利益的；</text>
+    <text class="list-item">（4）煽动民族仇恨、民族歧视，破坏民族团结的；</text>
+    <text class="list-item">（5）破坏国家宗教政策，宣扬邪教和封建迷信的；</text>
+    <text class="list-item">（6）散布谣言，扰乱社会秩序，破坏社会稳定的；</text>
+    <text class="list-item">（7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</text>
+    <text class="list-item">（8）侮辱或者诽谤他人，侵害他人合法权益的；</text>
+    <text class="list-item">（9）以及其他法律、行政法规禁止的其他内容的。</text>
+    <text class="" selectable="false" space="false" decode="false">
+      3.您在使用惠吧服务时，还需遵守以下规则：推广商品时，不得侵犯他人的专利、商标、著作权、商业秘密等其他专属权利；未经惠吧书面同意，您不得将惠吧内部隐私资料、品牌宣传等信息透露给他人，否则惠吧有权追究您的法律责任。
+    </text>
+  </view>
+  <view class="box">
+    <view class="title">三、免责声明</view>
+    <text class="" selectable="false" space="false" decode="false">
+      1.惠吧依照法律规定提供用户推广保障义务，但如因以下原因导致履行延后或履行内容变更、履行失败等情形，惠吧不承担相应违约责任：
+    </text>
+    <text class="list-item" selectable="false" space="false" decode="false">（1）因自然灾害、罢工、暴乱、战争、政府行为、司法行政命令等不可抗力因素；</text>
+    <text class="list-item" selectable="false" space="false" decode="false">（2）因电力供应故障、通讯网络故障等公共服务或第三人因素；</text>
+    <text class="list-item" selectable="false" space="false" decode="false">（3）因常规或紧急的设备与系统维护、网络信息与数据安全等因素。</text>
+    <text class="" selectable="false" space="false" decode="false">
+      2.惠吧不保证平台实时不受干扰，平台提供服务及时、安全、可靠或不出现任何错误，对此请您谨慎预防；但会尽力减少给用户造成的损失和影响。
+    </text>
+    
+  </view>
+  <view class="box">
+    <view class="title">
+      四、用户隐私条款
+    </view>
+    <text class="" selectable="false" space="false" decode="false">
+      保护用户个人隐私是惠吧平台遵守的基本义务，当您使用惠吧服务时，您同意惠吧平台收集、存储、使用、披露您的个人信息，以便帮助我们为您提供各项用户服务。惠吧承诺未经您明确同意，不会将您的个人信息对外公开或转让给任何公司、组织和个人。
+    </text>
+    <text class="" selectable="false" space="false" decode="false">
+      如用户通过惠吧平台购买第三方产品或服务时，惠吧获得的信息及用户提供的信息需提供给商家，商家会进行数据收集操作，但惠吧对商家的此项操作不承担责任。
+    </text>
+    <text class="" selectable="false" space="false" decode="false">
+      在以下情形中，共享、转让、公开披露您的个人信息无需提前征得您的授权同意：
+    </text>
+    <text class="list-item" selectable="false" space="false" decode="false">（1）与国家安全、国防安全有关的；</text>
+    <text class="list-item" selectable="false" space="false" decode="false">（2）与公共安全、公共卫生、重大公共利益有关的；</text>
+    <text class="list-item" selectable="false" space="false" decode="false">（3）与犯罪侦查、起诉、审判和判决执行等有关的；</text>
+    <text class="list-item" selectable="false" space="false" decode="false">（4）您自行向社会公众公开的个人信息；</text>
+    <text class="list-item" selectable="false" space="false" decode="false">（5）从合法公开披露的信息中收集个人信息的，如合法的新闻报道、政府信息公开等渠道。</text>
+  </view>
+  <view class="box">
+    <view class="title">惠吧平台对本用户推广协议保留解释权。</view>
+  </view>
+</view>

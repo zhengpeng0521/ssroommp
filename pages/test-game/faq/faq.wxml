@@ -1,0 +1,27 @@
+<!--pages/test-game/faq/faq.wxml-->
+
+<view class="wrap">
+  <view class="top">
+    <view class="g-btn lf" bind:tap="goHome">
+      返回首页
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-bd">
+      <view
+        class="list-item"
+        wx:for="{{qusetions}}"
+        wx:key="{{index}}"
+        data-index="{{index}}"
+        bindtap="slideAction"
+      >
+        <view class="item-title">
+          <text class="txt">{{item.title}}</text>
+          <text class="iconfont iconjiantou {{slide[index]?'slide':''}}"></text>
+        </view>
+        <view class="item-results {{slide[index]?'slide':''}}">{{item.results}}</view>
+      </view>
+    </view>
+  </view>
+</view>

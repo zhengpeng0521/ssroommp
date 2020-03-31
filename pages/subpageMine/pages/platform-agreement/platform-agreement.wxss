@@ -1,0 +1,5 @@
+/* pages/mine/platform-agreement/platform-agreement.wxss */
+
+.member-agree {
+  margin: 40rpx 20rpx;
+}

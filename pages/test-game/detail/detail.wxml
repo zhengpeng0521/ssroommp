@@ -1,0 +1,98 @@
+<!-- pages/test-game/detail/detail.wxml -->
+<wxs module='goodsTemp'>
+  var testFuc = function(e) {
+    var arr = {
+       '0':'待支付',
+       '1':'活动中',
+       '2':'领了部分',
+       '3':'已领完',
+       '9':'已过期'
+    };
+    return arr[e];
+  }
+  var answer = function(e){
+    var obj = {
+      '0':'假的',
+      '1':'真的'
+    }
+    return obj[e]
+  }
+  module.exports = {
+    testFuc:testFuc,
+    answer:answer
+  }
+</wxs>
+<view class="wrap">
+  <view class="top">
+    <view class="g-btn lf" bindtap="toIndex">返回首页</view>
+    <view class="g-btn rt" bindtap="toQuestion">常见问题</view>
+  </view>
+  <view class="content" style="background-image:url('http://img.ishanshan.com/gimg/n/20200119/7e2210522be0ff1aa9c709e49515fa1e')">
+    <view class="title">
+      <image style="width:320rpx;height:98rpx;" src="/images/test-game/5_dyxq.png" />
+    </view>
+    <view class="list">
+      <view class="list-item">出题人：{{answerDetail.nickname}}</view>
+      <view class="list-item">出题时间：{{answerDetail.createTime}}</view>
+      <view class="list-item">红包金额：{{answerDetail.awardTotalAmount}}</view>
+      <view class="list-item">需答对题数：{{answerDetail.minAnswerCount}}</view>
+      <view class="list-item">红包剩余：{{answerDetail.remainNumber}}个</view>
+      <view class="list-item">红包状态：{{goodsTemp.testFuc(answerDetail.topicStatus+'')}}</view>
+    </view>
+    <view class="action">
+      <button class="action-btn btn-view" bindtap="showAnswer">查看答案</button>
+      <button class="action-btn btn-poster" data-id="{{topicId}}" data-amount="{{answerDetail.awardTotalAmount}}" bindtap="toPoster">
+        查看海报
+      </button>
+    </view>
+    <scroll-view scroll-y class="scroll">
+      <view class="scroll-content">
+        <view class="record" wx:for="{{answerJoinerItemList}}" wx:key="joiner">
+          <image class="media" src="{{item.avatar}}" mode="widthFix" />
+          <view class="item">
+            <view class="item-row">
+              <view class="label nickname">{{item.nickname}}</view>
+              <view class="value money">{{item.awardAmount}}元</view>
+            </view>
+            <view class="item-row">
+              <view class="label">{{item.answerComment}}</view>
+              <view class="value">答对{{item.answerCount}}题</view>
+            </view>
+          </view>
+          <view class="media-action" data-id="{{item.joiner}}" bindtap="queryJoinerAnswer">
+            <view class="media-btn">查看详情</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- 规则说明 -->
+<van-popup show="{{answerDialog}}" custom-style="border-radius:10rpx;" closeable bind:close="close">
+  <scroll-view scroll-y style="height:700rpx;padding:30rpx 0;">
+    <view class="tip-wrap">
+      <view class="cell" wx:for="{{answer}}">
+        <view class="question">Q{{index+1}}:{{item.questionDescription}}</view>
+        <view class="answer">{{item.answerDescription}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</van-popup>
+<van-popup show="{{joinerDialog}}" custom-style="border-radius:10rpx;" closeable bind:close="close">
+  <scroll-view scroll-y style="height:700rpx;padding:30rpx 0;">
+    <view class="tip-wrap">
+      <view class="cell" wx:for="{{joinerAnswer}}">
+        <view class="question">Q{{index+1}}:{{item.answerDescription}}</view>
+        <view class="answer">
+          <view class="badge correct" wx:if="{{item.answerResult === 1}}" >
+            √
+          </view>
+          <view class="badge error" wx:else>
+            ×
+          </view>
+        {{goodsTemp.answer(item.answerChoose+'')}}
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</van-popup>

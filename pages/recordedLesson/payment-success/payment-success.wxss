@@ -1,0 +1,70 @@
+/* pages/recordedLesson/payment-success/payment-success.wxss */
+.container{
+  padding:40rpx 30rpx;
+}
+.result {
+  padding-top: 80rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.result-state {
+  display: flex;
+  padding-bottom: 40rpx;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1rpx solid #eee;
+}
+.result-state image {
+  width: 190rpx;
+  height: 190rpx;
+}
+.pay-text {
+  color: #858585;
+  font-size: 32rpx;
+}
+
+.result-info {
+  padding: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-bottom: 1rpx solid #eee;
+}
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.item-label{
+  color:#666;
+  font-size:28rpx;
+}
+.item-desc,
+.item-title {
+  color: #333;
+}
+.orange {
+  color: #ff9436;
+}
+.pannel-btn {
+  display: flex;
+}
+.flex-btn {
+  flex: 1;
+  font-size: 32rpx;
+  color: #00B600;
+  text-align: center;
+  line-height: 110rpx;
+  height: 110rpx;
+}
+.divide{
+  width:1rpx;
+  background:#eee
+}
+.dpr-amount{
+  color:#F56C6C;
+  font-size:28rpx;
+  line-height: 0;
+}
+.verification{
+  font-size:36rpx;
+}

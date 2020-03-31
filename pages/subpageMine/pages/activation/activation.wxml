@@ -1,0 +1,60 @@
+<!-- pages/mine/activation/activation.wxml -->
+<view class='card-img'>
+  <image mode='aspectFill' src='http://img.ishanshan.com/gimg/n/20200311/2dc189929d2e0b4d224187ef5529fbd1'></image>
+</view>
+<view class='active-block'>
+  <view class="card-block active-form">
+    <view class="block-title">
+      <text>会员卡信息</text>
+    </view>
+    <view class='input-box box-first'>
+      <!-- <image src='../../../images/icon/icon-kahao.png'></image> -->
+      <view class="section__title">卡号</view>
+      <input type="text" placeholder-class="placeholder-text" bindinput='bindCardNum' placeholder='请输入会员卡卡号'></input>
+    </view>
+    <view class='input-box'>
+      <!-- <image src='../../../images/icon/icon-jhm.png'></image> -->
+      <view class="section__title">密码</view>
+      <input type="text" bindinput='bindActiveNum' placeholder-class="placeholder-text" placeholder='请输入会员卡激活码'></input>
+    </view>
+  </view>
+  <view class="member-block active-form">
+    <view class="block-title">
+      <text>持卡人信息</text>
+      <!-- <view class="chose-contact" bindtap="choseContact" hover-class="btn-hover">
+        <text class="chose-contact-text">从“常用联系人”选择</text>
+        <text class="iconfont iconright"></text>
+      </view> -->
+    </view>
+    <view class='input-box box-first'>
+      <!-- <image src='../../../images/icon/people.png'></image> -->
+      <view class="section__title">姓名</view>
+      <input type="text" bindinput='bindName' value="{{buyName}}" placeholder-class="placeholder-text"  placeholder='请输入持卡人姓名'></input>
+    </view>
+    <view class='input-box'>
+      <!-- <image src='../../../images/icon/yanzhengma.png'></image> -->
+      <view class="section__title">身份证</view>
+      <input bindinput='bindIDNum' value="{{buyIDNum}}"  placeholder-class="placeholder-text" type='idcard' placeholder='请输入持卡人身份证'></input>
+    </view>
+  </view>
+  <view class="dec_info">
+    <text class='dec_txt'>闪闪课堂会员卡为实名制会员卡，会员商品仅允许会员本人使用，请您输入会员本人身份证信息，该信息不可更改，请确保输入准确。</text>
+  </view>
+  <view class='btn btn-primiray' bindtap='submit'>
+    <text>确定</text>
+  </view>
+  <checkbox-group bindchange="checkboxChange" class='check-box'>
+    <checkbox value="isSure" color='#09BB07' class="cb" checked="{{checked}}" />
+    <view>
+      <text>如购买本卡即表示您同意</text>
+      <text class="member-agree" bindtap='goToMemberAgree'>《会员协议》</text>
+    </view>
+  </checkbox-group>
+</view>
+<view class='lay-out' bindtap='closeDialog' hidden='{{!showSuccessDialog}}'></view>
+<view class='dialog-success {{showSuccessDialog?"":"scale"}}'>
+  <image src='/images/bg/congratulation.png'></image>
+  <view class='congratulation-title'>恭喜你成为会员</view>
+  <view class='congratulation-content'>您可以在小程序里面预约您心意商品了</view>
+  <view class='congratulation-btn' bindtap='navigateToBookingGuide'>查看"预约指南"</view>
+</view>

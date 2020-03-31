@@ -1,0 +1,9 @@
+<template name="more-loading">
+    <view class="m-loading">
+        <view class="square square1"></view>
+        <view class="square square2"></view>
+        <view class="square square3"></view>
+        <view class="square square4"></view>
+        <text>努力加载中……</text>
+    </view>
+</template>

@@ -1,0 +1,30 @@
+
+.course-item{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 20rpx;
+    background: #FFF;
+}
+
+.course-item .img{
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.course-item .img image{
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.course-item .content{}
+
+.course-item .content .title{}
+
+.course-item .content .price{}
+
+.course-item .content .price .currentPrice{}
+
+.course-item .content .price .oldPrice{}
+
+.course-item .content .scope{}

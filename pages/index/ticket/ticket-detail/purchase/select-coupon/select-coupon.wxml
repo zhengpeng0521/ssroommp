@@ -1,0 +1,59 @@
+<view class="container">
+
+    <view class="top">
+        <text>不使用优惠券</text>
+        <switch class="switch-coupon" bindchange="onChangeState"></switch>
+    </view>
+
+    <view wx:for="{{canUseCouponArr}}" wx:key="*this" class="cupon-list">
+        <view class="border"></view>
+        <view class="coupon">
+            <view class="cupon-left">
+                <view class="content">
+                    <text class="left-text1">￥</text>
+                    <text class="left-text2">{{item.integerPrice}}<text wx:if="{{item.decimalsPrice != null}}" class="child">.{{item.decimalsPrice}}</text></text>
+                </view>
+            </view>
+            <view class="cupon-right">
+                <text class="right-text1">{{item.title}}</text>
+                <text class="right-text2">{{item.typeName}}</text>
+                <text class="right-text3">有效期至{{item.endDate}}</text>
+            </view>
+            <view class="select" catchtap="onSeletCoupon" data-index="{{index}}">
+                <image class="select-icon" wx:if="{{selectedCoupon === index}}" src="/images/icon/gouxuan-green.png"></image>
+                <image class="select-icon" wx:else src="/images/icon/gouxuan-gray.png"></image>
+            </view>
+            <view class="circle1"></view>
+            <view class="circle2"></view>
+        </view>
+    </view>
+
+    <view wx:for="{{otherCouponArr}}" wx:key="*this" class="cupon-list">
+        <view class="border"></view>
+        <view class="coupon">
+            <view class="cupon-left">
+                <view class="content">
+                    <text class="left-text1-unuse">￥</text>
+                    <text class="left-text2-unuse">{{item.integerPrice}}<text wx:if="{{item.decimalsPrice != null}}" class="child-unuse">.{{item.decimalsPrice}}</text></text>
+                </view>
+            </view>
+            <view class="cupon-right">
+                <text class="right-text1-unuse">{{item.title}}</text>
+                <text class="right-text2-unuse">{{item.typeName}}</text>
+                <text class="right-text3-unuse">有效期至{{item.endDate}}</text>
+            </view>
+            <view class="select-unuse" catchtap="onSeletCoupon" data-index="{{index}}">
+            </view>
+            <view class="circle1"></view>
+            <view class="circle2"></view>
+        </view>
+    </view>
+
+    <view class="empty" wx:if="{{canUseCouponArr[0] == null && otherCouponArr[0] == null}}">
+        <image class="empty-img" src="/images/bg/zhanweitu.png"></image>
+        <view class="empty-text">
+            暂无优惠券
+        </view>
+    </view>
+
+</view>

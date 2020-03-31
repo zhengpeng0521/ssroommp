@@ -1,0 +1,95 @@
+/* pages/mine/common-problems/common-problems.wxss */
+
+.list-container {
+  padding-top: 20rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  padding: 40rpx 20rpx;
+  border-bottom: 2rpx solid #eee;
+  background-color: #fff;
+}
+
+.list-item {
+  border-bottom: 2rpx solid #eee;
+  background-color: #fff;
+  padding: 40rpx 20rpx;
+}
+
+.item-title {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-title .txt {
+  color: #333;
+}
+
+.item-results {
+  color: #999;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  height: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.item-results.slide {
+  padding-top: 40rpx;
+  height: auto;
+}
+
+.iconfont.slide {
+  transform: rotate(180deg);
+}
+
+.bottom-btn {
+  margin-top: 120rpx;
+  padding-bottom: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-btn button {
+  width: 324rpx;
+  height: 94rpx;
+  /* padding-top: 8rpx; */
+  border-radius: 47rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bottom-btn button text {
+  display: block;
+  line-height: 1;
+}
+
+.btn-txt-1 {
+  font-size: 36rpx;
+}
+
+.btn-txt-2 {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.btn-1 {
+  border: 2rpx solid #ff9436;
+  background-color: #fff;
+}
+
+.btn-2 {
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+}
+
+.btn-1 .btn-txt-1, .btn-1 .btn-txt-2 {
+  color: #ff9436;
+}
+
+.btn-2 .btn-txt-1, .btn-2 .btn-txt-2 {
+  color: #fff;
+}

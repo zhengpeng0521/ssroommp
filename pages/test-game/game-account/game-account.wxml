@@ -1,0 +1,11 @@
+<!--pages/test-game/game-account/game-account.wxml-->
+<view class="header">
+  <image class="hd-hb" src="https://img.ishanshan.com/gimg/n/20200120/7dda0cc1df5a2655c3dfb4931631cd64" >
+      <image class="avatar" src="{{result.avatar}}" />
+    <view class="account">{{result.redAmount}}元</view>
+    <view class="text">{{result.redComment}}</view>
+  </image>
+</view>
+<view class="foot" bindtap="toAnswerRecord">
+  <image class="view-sq" src="/images/test-game/3_but_cksq.png" />
+</view>

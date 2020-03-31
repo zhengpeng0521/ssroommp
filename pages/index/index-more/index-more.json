@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "RecomendLists": "/components/recommend-goods/recommend-goods",
+    "collapse-tag": "/components/collapse-tag/collapse-tag",
+    "segment":"/components/segment/segment"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "预约乐园",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

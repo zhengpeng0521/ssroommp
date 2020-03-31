@@ -1,0 +1,138 @@
+/* pages/test-game/faq/faq.wxss */
+page{
+  background:#C92538;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  margin:40rpx 0;
+}
+.g-btn{
+  width:170rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  font-size:28rpx;
+  text-align: center;
+  background:rgba(231,49,59,.6);
+  font-weight:500;
+  color:rgba(254,237,202,1);
+  background-clip:text;
+}
+.lf{
+  border-radius:0px 30rpx 30rpx 0px;
+}
+.rt{
+  border-radius:200rpx 0px 0px 200rpx;
+}
+
+.banner{
+  margin:0 20rpx;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width:700rpx;
+  height:296rpx;
+}
+.info{
+  display: flex;
+  padding:60rpx 120rpx;
+}
+.user{
+  width: 80rpx;
+  height: 80rpx;
+}
+.user image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border:3rpx solid #FFDEB3;
+}
+.center{
+  flex: 1;
+  width:160rpx;
+  height:46rpx;
+  font-size:40rpx;
+  color:rgba(255,222,179,1);
+  line-height:46rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.center text{
+font-size:60rpx;
+font-weight: bold;
+color:rgba(254,212,95,1);
+line-height:68rpx;
+}
+
+.btn-play{
+  box-sizing: border-box;
+  width:200rpx;
+  height:80rpx;
+  line-height: 70rpx;
+  font-weight: bold;
+  background:rgba(71,186,187,1);
+  box-shadow:0px 4rpx 14rpx 0px rgba(108,0,0,0.5),6rpx 5rpx 6rpx 0px rgba(255,255,255,0.5),-4rpx 0rpx 6rpx 0px rgba(9,120,122,1);
+  border-radius:62rpx;
+  border:6rpx solid rgba(254,221,179,1);
+  font-size:32rpx;
+  color:rgba(255,227,208,1);
+  text-shadow:0px 2rpx 4rpx rgba(0,0,0,0.5);
+  margin:0;
+}
+.card{
+  box-sizing: border-box;
+  padding:30rpx;
+  margin:40rpx auto;
+  width:630rpx;
+  min-height:454rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx;
+  border:8rpx solid rgba(254,221,179,1);
+}
+.card-hd{
+  border-bottom: 1px solid #eee;
+  padding-bottom:20rpx;
+}
+.hd-row{
+  display: flex;
+  justify-content: space-between;
+  font-size:24rpx;
+}
+.result-label{
+  font-size:24rpx;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+  line-height:34rpx;
+}
+.list-item {
+  border-bottom: 2rpx solid #eee;
+  background-color: #fff;
+  padding: 40rpx 20rpx;
+}
+
+.item-title {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-title .txt {
+  color: #333;
+}
+
+.item-results {
+  color: #999;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  height: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.item-results.slide {
+  padding-top: 40rpx;
+  height: auto;
+}
+
+.iconfont.slide {
+  transform: rotate(180deg);
+}

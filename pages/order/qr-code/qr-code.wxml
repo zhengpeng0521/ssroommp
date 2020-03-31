@@ -1,0 +1,59 @@
+<import src="/components/enter-loading/enter-loading.wxml" />
+
+
+<view wx:if="{{isLoading}}">
+    <template is="enter-loading" />
+</view>
+
+
+<view wx:else class="container">
+
+    <view class="qr-container">
+
+        <view class="qr-head">
+            <image class="head-img" src="{{ticketData.cover}}"></image>
+            <view class="head-content">
+                <text class="head-content-title">{{ticketData.title}}</text>
+                <view>适用人群：
+                    <text>{{ticketData.intro || ''}}</text>
+                </view>
+                <view>适用游乐园：
+                    <text>{{ticketData.fitShopName}}</text>
+                </view>
+            </view>
+        </view>
+
+        <view wx:if="{{currentQrCode.status === '1'}}" class="qr-main-used">
+            <view class="qr-number">核销码{{qrCodeCount === 1 ? '' : currentQrCodeIndex + 1}}：
+                <text>{{currentQrCode.verificationCode}}
+                    <text class="line"></text>
+                </text>
+            </view>
+            <view class="img">
+                <image class="qr-img" src="{{currentQrCode.verificationImg}}"></image>
+                <image class="used-img" src="/images/icon/yishiyong.png"></image>
+            </view>
+            <view class="main-btn-left" data-left="{{true}}" catchtap="changeQrCode"></view>
+            <view class="main-btn-right"  catchtap="changeQrCode"></view>
+        </view>
+
+
+        <view wx:else class="qr-main">
+            <view class="qr-number">核销码{{qrCodeCount === 1 ? '' : currentQrCodeIndex + 1}}：
+                <text>{{currentQrCode.verificationCode}}</text>
+            </view>
+            <view class="qr-img">
+                <canvas style="width: 400rpx;height: 400rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+            </view>
+            <view class="main-btn-left" data-left="{{true}}" catchtap="changeQrCode"></view>
+            <view class="main-btn-right" catchtap="changeQrCode"></view>
+        </view>
+
+        <view class="qr-footer">
+            <text>共{{qrCodeCount}}个二维码</text>
+        </view>
+
+    </view>
+
+
+</view>

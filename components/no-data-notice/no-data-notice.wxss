@@ -1,0 +1,24 @@
+/* components/no-data-notice/no-data-notice.wxss */
+
+.no-data-layout {
+  text-align: center;
+  margin-top: 160rpx;
+}
+
+.no-data-img {
+  width: 246rpx;
+  height: 246rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.no-data-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.no-data-txt {
+  color: #999;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}

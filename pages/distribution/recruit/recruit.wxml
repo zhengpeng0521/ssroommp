@@ -1,0 +1,26 @@
+<!-- pages/distribution/recruit/recruit.wxml -->
+<view class="">
+  <image class="recruit-img" src="http://img.ishanshan.com/gimg/n/20191230/2e8999d4ba657e94b04cd6cbadf8860a" />
+  <view class="action-box" wx:if="{{!spreadLevel || spreadLevel == 0}}">
+    <view class="verification">
+      <view class="btn btn-primiary" hover-class="btn-hover" catchtap="handleClick">我要成为惠吧推广达人</view>
+    </view>
+    <view class="protocol">
+      <view class="protocol-text">一年预计可省¥6000</view>
+      <label class="checkbox-label">
+        <checkbox-group bindchange="checkboxChange">
+          <checkbox class="checkbox" value="1" />
+        </checkbox-group>
+        <view catchtap="navTo">同意<text class="protocol-tips">《惠吧推广协议》</text></view>
+      </label>
+    </view>
+  </view>
+  <block wx:else>
+    <view class="notice">
+      您已是{{spread}}
+    </view>
+    <view class="verification">
+      <view class="btn btn-primiary" hover-class="btn-hover" catchtap="navToPoster">招募海报</view>
+    </view> 
+  </block>
+</view>

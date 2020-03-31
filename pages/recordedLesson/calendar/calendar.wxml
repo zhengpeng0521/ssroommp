@@ -1,0 +1,41 @@
+<!--pages/recordedLesson/calendar/calendar.wxml-->
+<import src="/components/enter-loading/enter-loading.wxml" />
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+<view class='week'>
+  <!-- <view class="appointTip">温馨提示：节假日预约热门乐园，请至少提前1个月</view> -->
+  <view class="title">
+    选择日期
+  </view>
+  <view class='week-container'>
+    <view class='week-item {{index===0||index===weeks_ch.length-1?"color":""}}' style="width:{{dayContainerWidth}}px;height:50rpx" wx:for='{{weeks_ch}}' wx:key='index'>
+      <view>{{item}}</view>
+    </view>
+  </view>
+</view>
+<scroll-view scroll-y>
+  <calendar dateTime="{{dateTime}}" daysTime="{{daysTime}}" isBlacklist="{{isBlacklist}}" bindchose="choseDate" />
+</scroll-view>
+<view class="calendar-bottom center" hover-class="btn-hover" bindtap="confimDate">
+  <view class="calendar-btn center">确定</view>
+</view>
+
+<van-dialog
+  use-slot
+  show="{{ show }}"
+  show-cancel-button
+  bindclose="onClose"
+  bindconfirm="handleConfirm"
+  confirm-button-text="确认"
+  cancel-button-text="取消"
+>
+  <view name="title">
+    <view class="dialog-title">
+      您确认选择<text>{{dateStr}}</text>使用吗
+    </view>
+  </view>
+  <view class="dialog-content">
+    <text>确定后，无法继续更改时间</text>
+  </view>
+</van-dialog>

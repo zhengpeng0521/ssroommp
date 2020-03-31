@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "用户评论",
+  "usingComponents": {
+    "custom-icon": "/components/icon/icon"
+  }
+}

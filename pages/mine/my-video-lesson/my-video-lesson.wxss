@@ -1,0 +1,202 @@
+/* pages/mine/my-video-lesson/my-video-lesson.wxss */
+@import "/template/loading/loading";
+
+page {
+  /* padding-top: 150rpx; */
+}
+.my-video-lesson {
+  padding: 60rpx 0;
+}
+/* 顶部tab样式 */
+.head {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left:0;
+  z-index: 10;
+}
+
+.head .head-item {
+  width: 234rpx;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.head .head-item .item-content {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+.head .head-item .head-green-line {
+  width: 90rpx;
+  height: 8rpx;
+  background: #ff9436;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -46rpx;
+}
+
+.head .head-item .item-content .head-badge {
+  min-width: 32rpx;
+  height: calc(width);
+  border-radius: 50%;
+  padding: 1px;
+  background: #ff7058;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 32rpx;
+  position: absolute;
+  top: -16rpx;
+  right: -16rpx;
+}
+.order-type{
+  background-color: #fff;
+  white-space: nowrap;
+  box-sizing: border-box;
+  height: 88rpx;
+  display: flex;
+}
+.top{
+  padding:30rpx 30rpx 20rpx;
+}
+.tab-wrap{
+  height:90rpx;
+  border-radius: 30rpx;
+  border:2rpx solid #eee;
+  color:#000;
+  font-size:32rpx;
+  display: flex;
+  overflow: hidden;
+}
+.tab-item:first-of-type{
+  border-right: 2rpx solid #eee;
+}
+.tab-item{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:#F7F7F7;
+  color:#666;
+}
+.tab-active{
+  background:#fff;
+  color:#333;
+}
+/* 录播课列表 */
+.video-item {
+  margin: 0 30rpx 30rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow:0px 0px 4px 3px rgba(0,0,0,0.05);
+}
+.video-item .lesson-img {
+  width: 100%;
+  height: 348rpx;
+}
+.video-item .content {
+  margin-top: 10rpx;
+  padding: 0 20rpx;
+}
+.video-item .title {
+  font-size: 28rpx;
+  color: #333;
+  line-height:40rpx;
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.title .video-icon {
+  margin-right: 10rpx;
+}
+.title .video-icon image{
+  width: 80rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.title .video-name{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 550rpx;
+}
+.video-item .bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30rpx;
+}
+.video-item .bottom .bottom-info .name {
+  font-size: 22rpx;
+  color: #999;
+  margin-bottom: 14rpx;
+}
+.video-item .bottom .bottom-info .name:last-child {
+  margin-bottom: 0;
+}
+.video-item .bottom .bottom-info .name text{
+  font-size: 22rpx;
+  color: #999;
+}
+.video-item .bottom .bottom-info .name .video-num {
+  margin-right: 14rpx;
+}
+.video-item .bottom .player {
+  margin-right: 10rpx;
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 28rpx;
+}
+.video-item .player image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.video-item .bottom .player text {
+  color: #333;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+/* 空提示 */
+.empty-block {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.empty-block .empty-img {
+  width: 244rpx;
+  height: 244rpx;
+  margin: 0 auto 20rpx;
+}
+
+.empty-block .empty-text {
+  font-size: 24rpx;
+  color: #888;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.empty-block .empty-text {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #888;
+}

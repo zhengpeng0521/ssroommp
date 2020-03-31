@@ -1,0 +1,9 @@
+<!-- pages/mine/my-collections/my-collections.wxml -->
+<import src="/template/loading/loading" />
+<import src="/template/member-goods/member-goods" />
+<view class="my-collection" wx:if="{{nocollections}}">
+  <image src="/images/bg/no-city.png" mode="aspectFill" class="no-collect-img" />
+</view>
+<view wx:else class='collection-list'>
+  <template is="member-goods" data="{{recommendData: list,btnTxt:btnTxt}}"></template>
+</view>

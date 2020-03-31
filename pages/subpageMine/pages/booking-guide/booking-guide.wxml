@@ -1,0 +1,7 @@
+<!--pages/mine/booking-guide/booking-guide.wxml-->
+<view>
+  <image mode="aspectFit" src="http://img.ishanshan.com/gimg/n/20200312/0d7a3851e4923c0413e4241484b72463?p=image/format,jpg/quality,q_50"></image>
+</view>
+<view class="bottom" wx:if="{{showBtn}}">
+  <view class="bottom-btn" bindtap="backToIndex">返回首页</view>
+</view>

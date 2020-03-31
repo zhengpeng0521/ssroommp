@@ -1,0 +1,52 @@
+/* components/collect-pop/collect-pop.wxss */
+
+.collect-pop {
+  position: fixed;
+  top: 20rpx;
+  z-index: 1111;
+  right: 70rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  /* box-shadow: 0rpx 0rpx 2rpx  #333; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collect-pop::after {
+  position: absolute;
+  top: -30rpx;
+  right: 60rpx;
+  content: '';
+  border-top: 20rpx solid transparent;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 20rpx solid #fff;
+}
+
+.collect-pop .text-item {
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  letter-spacing: 2rpx;
+}
+
+.collect-pop .point {
+  display: inline-block;
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.collect-pop .point.center {
+  width: 11rpx;
+  height: 11rpx;
+  margin: 0 2rpx 0;
+}
+
+.close text {
+  font-size: 40rpx;
+  margin-left: 20rpx;
+}

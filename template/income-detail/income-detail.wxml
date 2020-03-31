@@ -1,0 +1,69 @@
+<template name="income-detail">
+  <view class='income-content-list' wx:for='{{data}}' wx:key='{{item.id}}'>
+    <view class='item' wx:if='{{!item.inviter}}'>
+      <view class='item-header'>
+        <view class='user-mess'>
+          <image src='{{item.buyerAvatar}}'></image>
+          <text class='name'>{{item.buyerName}}(<text wx:if='{{item.buyerLevel ==="0"}}'>会员</text>
+          <text wx:if='{{item.buyerLevel ==="1"}}'>掌柜</text>
+          <text wx:if='{{item.buyerLevel ==="2"}}'>主管</text>
+          <text wx:if='{{item.buyerLevel ==="3"}}'>经理</text>)</text>
+        </view>
+        <view class='state'>
+          <text wx:if='{{item.orderStatus==="0"}}'>待支付</text>
+          <text wx:if='{{item.orderStatus==="1"}}'>待核销</text>
+          <text wx:if='{{item.orderStatus==="2"}}'>已完成</text>
+          <text wx:if='{{item.orderStatus==="3"}}'>退款中</text>
+          <text wx:if='{{item.orderStatus==="4"}}'>已退款</text>
+        </view>
+      </view>
+      <view class='item-body'>
+        <text class='action'>购买{{item.goodsName}}</text>
+        <text class='date'>{{item.obtainTime}}</text>
+      </view>
+      <view class='item-footer'>
+        <view class='flex'>
+          <image src='/images/icon/trade-icon-1.png'></image>
+          <text class=''>商品价格{{item.orderTotalAmount}}元</text>
+        </view>
+        <view class='flex'>
+          <image src='/images/icon/trade-icon-2.png'></image>
+          <text class=''>实付{{item.orderAmount}}元</text>
+        </view>
+        <view class='flex'>
+          <image src='/images/icon/trade-icon-3.png'></image>
+          <text class=''>收益{{item.benefit}}元</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='item' wx:if='{{item.inviter}}'>
+      <view class='item-header'>
+        <view class='user-mess'>
+          <image src='{{item.inviterAvatar}}'></image>
+          <text class='name'>{{item.inviterName}}(掌柜)</text>
+        </view>
+        <view class='state'>
+          <text wx:if='{{item.orderStatus==="0"}}'>待支付</text>
+          <text wx:if='{{item.orderStatus==="1"}}'>待核销</text>
+          <text wx:if='{{item.orderStatus==="2"}}'>已完成</text>
+          <text wx:if='{{item.orderStatus==="3"}}'>退款中</text>
+          <text wx:if='{{item.orderStatus==="4"}}'>已退款</text>
+        </view>
+      </view>
+      <view class='item-body'>
+        <text class='action'>推荐{{item.buyerName}},成为掌柜
+        <!-- <text wx:if='{{item.buyerLevel ==="1"}}'>掌柜</text>
+        <text wx:if='{{item.buyerLevel ==="2"}}'>主管</text>
+        <text wx:if='{{item.buyerLevel ==="3"}}'>经理</text> -->
+        </text>
+      </view>
+      <view class='item-footer'>
+        <view class='flex'>
+          <image src='/images/icon/trade-icon-3.png'></image>
+          <text class=''>获取培训奖励{{item.benefit}}元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

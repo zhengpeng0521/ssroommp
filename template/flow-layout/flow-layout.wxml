@@ -1,0 +1,32 @@
+<template name="list-item-theme_album">
+  
+    <view wx:for="{{render_list}}" wx:key="{{item}}" class="list-item" id="card-{{item}}">
+      <navigator url="/pages/index/ticket/ticket-detail/comment/detail/detail?id={{content_list[item].evaluateId}}">
+        <view class="list-box is-expand" data-card-id="{{content_list[item].evaluateId}}">
+          <view class="list-box_content">
+            <!-- <template is="images-viewer" data="{{images:content_list[item].imgs,_imageFillMode}}"></template> -->
+            <view class="media-previewer" wx:if="{{ !!content_list[item].evaluateImgs && !!content_list[item].evaluateImgs.length}}">
+              <image  src="{{content_list[item].evaluateImgs[0]}}?p=image/format,jpg/quality,q_95/resize,w_558" mode="widthFix"></image>
+            </view>
+          </view>
+          <view class="user-area">
+            <view class="content">{{content_list[item].content}}</view>
+            <view class="user-info">
+              <view class="user-avatar-wrap">
+                <image class="user-avatar" src="{{content_list[item].custAvatar}}" />
+              </view>
+              <view class="user-location">
+                <view class="user-name">{{content_list[item].custNickName}}</view>
+                <view class="user-desc">{{content_list[item].goodsName}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+</template>
+<!-- <template name="images-viewer">
+  <view wx:if="{{ !!images && !!images.length}}" class="media-previewer">
+    <image wx:for="{{ images }}" wx:key="{{images}}" src="{{item}}" mode="{{_imageFillMode}}" data-images="{{images}}" data-current-image="{{item}}" catchtap='_imagePreview'></image>
+  </view>
+</template> -->

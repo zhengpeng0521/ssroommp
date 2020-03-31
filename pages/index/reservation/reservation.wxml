@@ -1,0 +1,37 @@
+<!--pages/index/reservation/reservation.wxml-->
+<Carousel swiperList='{{imgsData}}' />
+<view class="reservation-top">
+  <view class="reservation-goods-title ellipsis">{{spuName}}</view>
+  <view class="reservation-shop-add">
+    <text>{{shopAddress}}</text>
+    <text>{{shopName}}</text>
+  </view>
+</view>
+<view class="reservation-bottom">
+  <view class="reservation-time">
+    <text class="reservation-time-title">您预约的时间</text>
+    <text class="reservation-time-num" bindtap="backToChoseDate">{{chosenDate}}<text class="iconfont iconright"></text></text>
+  </view>
+  <view class="refund-rules">
+    <text class="refund-rules-title">退款规则</text>
+    <text class="refund-rules-details" disabled="true">{{refundRule}}</text>
+  </view>
+  <view bindtap="reservationPay" class="reservation-btn submit-btn flex-center" hover-class="btn-hover">
+    <view>￥{{depositAmount}} 交保证金</view>
+  </view>
+</view>
+<!-- <van-dialog id="van-dialog" /> -->
+<van-dialog
+  use-slot
+  title="提示"
+  show="{{ show }}"
+  show-cancel-button
+  bindclose="onClose"
+  bindconfirm="handleConfirm"
+  confirm-button-text="继续预约"
+  cancel-button-text="我再想想"
+>
+  <view class="dialog-content">
+    <text wx:for="{{ dialogRefundRule }}" wx:key="index">{{item}}</text>
+  </view>
+</van-dialog>

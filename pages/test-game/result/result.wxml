@@ -1,0 +1,85 @@
+<!--pages/test-game/result/result.wxml-->
+<wxs module='goodsTemp'>
+  var testFuc = function(e) {
+    var arr = {
+       '0':'待支付',
+       '1':'活动中',
+       '2':'领了部分',
+       '3':'已领完',
+       '9':'已过期'
+    };
+    return arr[e];
+  }
+  module.exports.testFuc = testFuc
+</wxs>
+<view class="wrap">
+  <view class="top">
+    <view class="g-btn lf" bindtap="toIndex">
+      返回首页
+    </view>
+    <view class="g-btn rt" bindtap="toQuestion">
+      常见问题
+    </view>
+  </view>
+  <view class="banner" style="background-image:url('https://img.ishanshan.com/gimg/n/20200119/1f5c9490b3eb5e7053ce9f4b781f4b78')">
+    <view class="info">
+      <view class="user">
+        <image class="user-img" src="{{results.mineAvatar}}" />
+      </view>
+      <view class="center">
+        <view class="avatar">
+          你答对了
+        </view>
+        <view class="">
+          <text>{{results.answerCount}}</text> 道题
+        </view>
+      </view>
+      <view class="user">
+        <image class="user-img" src="{{results.makerAvatar}}" mode="aspectFill"  />
+      </view>
+    </view>
+  </view>
+  <view class="action">
+    <button class="btn-play" bindtap="startgame">
+      我也要玩
+    </button>
+    <button class="btn-withdraw" bindtap="toWithdraw">
+      我要提现
+    </button>
+  </view>
+  <view class="card">
+    <view class="card-hd">
+      <view class="hd-row">
+        <view class="result-label">质检结果</view>
+        <view class="result-value red">{{goodsTemp.testFuc(results.topicStatus+'')}}</view>
+      </view>
+      <view class="hd-row font-gray">
+        <view class="result-label font-gray">答对{{results.minAnswerCount}}题可瓜分红包~</view>
+        <view class="result-value">已领取{{results.winningNumber}}/{{results.awardNumber}}个~</view>
+      </view>
+    </view>
+    <view class="card-bd">
+      <view class="record" wx:for="{{JoinerList}}" wx:key="index">
+        <image class="media" src="{{item.avatar}}" />
+        <view class="item">
+          <view class="item-row">
+            <view class="label nickname">
+              {{item.nickname}}
+            </view>
+            <view class="value money">
+              {{item.awardAmount}}元
+            </view>
+          </view>
+          <view class="item-row">
+            <view class="label">
+              {{item.answerComment}}
+            </view>
+            <view class="value">
+              答对{{item.answerCount}}题
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--components/rate/rate.wxml-->
+<view class="rate extend-class" bindtouchmove="onTouchMove">
+  <view class="rate-item" wx:for="{{score}}" wx:key="index">
+    <custom-icon 
+      class="extend-class rate-icon"
+      data-score="{{ index }}" 
+      icon-class="custom-icon" 
+      color="{{index + 1 <= innerValue ? color : voidColor}}"
+      bindtap="onSelect"
+       />
+  </view>
+</view>

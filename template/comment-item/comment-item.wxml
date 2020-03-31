@@ -1,0 +1,23 @@
+<template name="comment-item">
+  <navigator url="/pages/index/ticket/ticket-detail/comment/detail/detail?id={{item.evaluateId}}" hover-class="list-hover" wx:for="{{commentData}}" wx:key="{{index}}">
+    <view class="comment-item">
+      <view class="comment-info">
+        <image class="comment-avatar" src="{{item.custAvatar}}" />
+        <view class="comment-user {{timeFlag?'':'comment-user-center'}}">
+          <text class="comment-name">{{item.custNickName}}</text>
+          <text wx:if="{{timeFlag}}" class="comment-time">{{item.createTime}}</text>
+        </view>
+        <view class="comment-more">
+          查看评论
+          <custom-icon name="gengduo" icon-class="more-icon" />
+        </view>
+      </view>
+      <view class="comment-body">
+        <text class="comment-content">{{item.content}}</text>
+        <view class="comment-image">
+          <image wx:for="{{item.imgs}}" wx:for-index="idx" wx:key="{{idx}}" mode="aspectFill" src="{{item}}?p=image/format,jpg/quality,q_90/resize,m_fill,h_220,w_220" />
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>

@@ -1,0 +1,43 @@
+<!--pages/trade/withdraw/withdraw.wxml-->
+<import src="/template/card-bg/card-bg" />
+<view class='withdraw-layout'>
+  <template is="card-bg"></template>
+  <view class='withdraw-detail'>
+    <text class='title'>可提现 (元）</text>
+    <text class='price'>{{freeBenefit}}</text>
+    <text class='detail'>还有{{frozenBenefit}}元金额未核销（未核销的订单不可提现）</text>
+  </view>
+</view>
+<navigator class='withdraw-navigator' hover-class='no' url='/pages/trade/withdraw-record/withdraw-record'>
+  <view class='navigator-text'>
+    <!-- <image src=''></image> -->
+    提现记录
+  </view>
+  <text class='iconfont iconright'></text>
+</navigator>
+
+<view class='withdraw-btn-layout'>
+  <button class='withdraw-btn' bindtap='showWithdrawDialog'>提现</button>
+</view>
+<!-- <view class='withdraw-rules'>提现规则</view> -->
+<view class='lay-out' hidden='{{!withdrawDialogBool}}' bindtap='closeWithdrawDialog'></view>
+<view class='withdraw-dialog {{withdrawDialogBool?"show":""}}'>
+  <view class='withdraw-dialog-top'>
+    <text class='withdraw-dialog-title'>提现金额(元)</text>
+    <text class='withdraw-dialog-close' bindtap='closeWithdrawDialog'>X</text>
+  </view>
+  <view class='withdraw-dialog-body'>
+    <view class='input-box'>
+      <input placeholder='请输入金额' type='digit' value='{{amount}}' bindinput="changeInputVal"></input>
+      <text class='yuan'>￥</text>
+      <text class='all' bindtap='allWithDraw'>全部</text>
+    </view>
+    <!-- <view class='withdraw-handling-fee'>
+      提现手续费：¥1.00
+    </view> -->
+    <view class='withdraw-dialog-btn' bindtap='withDrawAction'>
+      提现
+    </view>
+    <!-- <view class='withdraw-times'>本月还剩余1次提现操作</view> -->
+  </view>
+</view>

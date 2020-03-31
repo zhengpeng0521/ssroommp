@@ -1,0 +1,131 @@
+/* pages/trade/my-team/my-team.wxss */
+@import "/template/card-bg/card-bg";
+
+.card-bg-layout {
+  border-radius: 0;
+  height: 220rpx;
+}
+
+.my-team-header {
+  position: relative;
+}
+
+.my-team-header .user-detail {
+  position: absolute;
+  top: 60rpx;
+  left: 36rpx;
+  z-index: 30;
+}
+
+.user-detail .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+
+.user-detail .avatar image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-detail .user-text {
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.my-team-content {
+  padding: 0 20rpx;
+  margin-top: 40rpx;
+}
+
+.my-team-first {
+}
+
+.my-team-container { 
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.my-team-container .first {
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.my-team-container .first image {
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+  margin-right: 12rpx;
+}
+
+.my-team-container .first .level-title, .my-team-container .first .level-num {
+  font-size: 28rpx;
+}
+
+.my-team-container .right-arrow {
+  font-size: 24rpx;
+  float: right;
+  position: relative;
+  top: 10rpx
+}
+.my-team-container .right-arrow.active{
+  transform-origin: center center;
+  transform: rotate(180deg);
+}
+.my-team-container .user-detail {
+  margin-left: 20rpx;
+  display: inline-block;
+}
+
+.my-team-container .user-detail image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.inner-item {
+  padding-left: 80rpx;
+  position: relative;
+  padding-top: 30rpx;
+  border-top: 1px solid #eee;
+  display: none;
+}
+.inner-item.active{
+  display: block;
+}
+.inner-user-img {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 30rpx;
+  border-radius: 50%;
+}
+
+.inner-content-detail {
+  
+}
+
+.inner-user-text {
+  font-size: 24rpx;
+}
+
+.inner-user-text .name {
+  color: #666;
+}
+
+.inner-user-text .inner-content-detail {
+  color: #999;
+}

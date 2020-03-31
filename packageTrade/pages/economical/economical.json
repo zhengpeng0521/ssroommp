@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "今日省钱",
+  "usingComponents": {
+    "no-data":"../../../components/no-data-notice/no-data-notice"
+  }
+}

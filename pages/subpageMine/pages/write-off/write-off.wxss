@@ -1,0 +1,121 @@
+/* pages/mine/write-off/write-off.wxss */
+page{
+  background: #fff;
+}
+.write-off-layout {
+}
+
+.write-off-layout image {
+  width: 100%;
+}
+
+.list-container {
+  margin-top: 30rpx;
+  padding: 0 20rpx;
+}
+
+.list-container .date {
+  color: #fff;
+  background-color: #ccc;
+  font-size: 28rpx;
+  padding: 8rpx 45rpx 8rpx 21rpx;
+  border-radius: 57rpx;
+  position: relative;
+  width: max-content;
+}
+
+/* .list-container .date::after {
+  position: absolute;
+  top: -10rpx;
+  left: -10rpx;
+  right: -10rpx;
+  bottom: -10rpx;
+  content: '';
+} */
+
+.list-container .date .iconfont {
+  position: absolute;
+  top: 18rpx;
+  right: 15rpx;
+  color: #fff;
+  font-size: 20rpx;
+}
+
+.list-mess {
+  display: flex;
+  justify-content: left;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.mess-bar {
+  width: 16rpx;
+  height: 76rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.mess-text .text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.list {
+  margin-top: 30rpx;
+}
+
+.list .list-item {
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #eee;
+}
+
+.list-item .item-date {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.item-goddsName, .item-username, .item-opratorName {
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.list-bottom {
+  text-align: center;
+  color: #999;
+  font-size: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.tab{
+  display: flex;
+  justify-content: center;
+  border-bottom:2rpx solid #eee;
+}
+.tab-item{
+  position: relative;
+  color:#999;
+  font-size:28rpx;
+  height:90rpx;
+  margin:0 60rpx;
+  display: flex;
+  align-items: center;
+}
+.tab-item.active{
+  color:#333;
+  font-weight: 600;
+}
+.tab-item.active:after{
+  position: absolute;
+  left:50%;
+  bottom:0;
+  display: inline-block;
+  content:' ';
+  width:80rpx;
+  height:8rpx;
+  background:rgba(255,148,54,1);
+  border-radius:4rpx;
+  transform: translateX(-50%);
+}

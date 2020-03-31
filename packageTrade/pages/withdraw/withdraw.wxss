@@ -1,0 +1,171 @@
+/* pages/trade/withdraw/withdraw.wxss */
+@import "/template/card-bg/card-bg";
+
+.withdraw-layout {
+  position: relative;
+}
+
+.card-bg-layout {
+  border-radius: 0;
+}
+
+.withdraw-detail {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 30rpx;
+  z-index: 13;
+}
+
+.withdraw-detail text {
+  color: #fff;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.withdraw-detail .title {
+  font-size: 28rpx;
+}
+
+.withdraw-detail .price {
+  font-size: 80rpx;
+  font-weight: 500;
+}
+
+.withdraw-detail .detail {
+  font-size: 28rpx;
+}
+
+.withdraw-navigator {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.navigator-text text {
+  font-size: 28rpx;
+}
+
+.withdraw-btn-layout {
+  padding: 0 40rpx;
+  position: fixed;
+  bottom: 120rpx;
+}
+
+.withdraw-btn {
+  width: 670rpx;
+  height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 48rpx;
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.withdraw-rules {
+  color: #666;
+  font-size: 28rpx;
+  position: fixed;
+  bottom: 60rpx;
+  text-align: center;
+  width: 100%;
+}
+
+.withdraw-dialog {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 474rpx;
+  position: fixed;
+  left: 0;
+  z-index: 21;
+  bottom: -474rpx;
+  transition: all 0.6s;
+}
+
+.withdraw-dialog-top {
+  height: 100rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  border-bottom: 2rpx solid #eee;
+  text-align: center;
+  position: relative;
+}
+
+.withdraw-dialog-title {
+  color: #333;
+  font-size: 32rpx;
+}
+
+.withdraw-dialog-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 100rpx;
+  height: 100%;
+}
+
+.withdraw-dialog-body {
+  padding: 0 24rpx;
+}
+
+.withdraw-dialog.show {
+  bottom: 0;
+}
+
+.withdraw-dialog-body {
+  padding: 0 70rpx;
+}
+
+.withdraw-dialog-body .input-box {
+  position: relative;
+  height: 120rpx;
+  padding: 0 30rpx;
+  border-bottom: 2rpx solid #ddd;
+  margin-bottom: 10rpx;
+}
+
+.withdraw-dialog-body input {
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  font-size: 40rpx;
+  padding: 0 50rpx;
+  height: 100rpx;
+}
+
+.withdraw-dialog-body .yuan {
+  font-size: 50rpx;
+  position: absolute;
+  top: 50rpx;
+  left: 0;
+}
+
+.withdraw-dialog-body .all {
+  color: #ff9436;
+  font-size: 28rpx;
+  position: absolute;
+  top: 60rpx;
+  right: 10rpx;
+}
+.withdraw-handling-fee{
+  font-size: 28rpx;
+  color: #666;
+}
+.withdraw-dialog-btn {
+  margin-top: 40rpx;
+  height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 48rpx;
+  text-align: center;
+  line-height: 94rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+.withdraw-times{
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}

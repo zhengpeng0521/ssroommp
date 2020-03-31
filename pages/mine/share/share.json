@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "v-tabs":"/components/tabs/tabs",
+    "v-tab": "/components/tabs/tab/tab",
+    "v-popup":"/components/popup/popup",
+    "van-popup":"/components/vant/popup/index",
+    "v-navbar":"/components/navigation-bar/navigation-bar"
+  },
+  "navigationBarTitleText": "分享"
+}

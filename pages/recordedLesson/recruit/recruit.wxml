@@ -1,0 +1,25 @@
+<!-- pages/recordedLesson/recruit/recruit.wxml -->
+<view class="">
+  <image class="recruit-img" src="http://img.ishanshan.com/gimg/n/20200312/fad8a3d46882b34c10c7147484ddb15c" />
+  <view class="action-box" wx:if="{{!spreadLevel || spreadLevel == 0}}">
+    <view class="verification">
+      <view class="btn btn-primiary" hover-class="btn-hover" catchtap="handleClick">我要成为闪闪课堂推广达人</view>
+    </view>
+    <view class="protocol">
+      <label class="checkbox-label">
+        <checkbox-group bindchange="checkboxChange">
+          <checkbox class="checkbox" value="1" />
+        </checkbox-group>
+        <view catchtap="navTo">同意<text class="protocol-tips">《闪闪课堂推广协议》</text></view>
+      </label>
+    </view>
+  </view>
+  <block wx:else>
+    <view class="notice">
+      您已是{{spread}}
+    </view>
+    <view class="verification">
+      <view class="btn btn-primiary" hover-class="btn-hover" catchtap="navToPoster">招募海报</view>
+    </view> 
+  </block>
+</view>

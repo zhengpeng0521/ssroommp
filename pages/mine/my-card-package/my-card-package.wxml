@@ -1,0 +1,32 @@
+<!--pages/mine/my-card-package/my-card-package.wxml-->
+<view class="my-card-package">
+  <view class="title">我的卡<text>(共{{cardNum || 0}}张)</text></view>
+  <view wx:if="{{isShow}}" class="current-card">
+    <image class="card-bg" src="{{currentCard.specialImg}}" />
+    <view class="member-mess">
+      <view class="member-title">{{currentCard.spuName}}</view>
+      <view class="expire-time">会员{{currentCard.expireTime}}到期</view>
+    </view>
+    <view class="rights">
+      <view class="rights-title">会员权益</view>
+      <view class="rights-item" wx:for='{{currentCard.rights}}' wx:for-index='innerIndex' wx:key='{{innerIndex}}' wx:for-item='inner'>
+        {{inner}}
+      </view>
+    </view>
+  </view>
+  <view class="cardList">
+    <view wx:for="{{cardList}}" wx:if="{{currentIndex != index}}" class="card-item" data-index='{{index}}' bindtap="clickCard">
+      <image class="card-bg" src="{{item.specialImg}}" />
+      <view class="member-mess">
+        <view class="member-title">{{item.spuName}}</view>
+        <view class="expire-time">会员{{item.expireTime}}到期</view>
+      </view>
+      <view class="rights">
+        <view class="rights-title">会员权益</view>
+        <view class="rights-item" wx:for='{{item.rights}}' wx:for-index='innerIndex' wx:key='{{innerIndex}}' wx:for-item='inner'>
+          {{inner}}
+        </view>
+      </view>
+    </view>
+  </view> 
+</view>

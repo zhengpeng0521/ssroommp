@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "painter": "/components/painter/painter",
+        "NavBar": "/components/nav-bar/nav-bar",
+        "BeforeShare": "/components/share-dialog/share-dialog"
+    },
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "会员卡详情",
+    "navigationStyle": "custom"
+}

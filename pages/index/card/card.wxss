@@ -1,0 +1,121 @@
+/* pages/index/card/card.wxss */
+.wrap{
+  padding:40rpx 30rpx
+}
+.coupon-item{
+  position: relative;
+  z-index: 1;
+  border-radius: 20rpx;
+  overflow: hidden;
+  color:#333;
+  height:220rpx;
+  padding:40rpx 30rpx 30rpx 40rpx;
+  box-sizing: border-box;
+  margin-bottom:30rpx;
+}
+.coupon-hd{
+  display: flex;
+}
+.coupon-info{
+  flex:1;
+  line-height: 50rpx;
+  font-weight: 500;
+  margin-bottom: 10rpx;
+}
+.coupon-info-name{
+  font-size:36rpx;
+  margin-bottom: 10rpx;
+}
+.coupon-info-desc{
+  font-size:28rpx;
+  height:50rpx;
+}
+.coupon-bd{
+  text-align: right;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.coupon-bg{
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:220rpx;
+}
+.overdue-flag{
+  position: absolute;
+  right:40rpx;
+  top:40rpx;
+  color:#666;
+}
+.overdue-img{
+  width:122rpx;
+  height:122rpx;
+}
+.ribbon {
+  position: absolute;
+  top: -6rpx;
+  left: -6rpx;
+  width: 210rpx;
+  height: 210rpx;
+  text-align: center;
+  background-color: transparent
+}
+
+.ribbon-inner {
+  position: absolute;
+  top: 32rpx;
+  left: 0;
+  display: inline-block;
+  height: 60rpx;
+  padding-right: 40rpx;
+  padding-left: 40rpx;
+  line-height: 60rpx;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: linear-gradient(322deg,rgba(255,148,54,1) 0%,rgba(255,188,58,1) 100%);
+}
+.ribbon-badge {
+  top: -4rpx;
+  left: -4rpx
+}
+
+.ribbon-badge .ribbon-inner {
+  left: -80rpx;
+  width: 100%;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
+
+.ribbon-badge.ribbon-reverse {
+  right: -4rpx;
+  left: auto
+}
+
+.ribbon-badge.ribbon-reverse .ribbon-inner {
+  right: -80rpx;
+  left: auto;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+/**
+空数据
+**/
+.empty-box{
+  padding-top:200rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.empty-image{
+  width:244rpx;
+  height:244rpx;
+}
+.empty-txt{
+  font-weight: 500;
+  margin-top:40rpx;
+  color:#999;
+  font-size:28rpx;
+}

@@ -1,0 +1,88 @@
+/* pages/index/ticket/ticket-detail/comment/detail/detail.wxss */
+@import '/components/enter-loading/enter-loading.wxss';
+page{
+  background:#fff;
+}
+.comment-wrap{
+  padding:40rpx 30rpx;
+}
+.comment-header{
+  display: flex;
+}
+.comment-avatar{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  margin-right:20rpx;
+}
+.comment-extend{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  justify-content: center;
+  font-size:29rpx;
+}
+.comment-name{
+  line-height: 1.8;
+  color:#606060;
+}
+.comment-time{
+  line-height: 1.8;
+  color:#999;
+}
+.comment-share{
+  display: flex;
+  align-items: center;
+  padding:4rpx;
+  background: none;
+}
+.icon-share{
+  color:#999;
+  font-size:36rpx;
+  line-height: 1;
+}
+.active-share .icon-share{
+  color:#FF9436;
+  transform: scale(1.05)
+}
+.comment-location{
+  display: flex;
+  color:#FF9436;
+  margin:20rpx 0;
+  align-items: center;
+}
+.icon-location{
+  margin-right:10rpx;
+  color:#FF9436;
+  font-size:30rpx;
+}
+.comment-goods{
+  font-size:28rpx;
+}
+.comment-detail-content{
+  color:#9d9d9d;
+  line-height: 40rpx;
+  font-size:28rpx;
+}
+.comment-image-item{
+  width: 100%;
+  margin-top:20rpx;
+}
+.icon-wrap{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  right:60rpx;
+  bottom:160rpx;
+  width:70rpx;
+  height:70rpx;
+  border-radius: 50%;
+  background: rgba(232,97,33,.8);
+}
+.home{
+  font-size:36rpx;
+  color:#fff;
+}

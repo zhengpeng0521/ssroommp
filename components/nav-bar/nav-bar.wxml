@@ -1,0 +1,6 @@
+<!--components/navBar/navBar.wxml-->
+<view class='nav-bar'>
+  <view class='back' bindtap='goBack'>
+    <text class='iconleft iconfont'></text>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商品评论",
+  "usingComponents": {
+    "custom-icon": "/components/icon/icon"
+  },
+  "enablePullDownRefresh":false,
+  "backgroundTextStyle":"dark"
+}

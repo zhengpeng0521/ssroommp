@@ -1,0 +1,206 @@
+@import "/components/enter-loading/enter-loading.wxss";
+
+.qr-container{
+    width: 690rpx;
+    margin: 110rpx auto auto;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #FFF;
+    border-top: 12rpx solid #54AC41;
+}
+
+.qr-container .qr-head{
+    width: 100%;
+    height: 216rpx;
+    border-bottom: 1px solid #EEE;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.qr-container .qr-head .head-img{
+    width: 136rpx;
+    height: 136rpx;
+    margin-left: 40rpx;
+}
+
+.qr-container .qr-head .head-content{
+    height: 136rpx;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.qr-container .qr-head .head-content .head-content-title{
+    font-size: 28rpx;
+    font-weight: bolder;
+    line-height: 28rpx;
+    color: #333;
+    margin-bottom: 44rpx;
+}
+
+.qr-container .qr-head .head-content view{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #999;
+    margin-bottom: 16rpx;
+}
+
+.qr-container .qr-head .head-content text text{
+    color: #666;
+}
+
+.qr-container .qr-main{
+    width: 100%;
+    height: 640rpx;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.qr-container .qr-main .qr-number{
+    margin: 81rpx auto 40rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #666;
+}
+
+.qr-container .qr-main .qr-number text{
+    font-size: 40rpx;
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 40rpx;
+    color: #54AC41;
+}
+
+.qr-container .qr-main .qr-img{
+    width: 400rpx;
+    height: 400rpx;
+    margin: 0 auto;
+}
+
+.qr-container .qr-main .main-btn-left{
+    width: 30rpx;
+    height: 30rpx;
+    color: #C7C7CC;
+    border:3rpx #C7C7CC solid;
+    border-bottom-color:transparent;
+    border-right-color:transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 350rpx;
+    left: 30rpx;
+}
+
+.qr-container .qr-main .main-btn-right{
+    width: 30rpx;
+    height: 30rpx;
+    color: #C7C7CC;
+    border:3rpx #C7C7CC solid;
+    border-top-color:transparent;
+    border-left-color:transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 350rpx;
+    right: 30rpx;
+}
+
+
+.qr-container .qr-main-used{
+    width: 100%;
+    height: 640rpx;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.qr-container .qr-main-used .qr-number{
+    margin: 81rpx auto 40rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #DDD;
+}
+
+.qr-container .qr-main-used .qr-number text{
+    font-size: 40rpx;
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 40rpx;
+    color: #DDD;
+    position: relative;
+    display: inline-block;
+}
+
+.qr-container .qr-main-used .qr-number text .line{
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: #DDD;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.qr-container .qr-main-used .img{
+    width: 400rpx;
+    height: 400rpx;
+    margin: 0 auto;
+    position: relative;
+}
+
+.qr-container .qr-main-used .img .qr-img{
+    width: 400rpx;
+    height: 400rpx;
+    opacity: 0.4;
+}
+
+.qr-container .qr-main-used .img .used-img{
+    width: 120rpx;
+    height: 90rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.qr-container .qr-main-used .main-btn-left{
+    width: 30rpx;
+    height: 30rpx;
+    color: #C7C7CC;
+    border:3rpx #C7C7CC solid;
+    border-bottom-color:transparent;
+    border-right-color:transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 350rpx;
+    left: 30rpx;
+}
+
+.qr-container .qr-main-used .main-btn-right{
+    width: 30rpx;
+    height: 30rpx;
+    color: #C7C7CC;
+    border:3rpx #C7C7CC solid;
+    border-top-color:transparent;
+    border-left-color:transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 350rpx;
+    right: 30rpx;
+}
+
+
+.qr-container  .qr-footer{
+    width: 100%;
+    height: 72rpx;
+    background: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-container .qr-foote text{
+    font-size: 24rpx;
+    color: #666;
+}

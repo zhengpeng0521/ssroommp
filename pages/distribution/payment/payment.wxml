@@ -1,0 +1,71 @@
+<!-- pages/distribution/payment/payment.wxml -->
+<view class="container">
+  <view class="head">
+    <image class="head-img" src="{{order.cover}}"></image>
+    <view class="head-content">
+      <text class="content-title">{{order.spuName}}</text>
+      <view class="content-price">
+        <text class="current-price">￥{{order.price}}</text>
+        <text class="price-del">￥{{order.oriPrice}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+    <view class="list">
+      <text class="category">数量</text>
+      <view class="num-content" style="border:none">
+        <text>1</text>
+      </view>
+    </view>
+    <view class="list">
+      <text class='category'>价格</text>
+      <text class="sum">￥{{order.price}}</text>
+    </view>
+    <view class="list" wx:if="{{user.spreadLevel>0}}">
+      <text class="category">订单完成后可赚<text class="award-price">￥{{order.selfBenefit}}</text>佣金</text>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="vipcard-block" wx:if="{{order.buyNeedAttach !== '0'}}">
+      <view class="section section-name" wx:for="{{idInfo}}">
+        <view class="section__title">{{item.fieldLabel}}</view>
+        <input class="name-input" type="{{item.vtype}}" name="{{item.fieldName}}" value="{{item.fieldName === 'name'?name:id}}" confirm-type='next' placeholder-class='placeholder-text' placeholder="{{item.fieldLabel}}" />
+      </view>
+      <view class="contact-info section" bindtap="navigateToContacts" wx:if="{{idInfo.length>0}}">
+        <text class="contact-info-title">从“常用联系人”选择</text>
+        <view class="chose-contact">
+          <text class="iconfont iconright"></text>
+        </view>
+      </view>
+      <view class="section" wx:for="{{attachInfo}}">
+        <view class="section__title">{{item.fieldLabel}}</view>
+        <input class="name-input" type="{{item.vtype}}" name="{{item.fieldName}}" value="" confirm-type='next' placeholder-class='placeholder-text' placeholder="{{item.fieldLabel}}" />
+      </view>
+    </view>
+    <view class="verification {{order.buyNeedAttach !== '0'?'has-idcard':''}}">
+      <button class="btn btn-primiary" form-type="submit" hover-class="btn-hover"><text class="btn-price">¥{{order.price}}</text>提交订单</button>
+    </view>
+    <!-- <view class="verification {{order.buyNeedAttach !== '0'?'has-idcard':''}}">
+      <view class="btn btn-primiary" form-type="submit" hover-class="btn-hover" catchtap="handleClick"><text class="btn-price">¥{{order.price}}</text>提交订单</view>
+    </view> -->
+  </form>
+</view>
+<view class='lay-out' bindtap='hidePoster' hidden='{{!confirmID}}'></view>
+<view class='poster-dialog' hidden='{{!confirmID}}'>
+  <view class="vip">
+    <view class="vip-head">您当前购买的是{{order.spuName}}</view>
+    <view class="vip-title">
+      <view class="confirm-text">请确认您的输入信息</view>
+      <view class="section section-name" wx:for="{{formArr}}">
+        <view class="section__title2">
+          <text class='confirm-label'>{{item.name}}</text>
+          <text class='confirm-content confirm-name'>{{item.val}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="footer-vip">
+      <view class="footer-btn no-card" bindtap='inputError'>输错了</view>
+      <view class="footer-btn no-card-buy" bindtap='handleConfirm'>确定</view>
+    </view>
+  </view>
+</view>

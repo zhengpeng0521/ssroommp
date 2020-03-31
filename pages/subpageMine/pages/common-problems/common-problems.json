@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "常见问题",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 20
+}

@@ -1,0 +1,38 @@
+<template name="playcard-template">
+  <view class='products-list-container'>
+    <view class='products-list'>
+      <navigator class='products-item' wx:for="{{data}}" wx:key="{{item.id}}" hover-class='no' url='../../pages/index/ticket/ticket-detail/ticket-detail?goodsId={{item.id}}&&goodsType={{item.goodsType}}'>
+        <image class='products-item-img' src='{{item.cover}}'></image>
+        <view class='products-item-detail'>
+          <view class='products-item-title'>
+            <text class='title ellipsis'>{{item.goodsName}}</text>
+            <view class='count-down'>
+              距离结束还有
+              <text>23</text>
+              天
+              <text>23</text>
+              :
+              <text>01</text>
+              :
+              <text>41</text>
+            </view>
+          </view>
+          <view class='products-item-desc ellipsis'>{{item.shopName}} | {{item.shopAdd}}</view>
+          <view class='products-item-price'>
+            <text style='fontSize:10rpx;color:#FF5100'>￥</text>
+            {{item.price}}
+            <view class='member-price'>会员价 ￥{{item.memberPrice}}</view>
+          </view>
+          <view class='products-item-count'>
+            剩余10份
+            <view class='count-range-box'>
+              <view class='count-range-line'></view>
+            </view>
+          </view>
+        </view>
+        <text class='products-item-buy'>购买</text>
+      </navigator>
+    </view>
+    <view class='nomore-data'>没有更多了...</view>
+  </view>
+</template>

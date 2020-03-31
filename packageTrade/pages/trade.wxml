@@ -1,0 +1,104 @@
+<!--pages/trade/trade.wxml-->
+<import src="../../template/enter-loading/enter-loading.wxml" />
+<import src="/template/card-bg/card-bg" />
+<view wx:if='{{enterLoading}}'>
+  <template is="enter-loading"></template>
+</view>
+<view wx:else class='user-detail {{userLevel>1?"highest-level":""}}'>
+  <template is="card-bg"></template>
+  <view class='member-detail-layout'>
+    <view class='member-detail {{userLevel>1?"highest-level":""}}'>
+      <view class='member-detail-top'>
+        <view class='user-mess'>
+          <image class='user-avatar' src="{{userInfo.avatar}}"></image>
+          <view class='user-name'>
+            <text class='user-name-txt'>{{userInfo.nickname}}</text>
+            <text class='user-id-txt'>ID:{{userInfo.custId}}</text>
+          </view>
+        </view>
+        <navigator class='user-level' hover-class="none" url='./my-rights/my-rights'>
+          <image class='user-level-img' src='../../images/icon/icon-userlevel-1.png'></image>
+          <text class='' wx:if='{{userLevel===0}}'>游客</text>
+          <text class='user-level-txt' wx:if='{{userLevel===1}}'>会员</text>
+          <text class='user-level-txt' wx:if='{{userLevel===2}}'>掌柜</text>
+          <text class='user-level-txt' wx:if='{{userLevel===3}}'>主管</text>
+          <text class='user-level-txt' wx:if='{{userLevel===4}}'>经理</text>
+          <text class='iconfont iconright'></text>
+        </navigator>
+      </view>
+      <view class='member-detail-bottom' wx:if='{{userLevel===1}}'>
+        <view style='padding:0 8rpx'>
+          <view class='progress-bar-container'>
+            <view class='progress-bar-start left-circle'></view>
+            <view class='progress-bar-start right-circle'></view>
+            <view class='progress-bar-line' style='width:{{percent}}%'>
+              <view class='progress-bar-num'>
+                <text>{{percent}}%</text>
+                <view class='progress-bar-num-point'></view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='progress-bar-desc'>
+          <text class='progress-bar-desc-left'>掌柜</text>
+          <text class='progress-bar-desc-right'>主管</text>
+        </view>
+        <view class='upgrade-rule'>
+          <view class='upgrade-rule-item' wx:for='{{upgradeRules}}' wx:key='{{item.id}}'>
+            <view class='upgrade-rule-item-point'></view>
+            {{item.text}}
+          </view>
+        </view>
+      </view>
+      <view class='member-detail-bottom' wx:if='{{userLevel>1}}'>
+        <view class='member-detail-notice'>
+          <view class='circle-one left'></view>
+          <view class='circle-one right'></view>
+          <view class='circle-two left'></view>
+          <view class='circle-two right'></view>
+          <text class='notice-text'>您已达到最高等级</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='menu-btns'>
+  <navigator url='/pages/trade/economical/economical' class='menu-item'>
+    <image class='menu-item-icon' src='../../images/icon/icon-save-money.png'></image>
+    <text class='menu-item-txt'>今日省钱</text>
+    <text class='menu-item-detail'><text class='yuan'>￥</text>{{saveMoney}}</text>
+  </navigator>
+  <navigator url='/pages/trade/income/income' class='menu-item'>
+    <image class='menu-item-icon' src='../../images/icon/icon-income.png'></image>
+    <text class='menu-item-txt'>今日收益</text>
+    <text class='menu-item-detail'><text class='yuan'>￥</text>{{earnings}}</text>
+  </navigator>
+  <view bindtap='navigateToMyTeam' class='menu-item'>
+    <image class='menu-item-icon' src='../../images/icon/icon-team.png'></image>
+    <text class='menu-item-txt'>我的团队</text>
+    <text class='menu-item-detail'>{{teamNum}}</text>
+  </view>
+  <navigator url='/pages/trade/withdraw/withdraw' class='menu-item'>
+    <image class='menu-item-icon' src='../../images/icon/icon-withdraw.png'></image>
+    <text class='menu-item-txt'>提现金额</text>
+    <text class='menu-item-detail'><text class='yuan'>￥</text>{{deposit}}</text>
+  </navigator>
+</view>
+<!-- <button bindtap='inviteDialogShow' class='invite-btn'>邀请他人成为我的团队</button>
+
+<view class='lay-out' hidden='{{!inviteDialogBool}}' bindtap='hidePoster'></view>
+<view class='poster-dialog' hidden='{{!inviteDialogBool}}'>
+  <view class='canvas-container'>
+    <canvas style='width:100%;height:100%' canvas-id='myCanvas'></canvas>
+  </view>
+  <view class='poster-btns'>
+    <button class='poster-share' open-type="share">
+      <view class='poster-btns-icon '></view>
+      <text>分享好友</text>
+    </button>
+    <view class='poster-download' bindtap='downloadPoster'>
+      <view class='poster-btns-icon '></view>
+      <text>保存图片</text>
+    </view>
+  </view>
+</view> -->

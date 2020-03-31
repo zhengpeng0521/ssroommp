@@ -1,0 +1,151 @@
+{
+  "pages": [
+    "pages/tabBar/index/index",
+    "pages/tabBar/mine/mine",
+    "pages/order/order",
+    "pages/tabBar/recordedLesson/index",
+    "pages/order/order-detail/order-detail",
+    "components/contact-info/contact-info",
+    "components/share-poster/share-poster",
+    "pages/common/webview-link/webview-link"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/subpageMine",
+      "pages": [
+        "pages/activation/activation",
+        "pages/my-collections/my-collections",
+        "pages/platform-agreement/platform-agreement",
+        "pages/customer-service/customer-service",
+        "pages/common-problems/common-problems",
+        "pages/booking-guide/booking-guide",
+        "pages/my-playcard/my-playcard",
+        "pages/expense-card/expense-card",
+        "pages/my-tickets/my-tickets",
+        "pages/write-off/write-off",
+        "pages/merchants-settled/merchants-settled",
+        "pages/cs-webview/cs-webview",
+        "pages/merchants-orders/merchants-orders"
+      ]
+    },
+    {
+      "root": "packageTrade",
+      "pages": [
+        "pages/my-rights/my-rights",
+        "pages/withdraw-record/withdraw-record",
+        "pages/my-team/my-team",
+        "pages/date-picker/date-picker",
+        "pages/income-record/income-record",
+        "pages/economical-record/economical-record",
+        "pages/withdraw/withdraw",
+        "pages/trade",
+        "pages/income/income",
+        "pages/economical/economical"
+      ]
+    },
+    {
+      "root": "pages/index",
+      "pages": [
+        "index-more/index-more",
+        "get-auth/get-auth",
+        "playcard/playcard",
+        "ticket/ticket-detail/ticket-detail",
+        "reservation/reservation",
+        "calendar/calendar",
+        "address/address",
+        "ticket/ticket-detail/shop-detail/shop-detail",
+        "ticket/ticket-detail/purchase/unpaid/unpaid",
+        "ticket/ticket-detail/purchase/purchase",
+        "ticket/ticket-detail/purchase/pay-success/pay-success",
+        "member-agree/member-agree",
+        "customerForm/customerForm",
+        "ticket/ticket-detail/comment/comment",
+        "ticket/ticket-detail/comment/detail/detail",
+        "card/card",
+        "theme-page/theme-page"
+      ]
+    },
+    {
+      "root": "pages/recordedLesson",
+      "pages": [
+        "recruit/recruit",
+        "promotion/promotion",
+        "calendar/calendar",
+        "recruit-poster/recruit-poster",
+        "payment-success/payment-success",
+        "product-detail/product-detail",
+        "benefit-details/benefit-details",
+        "order-detail/order-detail",
+        "my-team/my-team",
+        "withdraw/withdraw",
+        "withdrawal-record/withdrawal-record",
+        "payment/payment"
+      ]
+    },
+    {
+      "root": "pages/mine",
+      "pages": [
+        "contacts/contacts",
+        "privilege/privilege",
+        "bind-mobile/bind-mobile",
+        "record/record",
+        "share/share",
+        "my-video-lesson/my-video-lesson",
+        "video-detail/video-detail",
+        "my-card-package/my-card-package"
+      ]
+    }
+  ],
+  "tabBar": {
+    "custom": false,
+    "borderStyle": "black",
+    "selectedColor": "#00B600",
+    "color": "#333333",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/index/index",
+        "iconPath": "/images/icon/icon-home.png",
+        "selectedIconPath": "/images/icon/icon-home-selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/recordedLesson/index",
+        "iconPath": "/images/icon/icon-recoredLesson.png",
+        "selectedIconPath": "/images/icon/icon-recoredLesson-selected.png",
+        "text": "录播课"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "/images/icon/icon-order.png",
+        "selectedIconPath": "/images/icon/icon-order-selected.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/tabBar/mine/mine",
+        "iconPath": "/images/icon/icon-mine.png",
+        "selectedIconPath": "/images/icon/icon-mine-selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "usingComponents": {
+    "van-popup": "/components/vant/popup/index"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx16bc03f780bb4940",
+    "wxb0ed859563bee6df"
+  ]
+}

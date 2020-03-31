@@ -1,0 +1,19 @@
+<!-- components/popup/popup.wxml -->
+<c-mask show="{{ show }}" z-index="{{ zIndex }}" custom-style="{{ overlayStyle }}" duration="{{ duration }}" bind:click="onClickOverlay" />
+<view wx:if="{{ inited }}" class="custom-class {{ classes }} van-popup {{'van-popup--' + position}}" style="z-index: {{ zIndex }}; {{offsetTop!=0?'top:'+offsetTop+'%;':''}} -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ safeAreaInsetTop ? 'padding-top: ' + statusBarHeight + 'px;' : '' }} {{ customStyle }}" bind:transitionend="onTransitionEnd" catch:touchmove="noop">
+  <view class="van-content">
+    <view wx:if="{{position!=='bottom'}}" class="van-popup--close" style="{{closeStyle}}" bind:tap="close"></view>
+    <view class="van-body van-popup--radius {{position!=='bottom'?'van-body--radius':''}}" style="{{ customStyle }}">
+      <view class="van-header" wx:if="{{position==='bottom'}}">
+        <view wx:if="{{!!title}}" class="van-header-title">
+          {{title}}
+          <text style="color:#F56C6C" wx:if="{{important}}">{{important}}</text>
+        </view>
+        <view bind:tap="close" style="padding:10rpx;">
+          <view class="van-popup--close-x"></view>
+        </view>
+      </view>
+      <slot />
+    </view>
+  </view>
+</view>

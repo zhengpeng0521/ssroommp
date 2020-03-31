@@ -1,0 +1,23 @@
+<!--pages/test-game/game-share/game-share.wxml-->
+<view class="header">
+  <!-- <view class="hb-wrap">
+    <image class="hd-hb" src="/images/test-game/share-hb.png"/>
+
+      <image class="avatar" mode="widthFix" src="/images/bg/auth-logo.png" />
+
+    <view class="text">10道题，测测你有多了解我</view>
+    <view class="account">11.00元</view>
+    <image class="erweiImage" src="/images/bg/auth-logo.png" />
+    <view class="">长安识别二维码，答题领红包</view>
+  </view> -->
+  <view class='canvas-container'>
+    <painter style="position:fixed;right:-9999rpx" palette="{{template}}" bind:imgOK="onImgOK" widthPixels="750" />
+    <image src="{{posterUrl}}" class="poster-img"  mode="scaleToFill" />
+  </view>
+</view>
+<view class="foot">
+  <image bind:tap="downloadPoster" class="foot-image" src="/images/test-game/6_but_bchb.png" />
+  <button open-type="share" style="padding:0" class="share-btn">
+    <image  class="foot-image" src="/images/test-game/6_but_yqhy.png" />
+  </button>
+</view>

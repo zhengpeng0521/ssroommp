@@ -1,0 +1,34 @@
+<!--未过期-->
+<template name="coupon">
+  <view class="coupon-item">
+    
+    <view class="coupon-hd">
+      <view class="coupon-info">
+        <view class="coupon-info-name">首次预约特权券</view>
+        <view class="coupon-info-desc">亲子卡可用</view>
+      </view>
+      <view>
+        <view class="coupon-btn">查看</view>
+      </view>
+    </view>
+    <view class="coupon-bd">2019.9.12 到期</view>
+    <image class="coupon-bg" mode="aspectFill" src="/images/bg/popup-bg.png" />
+  </view>
+  <!--已过期-->
+  <view class="coupon-item overdue">
+    <image class="coupon-bg" mode="aspectFill" src="/images/bg/popup-gray-bg.png" />
+    <view class="overdue-flag">
+      <image class="overdue-img" mode="aspectFill" src="/images/bg/icon-overdue.png" />
+    </view>
+    <view class="coupon-hd">
+      <view class="coupon-info">
+        <view class="coupon-info-name">首次预约特权券</view>
+        <view class="coupon-info-desc">亲子卡可用</view>
+      </view>
+      <view hidden="{{true}}">
+        <view class="coupon-btn">查看</view>
+      </view>
+    </view>
+    <view class="coupon-bd">2019.9.12 到期</view>
+  </view>
+</template>

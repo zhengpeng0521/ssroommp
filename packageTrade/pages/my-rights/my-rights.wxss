@@ -1,0 +1,176 @@
+/* pages/order/my-rights/my-rights.wxss */
+@import "/template/card-bg/card-bg";
+
+.user-level-layout {
+  position: relative;
+  text-align: center;
+  height: 800rpx;
+}
+
+.user-level-layout.long {
+  height: 900rpx;
+}
+
+.user-level {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 116rpx;
+  width: 710rpx;
+  z-index: 13;
+  background: #fff;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  padding-bottom: 40rpx;
+  margin-bottom: 40rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+
+.avatar-box {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -60rpx;
+}
+
+.avatar-box image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-name {
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 76rpx;
+}
+
+.user-level-text {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.user-level-text image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-left: 14rpx;
+}
+
+.permission-header {
+  position: relative;
+  margin-top: 40rpx;
+}
+
+.line-point-left, .line-point-right {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 120rpx;
+  height: 2rpx;
+}
+
+.line-point-left {
+  left: 164rpx;
+}
+
+.line-point-right {
+  right: 164rpx;
+}
+
+.line-point-left .line, .line-point-right .line {
+  width: 104rpx;
+  height: 2rpx;
+  background-color: #ff9436;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.line-point-left .line {
+  left: 0;
+}
+
+.line-point-right .line {
+  right: 0;
+}
+
+.line-point-left .point, .line-point-right .point {
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #ff9436;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.line-point-left .point {
+  right: 0;
+}
+
+.line-point-right .point {
+  left: 0;
+}
+
+.permission-header text {
+  color: #ff9436;
+  position: relative;
+  top: -6rpx;
+}
+
+.level-rights {
+  margin-top: 30rpx;
+  padding-left: 130rpx;
+  text-align: left;
+  position: relative;
+}
+
+.level-rights image {
+  width: 84rpx;
+  height: 84rpx;
+  position: absolute;
+  left: 30rpx;
+}
+
+.level-rights .item-title {
+  font-size: 28rpx;
+}
+
+.level-rights .item-desc {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 6rpx;
+}
+
+.rule-detail-layout {
+  padding: 0 20rpx;
+  margin-top: 40rpx;
+}
+
+.rule-detail-layout .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.rule-item {
+  font-size: 28rpx;
+}
+
+.rule-item-title {
+  font-weight: 500;
+  color: #333;
+}
+
+.rule-item-desc {
+  color: #666;
+}

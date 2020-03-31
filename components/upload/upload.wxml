@@ -1,0 +1,18 @@
+<!-- components/upload/upload.wxml -->
+<view class="photo">
+  <block wx:for="{{uploadFileList}}" wx:key="{{item.uid}}">
+    <view class="photo-file">
+      <image class="photo-file-image" src="{{item.url}}" />
+      <view class="btn-delete" catch:tap="onRemove" data-file="{{item}}" data-index="{{index}}">
+        <view class="icon-delete"></view>
+      </view>
+    </view>
+  </block>
+  <view class="btn-wrap" style="padding:18rpx 0;">
+    <view wx:if="{{uploadFileList.length<3}}" bind:tap="onSelect" class="photo-btn" hover-class="photo-hover">
+      <image style="width:50rpx;height:50rpx;" src="/images/icon/icon-camera.png" />
+      <view class="photo-txt">上传照片</view>
+    </view>
+    <text wx:if="{{uploadFileList.length==0}}" class="tips">{{tipText}}</text>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--components/no-data-notice/no-data-notice.wxml-->
+<!-- A:还未购买商品 -->
+<view class='no-data-layout'>
+  <view class='no-data-img'>
+    <image src='../../images/bg/no-data-{{showType}}.png'></image>
+  </view>
+  <text class='no-data-txt' wx:if='{{showType === "a"}}'>您今天还没有购买任何商品</text>
+  <text class='no-data-txt' wx:if='{{showType === "b"}}'>您今天还没有分享任何商品</text>
+  <text class='no-data-txt' wx:if='{{showType === "c"}}'>您需要升级到主管才可以享受“团队奖励”哦</text>
+  <text class='no-data-txt' wx:if='{{showType === "d"}}'>您的团队还没有分享任何商品</text>
+  <text class='no-data-txt' wx:if='{{showType === "e"}}'>您今天还没有培训过哦</text>
+</view>

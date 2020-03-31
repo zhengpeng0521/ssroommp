@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "精选体验",
+  "backgroundColor": "#f8f8f8",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance":150,
+  "usingComponents": {
+    "flowLayout":"/components/flow-layout/flow-layout"
+  }
+}

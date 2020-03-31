@@ -1,0 +1,37 @@
+<!-- <navigator url='/pages/trade/economical-record/economical-record'>全部省钱记录</navigator> -->
+<import src="/template/card-bg/card-bg" />
+<import src="/template/loading/loading" />
+<view class='economical-detail-layout'>
+  <template is="card-bg"></template>
+  <view class='economical-detail'>
+    <text class='economical-detail-title'>"会员卡"今日为你省下(元）</text>
+    <text class='economical-detail-count'>{{saveMoney}}</text>
+  </view>
+  <view class='economical-detail-navbar-layout'>
+    <view class='economical-detail-navbar'>
+      <text class='title'>总共{{totalOrderNum}}单,共省钱{{totalSaveMoney}}元</text>
+      <navigator url='/pages/trade/economical-record/economical-record?totalOrderNum={{totalOrderNum}}&&totalSaveMoney={{totalSaveMoney}}' hover-class="none">全部省钱记录
+        <text class='iconfont iconright'></text>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class='today-economical'>
+  <view class='today-economical-title'>今日{{orderNum}}单 省钱{{saveMoney}}元</view>
+  <view wx:for='{{list}}' wx:key='{{item.id}}' hidden='{{showLoading}}'>
+    <view class='today-economical-item'>
+      <view class='item-head'>
+        <text class='time'>{{item.obtainTime}}</text>
+        <text class='price'>省{{item.deductShouldAmount}}元</text>
+      </view>
+      <view class='item-desc'>购买{{item.goodsName}}，原价{{item.orderTotalAmount}}元，购买价{{item.orderAmount}}元</view>
+    </view>
+  </view>
+  <view wx:if='{{!hasMoreData&&list[0]!=null}}' class='loadOver'>数据已加载完毕~</view>
+  <view class='loading-template' hidden='{{!showLoading}}'>
+    <template is='loading-ui'></template>
+  </view>
+  <view wx:if='{{list[0]==null&&!showLoading}}'>
+    <no-data prop-showType='a' />
+  </view>
+</view>

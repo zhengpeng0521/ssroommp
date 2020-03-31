@@ -1,0 +1,87 @@
+<view class="container">
+
+
+  <view class="result">
+    <view class="result-state">
+      <image src="/images/icon/pay@success.png" />
+      <view class="pay-text">付款成功</view>
+    </view>
+    <view class="result-info">
+      <!-- 预约商品订单 -->
+      <block wx:if='{{optionsData.orderType == 2}}'>
+        <view class="item-title">{{orderData.goodsName}}押金</view>
+        <view class="result-item">
+          <view class="item-label">押金金额</view>
+          <view class="item-desc orange">￥{{orderData.price}}</view>
+        </view>
+        <view class="result-item">
+          <view class="item-label">下单时间</view>
+          <view class="item-desc">{{orderData.orderTime}}</view>
+        </view>
+      </block>
+      <!-- 普通商品订单和会员卡订单 -->
+      <block wx:if='{{optionsData.orderType == 1}}'>
+        <view class="item-title">{{orderData.goodsName}}</view>
+        <view class="result-item">
+          <view class="item-label">原价</view>
+          <view class="item-desc">￥{{orderData.price}} x {{optionsData.goodsNum}}</view>
+        </view>
+        <view class="result-item">
+          <view class="item-label">下单时间</view>
+          <view class="item-desc">{{orderData.orderTime}}</view>
+        </view>
+        <view class="result-item" wx:if='{{orderData.welfareFlag == 1}}'>
+          <view class="item-label">减免</view>
+          <view class="item-desc orange">￥{{orderData.welfareReduceAmount}}</view>
+        </view>
+        <view class="result-item" wx:if='{{orderData.deductShouldAmount > 0}}'>
+          <view class="item-label">(会员折扣)</view>
+          <view class="item-desc orange">{{orderData.deductShouldAmount}}</view>
+        </view>
+        <view class="result-item">
+          <view class="item-label">实付款</view>
+          <view class="item-desc">￥{{orderData.orderAmount}}</view>
+        </view>
+        <view class="divider"></view>
+        <!-- 会员卡 -->
+        <view class="result-item">
+          <view class="item-label">持卡人</view>
+          <view class="item-desc">{{orderData.cardName}}</view>
+        </view>
+        <view class="result-item text-right">
+          <view class="item-desc">{{idCard}}</view>
+        </view>
+      </block>
+      <!-- <view class="view-btn">
+        <view wx:if='{{optionsData.orderType == 1}}' class="btn btn-primiary {{animateOfBtn ? 'btnGreenAnim' : ''}}" catchtap="onNavToMyTickets">
+          {{optionsData.goodsTopType==='9'?'查看预约指南':'去使用'}}
+        </view>
+        <view wx:if='{{optionsData.orderType == 2}}' class="btn btn-primiary {{animateOfBtn ? 'btnGreenAnim' : ''}}" catchtap="onNavToOrder">
+          查看订单
+        </view>
+      </view> -->
+    </view>
+    <view class="pannel-btn">
+      <view wx:if='{{optionsData.orderType == 1}}' class="flex-btn" catchtap="onNavToMyTickets">
+        {{optionsData.goodsType==='9'?'查看预约指南':'去使用'}}
+      </view>
+      <view wx:if='{{optionsData.orderType == 2}}' class="flex-btn"  catchtap="onNavToOrder">
+        查看订单
+      </view>
+      <view class="divide"></view>
+      <view class="flex-btn return-index" catchtap="onNavToIndex">
+        返回首页
+      </view>
+    </view>
+    
+  </view>
+  <view class="privilege" catchtap="onNavToPrivilege">
+    <view class="tips" style="background-image:url('http://img.ishanshan.com/gimg/n/20191108/6a051aa152f13db4c7ea32995271d0fc')">
+      <view class="tips-text">完成预约核销教育商品，即可获得不受限绿色通道特权</view>
+      <view class="badge">HOT</view>
+    </view>
+    <view class="btn btn-primiary" hover-class="btn-hover">
+      立即查看
+    </view>
+  </view>
+</view>

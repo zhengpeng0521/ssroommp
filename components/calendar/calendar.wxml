@@ -1,0 +1,16 @@
+<!--components/calendar/calendar.wxml-->
+
+  <view class='calendar' wx:for='{{dateTime}}' wx:for-item='outer' wx:key='{{index}}'>
+    <view class='calendar-item-title'>{{outer.yearMonth}}</view>
+    <view class='calendar-container'>
+      <view class='calendar-item-content center' style="width:{{dayContainerWidth}}px;height:{{dayContainerWidth}}px;" wx:for='{{outer.beginWeek}}' wx:key='{{index}}'></view>
+      <view class='calendar-item-content center {{inner.daysTime===daysTime?"active":""}} {{inner.available?"":"disable"}} {{isBlacklist?"disable":""}}' style="width:{{dayContainerWidth}}px;height:{{dayContainerWidth}}px;" data-available='{{inner.available}}' data-daysTime='{{inner.daysTime}}'
+        bindtap="choseDate" wx:for='{{outer.daysArr}}' wx:for-item='inner' wx:key='{{index}}'>
+        <view class='calendar-item-inner center'>
+          <view>{{inner.days}}</view>
+          <view class="isFull" wx:if='{{!isBlacklist && inner.isFull}}'>约满</view>
+          <view class="less" wx:elif='{{!isBlacklist && inner.isLack == 1}}'>紧张</view>
+        </view>
+      </view>
+    </view>
+  </view>

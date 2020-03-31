@@ -1,0 +1,61 @@
+/* pages/distribution/recruit-poster/recruit-poster.wxss */
+page{
+  background:#d2361f;
+}
+.share {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.canvas-container {
+  z-index: 100;
+  overflow: auto;
+  width: 100%;
+}
+
+.poster-img {
+  height: 1000rpx;
+  width: 100%;
+  display: block;
+}
+.button-hover {
+  background-color: #ffffff !important;
+}
+
+.poster-share {
+  text-align: center;
+}
+
+.poster-btns {
+  background-color: #fff;
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  left: 0;
+  display: flex;
+  border-top-left-radius: 70rpx;
+  border-top-right-radius: 70rpx;
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+.poster-btns text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.poster-btns .poster-btns-icon {
+  margin-top: 20rpx;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+}
+
+.share-btn {
+  height: 149rpx;
+  background-color: #ffffff !important;
+}

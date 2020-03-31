@@ -1,0 +1,39 @@
+<!--pages/test-game/answer-question/answer-question.wxml-->
+<view class="wrap">
+  <view
+    class="index"
+    style="background-image:url('http://img.ishanshan.com/gimg/n/20200119/ce837f41e1deafba88c6c9e406d7b8cc')"
+  >
+    <view class="list">
+      <view wx:for="{{10}}" class="list-item {{index<=show?'active':''}}">{{item+1}}</view>
+    </view>
+  </view>
+
+  <view
+    class="question"
+    style="background-image:url('http://img.ishanshan.com/gimg/n/20200119/366e791f79f0bb9349cd8ef80bdd191a')"
+  >
+    <view class="change" bindtap="change">
+      <image class="change-img" src="/images/test-game/8_change.png" />
+      换一题
+    </view>
+    <block wx:for="{{question}}" wx:key="{{item.questionId}}">
+      <view class="question-box" hidden="{{index!=show}}">
+        <view class="question-title">
+          {{item.questionDescription}}
+        </view>
+        <view wx:for="{{item.answerItemList}}" wx:for-item="answer" wx:for-index="i" data-index="{{i}}" data-qid="{{item.questionId}}" data-aid="{{answer.answerId}}" class="question-answer {{answer.answerId==selected?'selected':''}}" bind:tap="select" >
+          <view class="answer-no">{{i+1}}</view>
+          <view class="answer-content">
+            {{answer.answerDescription}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="action">
+    <image wx:if="{{!showSubmit}}" bindtap="next" class="action-btn" src="/images/test-game/8_next.png" />
+    <image wx:else bindtap="submit" class="action-btn" src="/images/test-game/tj.png" />
+  </view>
+</view>

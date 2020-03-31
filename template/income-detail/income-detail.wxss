@@ -1,0 +1,72 @@
+/* template/income-detail/income-detail.wxss */
+.income-content-list{
+  margin-top: 30rpx;
+}
+.income-content-list .item {
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.income-content-list .item-header {
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  padding: 10rpx 20rpx;
+}
+
+.income-content-list .item-header .user-mess {
+  float: left;
+}
+
+.income-content-list .user-mess image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 14rpx;
+}
+
+.income-content-list .user-mess .name {
+  font-size: 28rpx;
+  color: #666;
+  white-space: nowrap;
+}
+
+.income-content-list .item-header .state {
+  float: right;
+  font-size: 28rpx;
+  color: #46b6ee;
+  position: relative;
+  top: 6rpx;
+}
+
+.income-content-list .item-body {
+}
+
+.income-content-list .item-body .action {
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.income-content-list .item-body .date {
+  font-size: 20rpx;
+  color: #999;
+}
+.income-content-list .item-footer{
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 20rpx;
+}
+.income-content-list .item-footer .flex{
+  margin-right: 20rpx;
+}
+.income-content-list .item-footer .flex text{
+  color: #999;
+}
+.income-content-list .item-footer .flex image{
+  width: 24rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}

@@ -1,0 +1,19 @@
+/* pages/mine/my-collections/my-collections.wxss */
+@import "/template/member-goods/member-goods";
+page{
+  background-color: #fff;
+}
+.collection-list {
+    padding: 30rpx 20rpx;
+}
+
+.no-collect-img {
+    height: 222rpx;
+    width: 222rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

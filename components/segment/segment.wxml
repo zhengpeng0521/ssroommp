@@ -1,0 +1,11 @@
+<!-- components/segment/segment.wxml -->
+<scroll-view class="scroll" scroll-x="true" scroll-with-animation scroll-left="0">
+  <view class='segment-class goods-tab {{goodsNavFixed ? "goodsNavFixed": ""}} {{tagStyle?"tag":""}}' id="goodsNav">
+    <view wx:for="{{segment}}" wx:key="{{item.id}}" class="tab-class tab-item-tap" data-item="{{item}}" data-index="{{index}}" bindtap="choseCardType">
+      <view class="tab-item {{index == currentActive ? 'active': ''}}">
+        <view class="tab-item-text {{system}}">{{item.name}}</view>
+        <view class="bottom-border"></view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

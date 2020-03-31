@@ -1,0 +1,220 @@
+<import src="/template/more-loading/more-loading.wxml" />
+<view>
+  <view class="container">
+    <!-- 顶部tab栏 -->
+    <view class="head">
+      <view class="order-type">
+        <block wx:for="{{headContent}}" wx:key="index">
+          <view class="head-item" catchtap="toogleTab" data-index="{{item.index}}">
+            <view class="item-content {{index === currentIndex ? 'tab-active-class':''}}">
+              {{item.text}}
+              <view wx:if="{{item.badge !== 0 && item.badge != null}}" class="head-badge">
+                {{item.badge}}
+              </view>
+            </view>
+            <view wx:if="{{item.lineShow}}" class="head-green-line"></view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- 订单数据 -->
+    <view class="order-content">
+      <block wx:if="{{tabActive==0}}">
+        <view wx:for="{{orderListData.results}}" wx:key="id" class="general {{item.animateOfBtn ? 'btnWhiteAnim': ''}}" catchtap="onOpenOrderDetail" data-id="{{item.id}}" data-index="{{index}}" data-amount="{{item.orderAmount}}" data-status='{{item.orderStatus}}' data-orderType="{{item.orderType}}">
+          <view class="card-body">
+            <image class="general-img" src="{{item.cover}}" mode='aspectFill'></image>
+            <view class="general-content">
+              <view class="content-title">{{item.goodsName}}</view>
+              <!-- <view class="content-type">
+                <view>教育卡商品</view>
+              </view> -->
+              <view class="content-block inline-flex">
+                <view class="content-block-item">
+                  <text class="content-block-tip">数量</text>
+                  <text class="content-block-detail">{{item.goodsQuantity}}</text>
+                </view>
+                <view class="content-block-item">
+                  <block wx:if="{{item.goodsTopType!=9}}">
+                    <text wx:if="{{item.goodsType!='104'}}" class="content-block-tip">保证金</text>
+                     <text wx:else class="content-block-tip">实付款</text>
+                  </block>
+                  <text class="content-block-tip" wx:else>实付款</text>
+                  <text class="content-block-detail">¥{{item.orderAmount || '-'}}</text>
+                </view>
+                <!-- <view class="content-block-item" wx:if="{{item.goodsTopType!=9}}">
+                  <text class="content-block-tip">所属卡</text>
+                  <text class="content-block-detail">{{item.vipCardName || '-'}}</text>
+                </view> -->
+              </view>
+              <view class="content-block" wx:if="{{item.orderType == 2}}">
+                <text class="content-block-tip content-block-middle">预约时间</text>
+                <text class="content-block-detail">{{item.expireTime || '-'}}</text>
+              </view>
+              <!-- <view class="content-appoint">
+                <text class="content-block-tip">预约时间：</text>
+                <text class="content-block-detail">{{item.expireTime}}</text>
+              </view> -->
+            </view>
+            <view wx:if="{{item.orderStatus === '0'}}" style='color:#FF9436' class="general-state">
+              待支付 {{item.deadline}}
+            </view>
+            <view wx:if="{{item.orderStatus === '1'}}" style='color:#FF9436' class="general-state">
+              待预约
+            </view>
+            <!-- <view wx:if="{{item.orderStatus === '2'}}" style='color:#46B6EE' class="general-state">
+              待出票
+            </view> -->
+            <view wx:if="{{item.orderStatus === '3'}}" style='color:#FF9436' class="general-state">
+              待核销
+            </view>
+            <view wx:if="{{item.orderStatus === '4'}}" style='color:#999' class="general-state">
+              已完成
+            </view>
+            <view wx:if="{{item.orderStatus === '5'}}" style='color:#999' class="general-state">
+              已过期
+            </view>
+            <view wx:if="{{item.orderStatus === '6'}}" style='color:#999' class="general-state">
+              退款中
+            </view>
+            <view wx:if="{{item.orderStatus === '7'}}" style='color:#999' class="general-state">
+              已退款
+            </view>
+            <view wx:if="{{item.orderStatus === '8'}}" style='color:#999' class="general-state">
+              已取消
+            </view>
+            <view wx:if="{{item.orderStatus === '9'}}" style='color:#999' class="general-state">
+              已关闭
+            </view>
+            <!-- <view wx:if="{{item.orderStatus === '3'}}" class="general-operate" catchtap="onViewQrCode" data-id="{{item.id}}">
+              <text>查看核销码</text>
+            </view> -->
+            <view class="list-operate" wx:if="{{item.orderStatus === '0'}}">
+              <view class="cancel-operate" data-type="{{item.orderType}}" data-id="{{item.id}}" catchtap="handleCloseOrder">
+                <text>取消订单</text>
+              </view>
+              <view class="general-operate" data-id="{{item.id}}" data-amount="{{item.orderAmount}}">
+                <text>继续支付</text>
+              </view>
+            </view>
+            <!-- <view wx:if="{{item.status === '4'}}" class="general-operate" data-id="{{item.id}}">
+              <text>去评价</text>
+            </view> -->
+          </view>
+          <block wx:if="{{item.orderType==2 && item.orderStatus == 3 && (item.saleMode==6||item.saleMode==4)}}">
+            <view class="rip">
+              <view class="driver"></view>
+            </view>
+            <view class="card-footer">
+              <text>可打卡核销，提前退还保证金</text>
+            </view>
+          </block>
+          <block wx:if="{{item.orderType==2 && item.orderStatus == 4 && item.evaluateStatus == 1}}">
+            <view class="rip">
+              <view class="driver"></view>
+            </view>
+            <view class="card-footer">
+              <text>商品可评论</text>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="general spread-order" wx:for="{{orderListData.results}}" wx:key="id" catchtap="onOpenSpreadOrder" data-id="{{item.id}}" data-index="{{index}}" data-amount="{{item.orderAmount}}" data-status='{{item.orderStatus}}' data-orderType="{{item.orderType}}">
+          <view class="card-body">
+            <image class="general-img" src="{{item.cover}}" mode='aspectFill'></image>
+            <view class="general-content">
+              <view class="content-title">{{item.goodsName}}</view>
+              <view class="content-media">
+                <view class="content-block">
+                  <view class="content-block-item">
+                    <text class="content-block-tip">数量</text>
+                    <text class="content-block-detail">{{item.goodsQuantity}}</text>
+                  </view>
+                  <view class="content-block-item">
+                    <text class="content-block-tip">实付款</text>
+                    <text class="content-block-detail">¥{{item.orderAmount}}</text>
+                  </view>
+                </view>
+                <view class="appoint-btn" catchtap="selectAppointDay" data-id="{{item.id}}" wx:if="{{item.orderStatus === '1'}}">选择使用日期</view>
+              </view>
+            </view>
+            <view wx:if="{{item.orderStatus === '0'}}" style='color:#FF9436' class="general-state">
+              待支付 {{item.deadline}}
+            </view>
+            <view wx:if="{{item.orderStatus === '1'}}" style='color:#FF9436' class="general-state">
+              待预约
+            </view>
+            <!-- <view wx:if="{{item.orderStatus === '2'}}" style='color:#46B6EE' class="general-state">
+              待出票
+            </view> -->
+            <view wx:if="{{item.orderStatus === '3'}}" style='color:#FF9436' class="general-state">
+              待核销
+            </view>
+            <view wx:if="{{item.orderStatus === '4'}}" style='color:#999' class="general-state">
+              已完成
+            </view>
+            <view wx:if="{{item.orderStatus === '5'}}" style='color:#999' class="general-state">
+              已过期
+            </view>
+            <view wx:if="{{item.orderStatus === '6'}}" style='color:#999' class="general-state">
+              退款中
+            </view>
+            <view wx:if="{{item.orderStatus === '7'}}" style='color:#999' class="general-state">
+              已退款
+            </view>
+            <view wx:if="{{item.orderStatus === '8'}}" style='color:#999' class="general-state">
+              已取消
+            </view>
+            <view wx:if="{{item.orderStatus === '9'}}" style='color:#999' class="general-state">
+              已关闭
+            </view>
+            <view class="list-operate" wx:if="{{item.orderStatus === '0'}}">
+              <view class="cancel-operate" data-type="{{item.orderType}}" data-id="{{item.id}}" catchtap="closeDprOrder">
+                <text>取消订单</text>
+              </view>
+              <view class="general-operate" data-id="{{item.id}}" data-amount="{{item.orderAmount}}">
+                <text>继续支付</text>
+              </view>
+            </view>
+          </view>
+          <block>
+            <view class="rip">
+              <view class="driver"></view>
+            </view>
+            <view class="card-footer">
+              订单将在
+              <text>{{item.expireTime}}</text>
+              后过期
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+    <!-- 空数据提示 -->
+    <view class="empty-block" wx:if="{{orderListData.results[0] == null && isLoading === false}}">
+      <image class="empty-img" src="/images/bg/blank_no_zf@2x.png"></image>
+      <view class="empty-text">
+        <text>暂无</text>
+        <text wx:if="{{currentIndex === 0}}"></text>
+        <text wx:if="{{currentIndex === 1}}">待支付</text>
+        <text wx:if="{{currentIndex === 2}}">待预约</text>
+        <!-- <text wx:if="{{currentIndex === 3}}">待出票</text> -->
+        <text wx:if="{{currentIndex === 3}}">待核销</text>
+        <text wx:if="{{currentIndex === 4}}">已完成</text>
+        <!-- <text wx:if="{{currentIndex === 6}}">已过期</text>
+        <text wx:if="{{currentIndex === 7}}">退款中</text>
+        <text wx:if="{{currentIndex === 8}}">已退款</text>
+        <text wx:if="{{currentIndex === 9}}">已取消</text>
+        <text wx:if="{{currentIndex === 10}}">已关闭</text> -->
+        <text>订单</text>
+      </view>
+    </view>
+    <!-- 数据加载完毕的提示 -->
+    <view wx:if="{{orderListData.isHaveMoreData === false && orderListData.results[0] != null}}" class="loadOver {{orderListData.results.length <=3 ? 'loadBottom': ''}}">
+      数据已加载完毕~
+    </view>
+    <view wx:if="{{isLoadingMore}}">
+      <template is="more-loading" />
+    </view>
+  </view>
+</view>

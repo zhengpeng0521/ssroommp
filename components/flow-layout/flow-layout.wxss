@@ -1,0 +1,103 @@
+/* components/flowLayout/flowLayout.wxss */
+.list-container {
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx 30rpx 100rpx;
+}
+
+.list-side-box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.list-side-box {
+  margin-right: 20rpx;
+}
+
+.list-side-box:last-child {
+  margin-right: 0;
+}
+
+.list-item {
+  break-inside: avoid;
+  box-sizing: border-box;
+  margin-bottom:20rpx;
+  background:#fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+/* list-box themeA */
+.list-box {
+  position: relative;
+  border-radius: 4px;
+  color:#333;
+  /* box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.08)  */
+}
+
+.list-box_content {
+  min-height: 71px;
+  overflow: hidden;
+  height: auto;
+}
+
+.list-box_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.user-location{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color:#666;
+  font-size:20rpx;
+}
+.user-area{
+  padding: 20rpx 20rpx;
+  color:#333;
+}
+.content{
+  line-height:34rpx;
+  font-size:24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.user-info{
+  display: flex;
+  padding-top:20rpx;
+}
+.user-name{
+
+}
+.user-desc{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.user-avatar-wrap{
+  display: flex;
+  align-items: center;
+  padding-right:10rpx;
+}
+.user-avatar{
+  width:60rpx;
+  height:60rpx;
+  border-radius: 50%;
+}
+
+.media-previewer image {
+  display: block;
+  width: 100%;
+}
+
+.media-previewer image:first-child {
+  margin-top: 0;
+}

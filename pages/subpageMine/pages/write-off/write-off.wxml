@@ -1,0 +1,36 @@
+<!--pages/mine/write-off/write-off.wxml-->
+<view class='write-off-layout' bindtap="scanCode">
+  <image src='https://img.ishanshan.com/gimg/n/20200120/67051b378e6266d5658c491ae323b071' mode='widthFix'></image>
+</view>
+<view class="list-container">
+  <picker mode='date' class="date" bindchange="bindTimeChange">{{month}}月{{day}}日
+    <text class="iconfont icondown"></text>
+  </picker>
+  <view class="mess-title" style="margin-top:30rpx;font-weight:bold">
+    {{messTitle}}
+  </view>
+  <view class="list-mess">
+    <view class="mess-bar"></view>
+    <view class="mess-text">
+      <view class="text">总共核销{{totalCount}}单</view>
+      <view class="text">当日核销{{dateCount}}单</view>
+    </view>
+  </view>
+  <view class="tab">
+    <view class="tab-item {{active == 1? 'active':''}}" data-index="1" bindtap="changeTab">
+      普通订单
+    </view>
+    <view class="tab-item {{active == 2? 'active':''}}" data-index="2" bindtap="changeTab">
+      惠选订单
+    </view>
+  </view>
+  <view class="list">
+    <view class="list-item" wx:for='{{list}}' wx:key='index'>
+      <view class="item-date">{{item.verifyTime}}</view>
+      <view class="item-goddsName">核销：{{item.goodsName}}</view>
+      <view class="item-username">用户：{{item.custName}} {{item.verifier}}</view>
+      <view class="item-opratorName">操作人员：{{item.operateName}}</view>
+    </view>
+    <view class="list-bottom">没有更多了...</view>
+  </view>
+</view>

@@ -1,0 +1,361 @@
+/* pages/mine/privilege/privilege.wxss */
+page{
+  background: #F7F7F7;
+}
+.privilege{
+  border-top: 1rpx solid #eee;
+}
+.tabs-card{
+  width:100%;
+  box-sizing: border-box;
+  padding-top:190rpx!important;
+}
+.tabs-box{
+  height:88rpx!important;
+  overflow: hidden;
+  padding:30rpx;
+  background: #fff;
+}
+.tabs-wrap-class{
+  border:2rpx solid #eee;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.tabs-btn{
+  background:#F7F7F7!important;
+  color:#666!important;
+  font-size:32rpx!important;
+  line-height:88rpx!important;
+}
+.tab-active-class{
+  background:#fff!important;
+  color:#000!important;
+}
+.tabs-btn:first-of-type{
+  border-right: 2rpx solid #eee;
+}
+.tabs-nav .ellipsis:after{
+  display: none;
+}
+/* .rule-info{
+  color:#3A8A8C;
+  font-size:24rpx;
+  text-align: center;
+  margin-top:20rpx;
+}
+.btn-wrap{
+  margin-top:40rpx;
+}
+.task-control{
+  margin-top:30rpx;
+}
+.task-control-info{
+  color:#318487;
+  font-weight: 500;
+  font-size:28rpx;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+.task-control-info text{
+  color:#FF9436;
+}
+.task{
+  margin-top:50rpx;
+}
+.progress-icon{
+  position: relative;
+  left:32rpx;
+  top:4rpx;
+  width:32rpx;
+  height:32rpx;
+} */
+.panel{
+  border-radius: 20rpx;
+  overflow: hidden;
+  background:#fff;
+  padding: 30rpx 40rpx;
+}
+.panel .panel-top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 30rpx;
+  justify-content: space-between;
+}
+.panel-top .current-amount .text{
+  color:rgba(51,51,51,1);
+  line-height:34rpx;
+  font-size: 24rpx;
+  margin-bottom: 12rpx;
+}
+.panel-top .current-amount .num {
+  font-size: 70rpx;
+  color: #000000;
+  font-weight: 600;
+  line-height: 70rpx;
+}
+.panel-top .record-btn {
+  width: 168rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #FEDB4C;
+  font-weight: 500;
+  color:rgba(51,51,51,1);
+  line-height: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 50rpx;
+}
+.panel-bottom {
+  padding-top: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.panel-bottom .bottom-intro {
+  color:rgba(51,51,51,1);
+  line-height:34rpx;
+  font-size: 24rpx;
+}
+.panel-bottom .bottom-intro view {
+  margin-bottom: 10rpx;
+}
+.panel-bottom .bottom-intro view:last-child {
+  margin-bottom: 0;
+}
+.panel-bottom  .about-btn {
+  margin-top: 44rpx;
+  display: flex;
+  align-items: center;
+}
+.panel-bottom  .about-btn .btn-text {
+  font-weight:600;
+  color:rgba(87,107,149,1);
+  line-height:34rpx;
+  font-size: 24rpx;
+  margin-right: 6rpx;
+}
+.panel-bottom .about-btn .triangle {
+  width:0;
+  height:0;
+  border-top:9rpx solid transparent;
+  border-bottom:9rpx solid transparent;
+  border-left:13rpx solid#576B95;
+}
+.panel-footer{
+  box-sizing: border-box;
+  display: flex;
+  padding:4rpx 0
+}
+.panel-btn{
+  flex:1;
+  text-align: center;
+  line-height: 72rpx;
+  color:#666;
+  font-size:28rpx;
+}
+.panel-btn:first-of-type{
+  border-right: 1rpx solid #eee;
+}
+.banner{
+  box-sizing: border-box;
+  padding:40rpx 20rpx;
+  /* margin-top:40rpx; */
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.banner-number{
+  width:270rpx;
+}
+.hd{
+  padding:40rpx 0 32rpx;
+}
+.number{
+  font-size:80rpx;
+  padding:0;
+  line-height: 1;
+  font-weight: 600;
+  color:#FEDF00;
+  text-shadow:2px 2px 0px #fff;
+}
+.unit{
+  font-size:26rpx;
+  font-weight: 600;
+  color:#fff;
+}
+.badge{
+  font-size:26rpx;
+  color:#fff;
+  font-weight: 600;
+  line-height: 48rpx;
+  text-align: center;
+  width:216rpx;
+  height:48rpx;
+  background:linear-gradient(90deg,rgba(26,202,231,1) 0%,rgba(93,160,247,1) 100%);
+  border-radius:24rpx;
+}
+.banner-info{
+  box-sizing: border-box;
+  width:380rpx;
+  padding:35rpx 10rpx 35rpx 40rpx;
+  font-size:24rpx;
+}
+.list{
+  padding-top:20rpx;
+}
+.list-item{
+  font-weight: 600;
+  color:#26A8A8;
+  margin-bottom: 12rpx;
+}
+.list-item text{
+  border-radius: 50%;
+  background: #FFC345;
+  color:#fff;
+  width:32rpx;
+  height:32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8rpx;
+}
+.about{
+  text-align: right;
+  color:#FF9436;
+  font-weight: 600;
+  margin-top: 30rpx;
+}
+.wx-card{
+  color:#333;
+  border:2rpx solid #F5F5F5;
+  background: #fff;
+  /* box-shadow: 0 4rpx 16rpx 0 rgba(0,0,0,0.1); */
+  border-radius: 20rpx;
+  margin-top:30rpx;
+}
+.bd-content{
+  color:#666;
+  font-size:24rpx;
+}
+.bd-desc{
+  margin: 10rpx 0;
+}
+.wx-card-hd{
+  padding:30rpx;
+  border-bottom: 2rpx solid #eee;
+  font-size:32rpx;
+  font-weight: 600;
+  color:#333;
+}
+.wx-card-bd{
+  padding:30rpx;
+}
+.bd-ft{
+  display: flex;
+  justify-content: space-between;
+}
+.bd-ft-info{
+  color:#A2A2A2;
+  font-size:24rpx;
+  align-items: flex-end;
+  align-self: flex-end;
+}
+.bd-ft-record{
+  margin:10rpx 0 20rpx 0;
+}
+.bd-ft-btn{
+  width:192rpx;
+  height:64rpx;
+  line-height: 64rpx;
+  background:linear-gradient(90deg,rgba(255,231,105,1) 0%,rgba(255,207,57,1) 100%);
+  border-radius:48rpx;
+  color:#E66C00;
+  font-weight: 600;
+  font-size:28rpx;
+}
+.bd-ft-operate{
+  display: flex;
+  align-items: flex-end;
+}
+.credits{
+  padding:30rpx;
+}
+.pad-wrap{
+  padding-bottom:150rpx;
+}
+.btn-wrap{
+  padding: 30rpx 0 60rpx;
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#F7F7F7;
+  /* box-shadow: 0 5rpx 15rpx rgba(0,0,0,.08); */
+  /* background:#fff; */
+}
+/**优惠券**/
+.dialog-coupon-name{
+  font-size:40rpx;
+}
+/* .coupon{
+  margin-top:50rpx;
+} */
+.popup-wrap{
+  padding: 30rpx;
+}
+.dialog-wrap{
+  position: relative;
+  width:684rpx;
+  height:604rpx;
+}
+.dialog-bg{
+  position: absolute;
+  z-index: -1;
+  width:684rpx;
+  height:604rpx;
+}
+.dialog-wrap .coupon-item{
+  position: absolute;
+  top:110rpx;
+  width:100%;
+  height:300rpx;
+  z-index: 2;
+  padding:100rpx;
+}
+.dialog-wrap .coupon-info{
+  margin-bottom:30rpx;
+}
+.dialog-btn{
+  position: absolute;
+  bottom:80rpx;
+  width:100%;
+}
+.dialog-btn .btn{
+  width:300rpx;
+  height:70rpx;
+  line-height: 70rpx;
+}
+
+/**
+空数据
+**/
+.empty-box{
+  padding-top:200rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.empty-image{
+  width:244rpx;
+  height:244rpx;
+}
+.empty-txt{
+  font-weight: 500;
+  margin-top:40rpx;
+  color:#999;
+  font-size:28rpx;
+}
+@import "/template/coupon/coupon.wxss"

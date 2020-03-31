@@ -1,0 +1,294 @@
+
+@import "/components/enter-loading/enter-loading.wxss";
+@import "/components/more-loading/more-loading.wxss";
+
+
+.container{
+    margin-top: 30rpx;
+}
+
+.ticket-available{
+    width: 100%;
+    height: 230rpx;
+    display: flex;
+    background: #FFF;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+
+.ticket-available .left{
+    height: 100%;
+    border-left: 8rpx solid #FF9834;
+    border-right: 1px dashed #EBECF0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ticket-available .left text{
+    white-space:nowrap;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #FF9834;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.ticket-available .left text:before{
+    content: '';
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: #EBECF0;
+    display: block;
+    position: absolute;
+    top: -14rpx;
+    right: -15rpx;
+}
+
+.ticket-available .left text:after{
+    content: '';
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: #EBECF0;
+    display: block;
+    position: absolute;
+    bottom: -14rpx;
+    right: -15rpx;
+}
+
+.ticket-available .right{
+    margin: 30rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket-available .right .ticket-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-available .right .ticket-info .title{
+    width: 480rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 38rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ticket-available .right .ticket-info .text{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #999;
+    margin-bottom: 16rpx;
+}
+
+.ticket-available .right .ticket-info .text:last-child{
+    margin-bottom: 0;
+}
+
+
+.ticket-available .right .ticket-info .text .text-inside{
+    font-weight: 600;
+    color: #666;
+}
+
+.ticket-available .right .right-img{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    right: 30rpx;
+    bottom: 30rpx;
+}
+
+
+
+
+.ticket-used{
+    width: 100%;
+    height: 230rpx;
+    display: flex;
+    background: #FFF;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+
+.ticket-used .left{
+    height: 100%;
+    border-left: 8rpx solid #CCC;
+    border-right: 1px dashed #EBECF0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ticket-used .left text{
+    white-space:nowrap;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #CCC;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.ticket-used .left text:before{
+    content: '';
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: #EBECF0;
+    display: block;
+    position: absolute;
+    top: -14rpx;
+    right: -15rpx;
+}
+
+.ticket-used .left text:after{
+    content: '';
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: #EBECF0;
+    display: block;
+    position: absolute;
+    bottom: -14rpx;
+    right: -15rpx;
+}
+
+.ticket-used .right{
+    margin: 30rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket-used .right .ticket-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-used .right .ticket-info .title{
+    width: 550rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    font-weight: bold;
+    color: #CCC;
+    margin-bottom: 38rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ticket-used .right .ticket-info .text{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #CCC;
+    margin-bottom: 16rpx;
+}
+
+.ticket-used .right .ticket-info .text:last-child{
+    margin-bottom: 0;
+}
+
+.ticket-used .right .ticket-info .text .text-inside{
+    font-weight: 600;
+    color: #CCC;
+}
+
+.ticket-used .right .right-img{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    right: 30rpx;
+    bottom: 30rpx;
+}
+
+
+.shade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.shade .qrcode{
+    width: 600rpx;
+    height: 490rpx;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    margin-top: 258rpx;
+    background: #FFF;
+    box-sizing: content-box;
+    border-top: 12rpx solid #FF9436;
+    position: relative;
+}
+
+.shade .qrcode .close{
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+}
+
+.shade .qrcode .close:before{
+    content: '';
+    display: block;
+    width: 30rpx;
+    height: 4rpx;
+    background: black;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 10rpx;
+    right: 0;
+}
+
+.shade .qrcode .close:after{
+    content: '';
+    display: block;
+    width: 30rpx;
+    height: 4rpx;
+    background: black;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10rpx;
+    right: 0;
+}
+
+.shade .qrcode .qrcode-title{
+    height: 40rpx;
+    margin-top: 100rpx;
+    text-align: center;
+}
+
+.shade .qrcode .qrcode-title text{
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #666;
+}
+
+.shade .qrcode .qrcode-title .qrcode-num{
+    font-size: 40rpx;
+    letter-spacing: -1px;
+    font-weight: 500;
+    line-height: 40rpx;
+    color: #54AC41;
+}
+
+.shade .qrcode .qrcode-img{
+    width: 400rpx;
+    height: 400rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40rpx;
+}
+

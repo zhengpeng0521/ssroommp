@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "省钱记录",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "no-data": "../../../components/no-data-notice/no-data-notice"
+  }
+}

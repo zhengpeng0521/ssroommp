@@ -1,0 +1,48 @@
+<!--pages/test-game/wallet/wallet.wxml-->
+<view class="wrap">
+  <view class="top">
+    <view class="g-btn lf" bindtap="goHome">
+      返回首页
+    </view>
+    <view class="g-btn rt" bindtap="goFaq">
+      常见问题
+    </view>
+  </view>
+  <view class="wallet">
+    <view class="flex">
+      <view class="label">用户：{{result.joiner}}</view>
+      <view class="label total">￥{{result.freeAmount}}</view>
+      <view class="label">最低提现金额1.0元</view>
+    </view>
+    <view class="flex" style="align-items: flex-end;flex:0 0 200rpx">
+      <view class="action">
+        <button class="btn-play" bindtap="handleProcess">
+          提现
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="card-hd">
+      注意事项
+    </view>
+    <view class="card-bd">
+      <view class="info-list">
+        1.微信非实名用户无法提现
+      </view>
+      <view class="info-list">
+        2.单次提现最高100，每天提现3次
+      </view>
+      <view class="info-list">
+        3.提现申请后将在72小时内打入您的微信零钱
+      </view>
+      <view class="info-list">
+        4.未被领取的红包余额24小时后退还到这里！
+      </view>
+      <view class="info-list">
+        5.如果遇到提现或页面异常，请稍后重试或联系客服。
+      </view>
+    </view>
+  </view>
+</view>
+

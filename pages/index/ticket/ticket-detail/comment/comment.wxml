@@ -1,0 +1,10 @@
+<!--pages/index/ticket/ticket-detail/comment/comment.wxml-->
+<import src="/template/comment-item/comment-item"/>
+<!-- <import src="/template/enter-loading/enter-loading.wxml" /> -->
+<import src="/template/loading/loading" />
+<import src="/template/horizontal-loading/horizontal-loading" />
+<view class="list">
+  <template is="comment-item" data="{{timeFlag:true,commentData:commentData}}" />
+  <template is='loading-ui' data="{{showLoading:listLoading}}"></template>
+  <view class='listBottom' style="padding-bottom:20rpx;">已经到底啦...</view>
+</view>

@@ -1,0 +1,11 @@
+/* components/rate/rate.wxss */
+.rate{
+  display: flex;
+}
+.rate-item{
+  padding:0 7rpx;
+}
+
+.custom-icon{
+  font-size:38rpx;
+}

@@ -1,0 +1,41 @@
+<!--pages/distribution/withdraw/withdraw.wxml-->
+<view class="withdraw-head"> 
+  <view class="head-text">可提现金额(元)</view>
+  <view class="amount-prefix">¥ {{totalNum}}</view>
+</view>
+
+<view class="withdraw-body">
+  <view class="body-content">
+    <view class="content-tips">
+      输入提现金额
+    </view>
+    <view class="content-info" bindtap="viewRecord">
+      提现记录<text class="iconfont iconright"></text>
+    </view>
+  </view>
+  
+    <view class="set-withdraw">
+      <view class="set-prefix">¥</view>
+      <input type="digit" class="input-number" bindinput="changeInput" value="{{inputValue}}" />
+      <text class="set-all" bindtap="setAll">全部</text>
+    </view>
+</view>
+
+<view class="withdraw-foot">
+  <view class="confirm-submit" bindtap="confirmsubmit" disabled="{{checked == false? true : false}} ">确认提现</view>
+  <view class="foot-check">
+    <view class="check-view">
+        <checkbox value="" checked="{{checked}}" class="checkbox" bindtap="changeCheckbox" />   
+      <text class="foot-check-text" bindtap="changeCheckbox">我已阅读并同意XXXXX协议</text>
+    </view>
+    <view class="foot-check-info" bindtap="viewRule">提现说明</view>
+  </view>
+</view>
+
+<!-- 提现说明 -->
+<van-popup show="{{ruleDialog}}" custom-style="border-radius:10rpx;" closeable bind:close="viewRule">
+  <view class="tip-wrap">
+      <view class="tip-title-bold" >提现说明</view>
+      <view class="tip-desc">您的惠吧推广账户可提现佣金满30元即可申请提现，每日提现总金额≤1000，每日提现总次数≤10次，提现后佣金会在3个工作日内到账。首单佣金（金额 ≥1元）支持立即申请提现。目前惠吧仅支持提现到微信零钱，请您及时关注“惠吧会员卡”公众号接收消息提醒。</view>
+  </view>
+</van-popup>

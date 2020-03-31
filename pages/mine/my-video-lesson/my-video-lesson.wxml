@@ -1,0 +1,58 @@
+<!--pages/mine/my-video-lesson/my-video-lesson.wxml-->
+<import src="/template/loading/loading" />
+<view class="my-video-lesson">
+  <!-- <view class="head">
+    <view class="order-type">
+      <block wx:for="{{headContent}}" wx:key="index">
+        <view class="head-item" catchtap="toogleTab" data-index="{{index}}">
+          <view class="item-content">
+            {{item.text}}
+            <view wx:if="{{item.badge !== 0 && item.badge != null}}" class="head-badge">
+              {{item.badge}}
+            </view>
+          </view>
+          <view wx:if="{{item.lineShow}}" class="head-green-line"></view>
+        </view>
+      </block>
+    </view>
+  </view> -->
+  <view class="lesson">
+    <view class="video-list" wx:if="{{list.length>0}}">
+      <navigator wx:for="{{list}}" wx:key="id" class="video-item" url="/pages/mine/video-detail/video-detail?id={{item.spuId}}&&url={{item.cover}}&&tenantId={{item.tenantId}}&&shopId={{item.shopId}}" open-type="navigate">
+        <image class="lesson-img" mode="aspectFill" src="{{item.cover}}?p=image/format,jpg/quality,q_95/resize,w_324,h_324,g_center" />
+        <view class="content">
+          <view class="title">
+            <!-- 二期需要 -->
+            <!-- <view class="video-icon">
+              <image wx:if="{{item.type == '0'}}" src="http://img.ishanshan.com/gimg/n/20200311/8d6d487d98531600939b917f6552b4fd" />
+              <image wx:if="{{item.type == '1'}}" src="http://img.ishanshan.com/gimg/n/20200311/f3522b19b01aac0b6e2a74d0dfe8e523" />
+            </view> -->
+            <view class="video-name">{{item.goodsName}}</view>
+          </view>
+          <view class="bottom">
+            <view class="bottom-info">
+              <view class="name">创建人: {{item.creater}}</view>
+              <view class="name">
+                <text class="video-num">视频数: {{item.videoListNum || 0}}</text>
+                <!-- <text>|  有效期至2020-01-21</text> -->
+              </view>
+            </view>
+            <view class="player">
+              <image src="http://img.ishanshan.com/gimg/n/20200311/4eeae4c1200e6292c12f16c4c89d6c96"></image>
+              <text>播放</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <!-- 空数据提示 -->
+    <view class="empty-block" wx:if="{{list.length == 0 && listLoading === false}}">
+      <image class="empty-img" src="/images/bg/blank_no_zf@2x.png"></image>
+      <view class="empty-text">
+        暂无录播课
+      </view>
+    </view>
+    <template is='loading-ui' data="{{showLoading:listLoading}}"></template>
+    <view class='listBottom' style="padding-bottom:10rpx;" wx:if="{{list.length>0}}">已经到底啦...</view>
+  </view>
+</view>

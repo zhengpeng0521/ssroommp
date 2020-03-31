@@ -1,0 +1,210 @@
+@import "/components/enter-loading/enter-loading.wxss";
+@import "/components/more-loading/more-loading.wxss";
+
+
+.container{
+    margin-top: 30rpx;
+}
+
+.card{
+    width: 710rpx;
+    margin: 0 auto;
+    margin-bottom: 20rpx;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    border-top: 12rpx solid #FF9834;
+    border-radius: 5px;
+    padding-bottom: 30rpx;
+    position: relative;
+}
+
+.card .title{
+    width: 550rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    line-height: 28rpx;
+    color: #333;
+    margin-top: 30rpx;
+    margin-bottom: 52rpx;
+    margin-left: 30rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card .text{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #999;
+    margin-top: 16rpx;
+    margin-left: 30rpx;
+}
+
+.card .text .text-inside{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    font-weight: 600;
+    color: #666;
+}
+
+.card .top-right{
+    font-size: 24rpx;
+    font-weight: 600;
+    line-height: 24rpx;
+    color: #27AEDF;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+}
+
+.card .bottom-right{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    bottom: 30rpx;
+    right: 30rpx;
+}
+
+
+.card-useless{
+    width: 710rpx;
+    margin: 0 auto;
+    margin-bottom: 20rpx;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    border-top: 12rpx solid #DDD;
+    border-radius: 5px;
+    padding-bottom: 30rpx;
+    position: relative;
+}
+
+.card-useless .title-useless{
+    font-size: 28rpx;
+    font-weight: 600;
+    line-height: 28rpx;
+    color: #DDD;
+    margin-top: 30rpx;
+    margin-bottom: 52rpx;
+    margin-left: 30rpx;
+}
+
+.card-useless .text-useless{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #DDD;
+    margin-top: 16rpx;
+    margin-left: 30rpx;
+}
+
+.card-useless .text-useless .text-inside-useless{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    font-weight: 600;
+    color: #ddd;
+}
+
+.card-useless .top-right-useless{
+    font-size: 24rpx;
+    font-weight: 600;
+    line-height: 24rpx;
+    color: #DDD;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+}
+
+.card-useless .bottom-right{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    bottom: 30rpx;
+    right: 30rpx;
+}
+
+
+.shade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.shade .qrcode{
+    width: 600rpx;
+    height: 490rpx;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    margin-top: 258rpx;
+    background: #FFF;
+    box-sizing: content-box;
+    border-top: 12rpx solid #FF9834;
+    position: relative;
+}
+
+.shade .qrcode .close{
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+}
+
+.shade .qrcode .close:before{
+    content: '';
+    display: block;
+    width: 30rpx;
+    height: 4rpx;
+    background: black;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 10rpx;
+    right: 0;
+}
+
+.shade .qrcode .close:after{
+    content: '';
+    display: block;
+    width: 30rpx;
+    height: 4rpx;
+    background: black;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10rpx;
+    right: 0;
+}
+
+.shade .qrcode .qrcode-title{
+    height: 40rpx;
+    margin-top: 100rpx;
+    text-align: center;
+}
+
+.shade .qrcode .qrcode-title text{
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #666;
+}
+
+.shade .qrcode .qrcode-title .qrcode-num{
+    font-size: 40rpx;
+    letter-spacing: -1px;
+    font-weight: 500;
+    line-height: 40rpx;
+    color: #54AC41;
+}
+
+.shade .qrcode .qrcode-img{
+    width: 400rpx;
+    height: 400rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40rpx;
+}
+

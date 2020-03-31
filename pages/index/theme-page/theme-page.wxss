@@ -1,0 +1,38 @@
+/* pages/index/theme-page/theme-page.wxss */
+@import "/template/member-goods/member-goods";
+page{
+  background:#fff;
+}
+.item-column{
+  width:auto;
+  overflow: hidden;
+}
+.member-goods-item .item-shopAdd .text:last-of-type{
+  max-width: none;
+  flex:1;
+}
+.member-goods-item .image-container{
+  height:354rpx;
+}
+.theme-header-img,.theme-footer-img{
+  width:100%;
+  /* height:500rpx; */
+  display: block;
+}
+/* .theme-footer-img{
+  height:320rpx;
+} */
+.theme-header{
+  background:#fff;
+}
+.theme-title{
+  color:#333;
+  font-weight: 500;
+  font-size:32rpx;
+  padding:30rpx;
+}
+.list-container {
+  background:#fff;
+  padding:30rpx 60rpx;
+  margin:40rpx 0
+}

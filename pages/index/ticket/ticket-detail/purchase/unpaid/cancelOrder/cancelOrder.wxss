@@ -1,0 +1,136 @@
+.paystate{
+    width: 600rpx;
+    margin: 0 auto;
+    margin-top: 130rpx;
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    border-radius: 20rpx;
+}
+
+.paystate .top{
+    width: 100%;
+    height: 172rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.paystate .top .top-circle{
+    border-radius: 50%;
+    padding: 10rpx;
+    background: #FFF;
+    margin: -66rpx auto 8rpx;
+}
+
+.paystate .top .top-circle image{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.paystate .top .top-title{
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #333;
+    margin: 0 auto;
+}
+
+
+.paystate .center{
+    width: 540rpx;
+    /*height: 450rpx;*/
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60rpx;
+}
+
+.paystate .center .center-title{
+    font-size: 28rpx;
+    line-height: 44rpx;
+    vertical-align: top;
+    font-weight: 600;
+    color: #333;
+    margin-top: 60rpx;
+}
+
+.paystate .center .category{
+    height: 32rpx;
+    margin-top: 32rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paystate .center .category .left{
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #999;
+}
+
+.paystate .center .category .right{
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #333;
+}
+
+.paystate .center .category .green{
+    color: #54AC41;
+}
+
+
+
+.paystate .bottom{
+    width: 100%;
+    height: 170rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.paystate .bottom .bottom-btn{
+    width: 520rpx;
+    height: 88rpx;
+    border-radius: 44rpx;
+    background: #54AC41;
+    font-size: 32rpx;
+    line-height: 88rpx;
+    color: #FFF;
+    text-align: center;
+}
+
+.paystate .bottom .bottom-btn:before{
+    content: '';
+    display: block;
+    width: 20rpx;
+    height: 20rpx;
+    background: #EBECF0;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -10rpx;
+    left: -10rpx;
+}
+
+.paystate .bottom .bottom-btn:after{
+    content: '';
+    display: block;
+    width: 20rpx;
+    height: 20rpx;
+    background: #EBECF0;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -10rpx;
+    right: -10rpx;
+}
+
+.bcgd{
+    width: 100%;
+    height: 247rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}

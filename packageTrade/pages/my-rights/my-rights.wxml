@@ -1,0 +1,45 @@
+<!--pages/order/my-rights/my-rights.wxml-->
+<import src="/template/card-bg/card-bg" />
+<view class='user-level-layout {{userInfo.currentLevel > 1?"long":""}}'>
+  <template is="card-bg"></template>
+  <view class='user-level'>
+    <view class='avatar-box'>
+      <image src='{{userInfo.avatar}}'></image>
+    </view>
+    <view class='user-name'>{{userInfo.nickname}}</view>
+    <view class='user-level-text'>
+      您当前的等级为
+      <text wx:if='{{userInfo.currentLevel ===1}}'>掌柜</text>
+      <text wx:if='{{userInfo.currentLevel ===2}}'>主管</text>
+      <text wx:if='{{userInfo.currentLevel ===3}}'>经理</text>
+      <image src='../../../images/icon/icon-userlevel-1.png'></image>
+    </view>
+    <view class='permission-header'>
+      <view class='line-point-left'>
+        <view class='line'></view>
+        <view class='point'></view>
+      </view>
+      <view class='line-point-right'>
+        <view class='line'></view>
+        <view class='point'></view>
+      </view>
+      <text>享受权益</text>
+    </view>
+    <view class='level-rights' wx:for='{{myRights}}' wx:key='{{item.id}}'>
+      <image src='../../../images/icon/{{item.icon}}.png'></image>
+      <view class='item-detail'>
+        <view class='item-title'>{{index+1}}: {{item.title}}</view>
+        <text class='item-desc'>{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='rule-detail-layout'>
+  <view class='title'>规则说明</view>
+  <view class='rule-item'>
+    <text class='rule-item-title'>一，用户体系</text>
+    <text class='rule-item-desc'>
+      分销商规则 \n1.平台用户分两类:普通用户、分销商。 \n2.普通用户:进入平台小程序，授权后，即成为普通用户，可购买平台内的任何商品。\n 3.分销商:购买平台指定的商品“畅玩卡”，即成为分销商。\n
+    </text>
+  </view>
+</view> -->

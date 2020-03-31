@@ -1,0 +1,71 @@
+<!--pages/subpageMine/pages/merchants-settled/merchants-settled.wxml-->
+<view class="top-img">
+  <image src="http://img.ishanshan.com/gimg/n/20200311/10aa64c8b4aa0c1705b488dec1378e25?p=image/format,jpg/quality,q_95/resize,w_750,h_260,g_center" />
+</view>
+<form bindsubmit="confirm" class="form-container">
+  <view class="title">请填写入驻信息</view>
+  <view class="fields">
+    <view class="input-list">
+      <view class="name">姓名</view>
+      <input class="input"  placeholder-class="placeholder-text" name='name' placeholder="请输入您的名字"></input>
+    </view>
+    <view class="input-list" style="border-bottom:0">
+      <view class="name">手机号码</view>
+      <input class="input" placeholder-class="placeholder-text" name='mobile' type="number" placeholder="请输入正确的手机号码"></input>
+    </view>
+  </view>
+  <view class="fields">
+    <view class="input-list">
+      <view class="name">商家名称</view>
+      <input class="input" placeholder-class="placeholder-text" name='businessName' placeholder="请输入商家名称"></input>
+    </view>
+    <view class="input-list">
+      <view class="name">商家数量</view>
+      <input class="input" placeholder-class="placeholder-text" name='businessNum' type="number" placeholder="请输入商家数量"></input>
+    </view>
+    <view class="input-list">
+      <view class="name">城市区域</view>
+      <picker mode='region' bindchange="bindRegionChange">
+        <input class="input" placeholder-class="placeholder-text" disabled="true" name='cityList' value="{{regionVal}}" placeholder="请输入所在城市区域"></input>
+      </picker>
+    </view>
+    <view class="input-list textarea" style="border-bottom:0">
+      <view class="name">详细地址</view>
+      <textarea name='address' placeholder-class="placeholder-text" placeholder=""></textarea>
+    </view>
+  </view>
+  <view class="teamwork">
+    <text class="tel-us">联系我们</text>
+    <view class="business">
+      <image src="http://img.ishanshan.com/gimg/n/20200311/b8fb8d92e9a598d7d3c78cb03525057a"></image>
+      <text class="">商务合作</text>
+    </view>
+  </view>
+  <view class="fields">
+    <view class="input-list">
+      <view class="name">联系人</view>
+      <view class="input-list-content">
+        <text class="text">方先生</text>
+        <text class="iconfont iconright"></text>
+      </view>
+    </view>
+    <view class="input-list" style="border-bottom:0">
+      <view class="name">联系电话</view>
+      <view class="input-list-content" bindtap="callPhone" data-phone="15382302289">
+        <text class="text">15382302289（微信同号）</text>
+        <text class="iconfont iconright"></text>
+      </view>
+    </view>
+    <!-- <view class="input-list">
+      <view class="name">公司电话</view>
+      <view class="input-list-content" bindtap="callPhone" data-phone="400-093-08850">
+        <text class="text">400-093-08850</text>
+        <text class="iconfont iconright"></text>
+      </view>
+    </view> -->
+  </view>
+  <view style="height:202rpx;"></view>
+  <view class="submit-button">
+    <button form-type="submit" hover-class="btn-hover">提交信息</button>
+  </view>
+</form>

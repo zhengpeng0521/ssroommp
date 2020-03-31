@@ -1,0 +1,13 @@
+<!--components/collect-pop/collect-pop.wxml-->
+<view class="collect-pop" wx:if='{{show}}'>
+  <view class="text">
+    <view class="text-item">点击"
+      <text class="point"></text>
+      <text class="point center"></text>
+      <text class="point"></text>"添加到我的小程序，</view>
+    <view class="text-item">更多活动等你来发现</view>
+  </view>
+  <view class="close" bindtap="close">
+    <text class="iconfont iconLC_icon_close_circle_line"></text>
+  </view>
+</view>

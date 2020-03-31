@@ -1,0 +1,99 @@
+/* pages/distribution/calendar/calendar.wxss */
+@import "/components/enter-loading/enter-loading.wxss";
+page {
+  background-color: #fff;
+}
+.title{
+  padding:36rpx 20rpx;
+  font-size:36rpx;
+  color:#333;
+}
+.appointTip{
+  height:72rpx;
+  line-height:72rpx;
+  font-size: 24rpx;
+  background:rgba(255,241,236,0.6);
+  color:#b88766;
+  padding-left:35rpx;
+}
+.week {
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  padding-bottom: 10rpx;
+}
+
+.week-title {
+  font-size: 36rpx;
+  padding: 36rpx 20rpx;
+  background-color: #fff;
+}
+
+.week-container {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1rpx solid #eee;
+  padding:8rpx 0;
+}
+
+.week-item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size:28rpx;
+}
+
+.week-item.color {
+  color: #ff9436;
+}
+
+scroll-view {
+  margin-top: 202rpx!important;
+}
+
+
+
+.calendar-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 0 60rpx 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.calendar-btn {
+  width: 670rpx;
+  height: 94rpx;
+  background: linear-gradient(322deg, rgba(255, 148, 54, 1) 0%, rgba(255, 188, 58, 1) 100%);
+  border-radius: 47rpx;
+  color: #fff;
+}
+
+.dialog-title{
+  padding:50rpx 70rpx 0;
+  color:#000;
+  font-size:36rpx;
+  font-weight: 500;
+  text-align: center;
+}
+.dialog-title text{
+  color:#FF9436;
+  font-size:36rpx;
+  font-weight: 500;
+}
+.dialog-content{
+  color:#888888;
+  font-size:30rpx;
+  margin-top:18rpx;
+  padding-bottom: 50rpx;
+  text-align: center;
+}

@@ -1,0 +1,69 @@
+<!--pages/test-game/record/record.wxml-->
+<!--pages/test-game/detail/detail.wxml-->
+<wxs module='goodsTemp'>
+  var testFuc = function(e) {
+    var arr = {
+       '0':'待支付',
+       '1':'活动中',
+       '2':'领了部分',
+       '3':'已领完',
+       '9':'已过期'
+    };
+    return arr[e];
+  }
+  module.exports.testFuc = testFuc
+</wxs>
+<view class="wrap">
+  <view class="top">
+    <view class="g-btn lf" bindtap="toIndex">
+      返回首页
+    </view>
+    <view class="g-btn rt" bindtap="toQuestion">
+      常见问题
+    </view>
+  </view>
+  <view
+    class="content"
+    style="background-image:url('https://img.ishanshan.com/gimg/n/20200119/7e2210522be0ff1aa9c709e49515fa1e')"
+  >
+    <view class="title">
+      <image style="width:320rpx;height:98rpx;" src="/images/test-game/5_ctjl.png" />
+    </view>
+    <scroll-view scroll-y class="scroll" scroll="scrollFn"
+    bindscrolltolower="loadMore">
+      <view class="scroll-content">
+        <!-- wx:for="{{record}}" -->
+        <block wx:if="{{record.length>0}}">
+          <view class="record" wx:for="{{record}}">
+            <image class="media" src="{{item.avatar}}" mode="widthFix" />
+            <view class="item">
+              <view class="item-row">
+                <view class="label nickname">
+                  {{item.nickname}}
+                </view>
+              </view>
+              <view class="item-row">
+                <view class="label">
+                  总计：{{item.awardTotalAmount}}元, {{item.awardNumber}}个, {{goodsTemp.testFuc(item.topicStatus+'')}}
+                </view>
+              </view>
+              <view class="item-row">
+                <view class="label">
+                  {{item.createTime}}
+                </view>
+              </view>
+            </view>
+            <view class="media-action">
+              <view class="media-btn" data-id="{{item.id}}" bindtap="toDetail">答题详情</view>
+              <view class="media-btn" data-amount="{{item.awardTotalAmount}}" data-id="{{item.id}}" bindtap="toPoster" style="background:#47BABB">获取海报</view>
+            </view>
+          </view>
+        </block>
+        <view wx:else class="empty" style="text-align:center">
+          暂无记录
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+

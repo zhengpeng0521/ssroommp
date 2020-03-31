@@ -1,0 +1,89 @@
+/* pages/trade/economical/economical.wxss */
+@import "/template/card-bg/card-bg";
+.economical-detail-layout {
+  position: relative;
+  height: 350rpx
+}
+
+.economical-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.economical-detail text {
+  display: block;
+  color: #fff;
+}
+
+.economical-detail-title {
+  margin-top: 40rpx;
+  font-size: 28rpx;
+}
+
+.economical-detail-count {
+  font-size: 80rpx;
+  font-weight: 500;
+  margin-top: 10rpx;
+}
+
+.economical-detail-navbar-layout {
+  padding: 0 20rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 0;
+  z-index: 12;
+}
+
+.economical-detail-navbar {
+  width: 670rpx;
+  padding: 0 20rpx;
+  height: 112rpx;
+  line-height: 112rpx;
+  background: #fff;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  font-size: 28rpx;
+}
+.economical-detail-navbar navigator{
+  color: #FF9436;
+  float: right;
+}
+.economical-detail-navbar navigator text{
+  color: #FF9436;
+}
+.economical-detail-navbar navigator::after{
+
+}
+.today-economical{
+  padding: 0 20rpx
+}
+.today-economical-title{
+  color: #666;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.today-economical-item{
+  padding: 20rpx 0;
+  margin-top: 10rpx;
+  border-bottom:1rpx solid #eee;
+}
+.today-economical-item .item-head{
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.today-economical-item .time{
+  color: #333;
+  font-size: 28rpx;
+}
+.today-economical-item .price{
+  color: #46B6EE;
+
+}
+.today-economical-item .item-desc{
+  font-size: 24rpx;
+  color: #666;
+}

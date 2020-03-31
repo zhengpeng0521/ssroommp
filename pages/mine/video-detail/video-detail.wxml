@@ -1,0 +1,76 @@
+<!--pages/mine/video-detail/video-detail.wxml-->
+<import src="/components/enter-loading/enter-loading.wxml" />
+<view wx:if="{{isLoading}}">
+  <template is="enter-loading" />
+</view>
+<view wx:else class="video">
+  <view class="video_top">
+    <view wx:if="{{videoShow}}">
+      <video
+        class="classVideo"
+        id="video"
+        object-fit="contain"
+        src="{{videoUrl+'?z=zd'}}"
+        autoplay="{{true}}"
+        show-center-play-btn="{{false}}"
+        enable-play-gesture="{{true}}"
+        title="{{videoName}}"
+        bindplay="playVideo"
+        bindpause="pauseVideo"
+      >
+        <cover-image
+          wx:if="{{videoPause}}"
+          bindtap="videoPlay"
+          class="video_img"
+          src="http://img.ishanshan.com/gimg/user/n///5183614826034622464.png"
+        ></cover-image>
+      </video>
+      <view class="top_content">
+        <view class="describe">
+          {{videoName}}
+        </view>
+        <view class="video_time">该视频由{{creater}}{{createTime}}上传</view>
+      </view>
+    </view>
+    <view wx:else class="banner_box">
+      <view class="mask"></view>
+      <view class="tip">暂未上传视频课程</view>
+      <image class="banner" mode="aspectFill" src="{{banner}}"></image>
+    </view>
+  </view>
+  <view class="video_content" style="height:calc(100vh - {{headHeight}}px)">
+    <view class="title" style="top:{{videoTitleHeight}}px">目录</view>
+    <view class="section">
+      <view wx:for="{{list}}" wx:key="key" wx:for-index="sectionIndex" wx:for-item="sectionItem">
+        <view class="section_item {{(!sectionItem.checked && sectionIndex !== list.length - 1) ? 'border' : ''}}" data-sectionIndex="{{sectionIndex}}" catchtap="toggleSection">
+          <view class="line"></view>
+          <view class="section_title">{{sectionItem.chapterName}}</view>
+          <image wx:if="{{sectionItem.checked}}" class="section_img" src="http://img.ishanshan.com/gimg/user/n///8466021425193553920.png"></image>
+          <image wx:else class="section_img" src="http://img.ishanshan.com/gimg/user/n///8301188934738776064.png"></image>
+        </view>
+        <view class="className" wx:if="{{sectionItem.checked && sectionItem.checked === true}}">
+          <view class="item_wrap" wx:for="{{sectionItem.videoInfo}}" wx:key="key" wx:for-index="classIndex" wx:for-item="classItem">
+            <view class="class_name_item" data-sectionIndex="{{sectionIndex}}" data-classIndex="{{classIndex}}" catchtap="toggleVideo">
+              <view class="class_name {{classItem.checked? 'class_name_activity' : ''}}">
+                <view class="index">{{classIndex + 1 < 10 ? 0 : ''}}{{classIndex + 1}}</view>
+                <view class="class_name_line">|</view>
+                <view class="videoName">{{classItem.videoName}}</view>
+              </view>
+              <image wx:if="{{classItem.checked}}" src="http://img.ishanshan.com/gimg/n/20200314/0adf8ccb3c3a81e350ff633852d324f4"></image>
+              <image wx:else src="http://img.ishanshan.com/gimg/user/n///3216979448603471872.png"></image>
+            </view>
+            <view class="item_line" wx:if="{{classIndex !== sectionItem.videoInfo.length - 1}}"></view>
+          </view>
+          <view wx:if="{{sectionItem.videoInfo.length === 0 || !sectionItem.videoInfo}}" class="noClass">暂未上传视频课程 {{videoShow}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="company">
+      <image class="companyLogo" src="http://img.ishanshan.com/gimg/n/20200209/6bef92327c3e6347d935b9527f047ef7"></image>
+      <view class="companyText">闪宝科技提供技术支持</view>
+    </view>
+    <view class="website">www.ishanshan.com</view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="contact-edit-block">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <view class="section__title">姓名</view>
+      <input class="name-input" name="name" type="text" value="{{name}}" confirm-type='next' placeholder-class='placeholder-text' placeholder="请输入姓名" />
+    </view>
+    <view class="section">
+      <view class="section__title">身份证</view>
+      <input type="idcard" name='id' class="name-input" value="{{id}}" placeholder-class='placeholder-text' placeholder="请输入身份证号码" />
+    </view>
+    <button class="c-btn contact-edit-btn" form-type="submit">
+      <text class="c-text">{{edit?'确认新增':'确认修改'}}</text>
+    </button>
+  </form>
+</view>

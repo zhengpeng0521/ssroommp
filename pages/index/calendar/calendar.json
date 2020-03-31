@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "calendar":"/components/calendar/calendar",
+    "v-popup":"/components/popup/popup",
+    "v-coupon":"/components/coupon/coupon"
+  },
+  "navigationBarTitleText": "选择日期"
+}

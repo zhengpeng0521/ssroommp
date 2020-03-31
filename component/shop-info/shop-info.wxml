@@ -1,0 +1,17 @@
+<view class="shop-info">
+    <view class="main-top {{indexOfCurrentDevice ? 'btnWhiteAnim': ''}}" catchtap="onNavToShopDetail">
+        <text class="top-title">适用游乐园</text>
+        <text class="scan-detail">查看详情</text>
+        <view class="arrow"></view>
+    </view>
+    <view class="main-center">
+        <text class="shop-adress">{{shopData.shopName}}</text>
+        <text class="shop-distance">{{shopData.distance}}km</text>
+        <image class="icon-phone" src="/images/icon/dianhua.png" catchtap="onPhoneCall"></image>
+    </view>
+    <view class="main-bottom {{indexOfCurrentAddress ? 'btnWhiteAnim': ''}}" catchtap="onOpenMap">
+        <image class="icon-adress" src="/images/icon/dizhi.png"></image>
+        <text class="bottom-title">{{shopData.shopAddress}}</text>
+        <view class="arrow" style="margin: auto 30rpx auto auto;"></view>
+    </view>
+</view>

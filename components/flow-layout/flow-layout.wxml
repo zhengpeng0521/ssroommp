@@ -1,0 +1,7 @@
+<!--components/flowLayout/flowLayout.wxml-->
+<import src="../../template/flow-layout/flow-layout.wxml" />
+<view wx:if="{{renderList.length>0}}" class="list-container">
+  <view wx:for="{{renderList}}" wx:key="{{index}}" wx:for-item="column" class="list-side-box">
+    <template is="list-item-theme_album" data="{{render_list:column,content_list:rawData}}"></template>
+  </view>
+</view>

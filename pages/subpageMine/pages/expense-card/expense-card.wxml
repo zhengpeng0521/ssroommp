@@ -1,0 +1,61 @@
+<import src="/components/enter-loading/enter-loading.wxml" />
+<import src="/components/more-loading/more-loading.wxml" />
+
+
+<view wx:if="{{isLoading}}">
+    <template is="enter-loading" />
+</view>
+
+<view wx:else class="cast-imgs  {{isShowQrCode?'noSroll':''}}" scroll-y="true" style="height:100vh">
+    <view class="container">
+        <block wx:for="{{expenseCardData}}" wx:key="*this"> 
+            <view data-index='{{index}}' wx:if="{{item.status === '1'}}" class="card" catchtap="possVerifyCode" 
+            data-id="{{item.verifyId}}">
+                <text class="title">{{item.cardName}}</text>
+                <text class="text">有效期至{{item.expireTime || ''}}</text>
+                <text wx:if="{{item.cardType === '2'}}" class="text">不限使用次数</text>
+                <text wx:if="{{item.cardType === '1'}}" class="text">剩余{{item.remainTimes}}次</text>
+                <text class="text">适用游乐园：<text class="text-inside">{{item.shopName}}</text></text>
+                <text class="top-right">正常</text>
+                <image class="bottom-right" src="/images/icon/erweima-black.png" data-index="{{index}}"></image>
+            </view>
+
+            <view wx:else class="card-useless">
+                <text class="title-useless">{{item.cardName}}</text>
+                <text class="text-useless">有效期至{{item.expireTime || ''}}</text>
+                <text wx:if="{{item.type === '1'}}" class="text-useless">不限使用次数</text>
+                <text wx:if="{{item.type === '2'}}" class="text-useless">剩余{{item.totalTimes}}次</text>
+                <text class="text-useless">适用游乐园：<text class="text-inside-useless">{{item.shopName}}</text></text>
+                <text wx:if="{{item.status === '2'}}" class="top-right-useless">已用完</text>
+                <text wx:else class="top-right-useless">已过期</text>
+                <image class="bottom-right" src="/images/icon/erweima-gray.png" data-index="{{index}}"></image>
+            </view>
+        </block>
+
+        <view class="empty" wx:if="{{expenseCardData[0] == null}}">
+            <image class="empty-img" src="/images/bg/zhanweitu.png"></image>
+            <text class="empty-text">暂无消费卡</text>
+        </view>
+
+        <view wx:if="{{isHaveMoreData === false && expenseCardData[0] != null}}" class="loadOver">数据已加载完毕~</view>
+
+    </view>
+
+</view>
+
+<view hidden="{{!isShowQrCode}}" class="shade" catchtap="onQrCodeHide">
+    <view class="qrcode" catchtap="onVoidHandler">
+        <view class="close" catchtap="onQrCodeHide"></view>
+        <!-- <view class="qrcode-title">
+            <text>核销码：</text>
+            <text class="qrcode-num">{{qrCodeData.verificationCode}}</text>
+        </view> -->
+        <view class="qrcode-img">
+            <canvas style="width: 400rpx;height: 400rpx;background:#f1f1f1;" canvas-id="mycanvas" disable-scroll="true" />
+        </view>
+    </view>
+</view>
+
+<view wx:if="{{isLoadingMore}}">
+    <template is="more-loading" />
+</view>

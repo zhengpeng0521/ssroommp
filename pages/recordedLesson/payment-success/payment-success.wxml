@@ -1,0 +1,39 @@
+<!-- pages/recordedLesson/payment-success/payment-success.wxml -->
+<view class="container">
+  <view class="result">
+    <view class="result-state">
+      <image src="/images/icon/pay@success.png" />
+      <view class="pay-text">付款成功</view>
+    </view>
+    <view class="result-info">
+      <!-- 普通商品订单和会员卡订单 -->
+      <block>
+        <view class="result-item">
+          <view class="item-label">商品名称</view>
+          <view class="item-desc">{{orderData.goodsName}}</view>
+        </view>
+        <view class="result-item">
+          <view class="item-label">金额</view>
+          <view class="item-desc">￥{{orderData.orderAmount}}</view>
+        </view>
+        <view class="result-item">
+          <view class="item-label">下单时间</view>
+          <view class="item-desc">{{orderData.orderTime}}</view>
+        </view>
+        <view class="result-item" wx:if="{{user.spreadLevel>0}}">
+          <view class="item-label">订单完成</view>
+          <view class="item-desc">赚取佣金<text class="dpr-amount">￥{{orderData.benefit}}</text>佣金</view>
+        </view> 
+      </block>
+    </view>
+    <view class="pannel-btn">
+      <view class="flex-btn" catchtap="onNavToIndex">返回课程详情</view>
+      <view class="divide"></view>
+      <view class="flex-btn return-index" catchtap="onNavToOrder">查看订单</view>
+    </view>
+  </view>
+</view>
+
+<view class="verification" wx:if="{{orderData.orderStatus == 1}}">
+  <view class="btn btn-primiary" bindtap="selectAppointDay" hover-class="btn-hover">选择使用时间</view>
+</view>

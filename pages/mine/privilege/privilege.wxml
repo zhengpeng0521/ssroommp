@@ -1,0 +1,152 @@
+<!-- pages/mine/privilege/privilege.wxml -->
+<import src="/template/coupon/coupon" />
+<view class="privilege">
+  <view class="credits pad-wrap">
+    <view class="panel">
+      <view class="panel-top">
+        <view class="current-amount">
+          <view class="text">您当前拥有喵币</view>
+          <view class="num">{{freeFrag}}</view>
+        </view>
+        <navigator hover-class="none" url="/pages/mine/record/record" open-type="navigate">
+          <view class="record-btn">喵币记录</view>
+        </navigator>
+      </view>
+      <view class="panel-bottom">
+        <view class="bottom-intro">
+          <view>“喵币”可做任务获得</view>
+          <view>“喵币”可兑换超值权益</view>
+        </view>
+        <view class="about-btn" catchtap="viewRule">
+          <view class="btn-text">关于“喵币”</view>
+          <view class="triangle" />
+        </view>
+      </view>
+      <!-- <view class="banner">
+        <view class="banner-number">
+          <view class="hd">
+            <text class="number">{{freeFrag}}</text>
+            <text class="unit">个</text>
+          </view>
+          <view class="badge">您当前拥有喵币</view>
+        </view>
+        <view class="banner-info">
+          <view class="list">
+            <view class="list-item">
+              <text>1</text>
+              "喵币"可做任务获得
+            </view>
+            <view class="list-item">
+              <text>2</text>
+              "喵币"可兑换超值权益
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="panel-footer">
+        <view class="panel-btn">
+          <navigator hover-class="none" url="/pages/mine/record/record" open-type="navigate">
+            喵币记录
+          </navigator> 
+        </view>
+        <view class="panel-btn" catchtap="viewRule">
+          关于"喵币"
+        </view>
+      </view> -->
+    </view>
+    <block>
+      <view class="wx-card" wx:for="{{cardTaskItem}}" wx:key="{{item.taskId}}">
+        <view class="wx-card-hd">{{item.taskName}}</view>
+        <view class="wx-card-bd">
+          <view class="bd-content">
+            <view class="bd-title">{{item.taskDesc}}</view>
+            <view class="bd-desc">活动时间：{{item.startDate}}～{{item.endDate}}</view>
+            <view class="bd-desc">活动奖励：{{item.obtainFrag}}喵币</view>
+          </view>
+          <view class="bd-ft">
+            <view class="bd-ft-info">
+              <view class="bd-ft-record" wx:if="{{item.taskNum>0}}">
+                当前已完成{{item.taskNum}}次，共获得{{item.totalFrag}}喵币
+              </view>
+              <view catchtap="viewRule" data-desc="{{item.taskRule}}">
+                <custom-icon name="help" color="#D8D8D8" style="margin-right:10rpx;" />
+                查看规则说明
+              </view>
+            </view>
+            <view class="bd-ft-operate">
+              <button class="bd-ft-btn" data-name="{{item.taskName}}" data-task="{{item.taskType}}" bindtap="onNavTo">
+                {{item.text}}
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="btn-wrap">
+      <!-- <view class="empty-box" style="padding:20rpx 0;" wx:if="{{cardTaskItem.length == 0}}">
+          <image class="empty-image" src="/images/bg/no-data-f.png" />
+          <view class="empty-txt">暂无任务</view>
+        </view> -->
+      <button class="btn btn-primiary" hover-class="btn-hover" bind:tap="takeCoupon">
+        点击兑换
+      </button>
+    </view>
+  </view>
+</view>
+<v-popup show="{{showPopup}}" title="选择要兑换的特权券" position="bottom" bind:close="handleClose">
+  <scroll-view scroll-y="true" style="max-height: 570rpx;margin-top:0">
+    <view class="popup-wrap">
+      <block wx:if="{{welfareAwardItemList.length>0}}">
+        <v-coupon wx:for="{{welfareAwardItemList}}" wx:key="{{item.welfareId}}" item="{{item}}" operate-text="领取" bindoperate="handleTake" />
+      </block>
+      <view class="empty-box" style="padding:20rpx 0;" wx:else>
+        <image class="empty-image" src="/images/bg/no-data-f.png" />
+        <view class="empty-txt">暂无可领取的特权券</view>
+      </view>
+    </view>
+  </scroll-view>
+</v-popup>
+<v-popup offsetTop="{{40}}" show="{{showDialog}}" custom-style="background:transparent" closeStyle="top:40rpx;right:50rpx;" bind:close="closeDialog">
+  <view class="dialog-wrap">
+    <image class="dialog-bg" src="/images/bg/success-tip.png" />
+    <view class="coupon-item">
+      <view class="coupon-hd">
+        <view class="coupon-info">
+          <view class="coupon-info-name dialog-coupon-name">{{welfare.welfareName}}</view>
+          <view class="coupon-info-desc">部分商品可用</view>
+        </view>
+      </view>
+      <view class="coupon-bd">{{welfare.expireTime}} 到期</view>
+    </view>
+    <view class="dialog-btn" data-rule="{{welfare.ruleId}}" data-scope="{{welfare.goodsScope}}" bindtap="handleView">
+      <view class="btn btn-primiary">立即使用</view>
+    </view>
+  </view>
+</v-popup>
+<!-- 规则说明 -->
+<van-popup show="{{ruleDialog}}" custom-style="border-radius:10rpx;" closeable bind:close="closeRuleDialog">
+  <view class="tip-wrap">
+    <block wx:if="{{showRule}}">
+      <view class="tip-title">{{ruleTitle}}</view>
+      <view wx:for="{{ruleDesc}}" wx:key="{{index}}" class="tip-desc">{{item}}</view>
+    </block>
+    <block wx:else>
+      <view class="tip-title">喵币</view>
+      <view class="tip-desc">喵币可用于兑换“闪闪课堂”平台提供的各项特权，未来“喵币”可兑换礼品、提现。</view>
+      <view class="tip-box">
+        <view class="tip-box-title">适用范围</view>
+        <view class="tip-box-content">1、喵币仅可在闪闪课堂会员卡使用，如用户帐号暂停使用，则闪闪课堂会员卡将取消该用户帐号内喵币相关使用权益。</view>
+        <view class="tip-box-content">2、喵币查询:您可以在“个人中心-我的特权-喵币任务”中可查询到您的喵币详细情况。</view>
+      </view>
+      <view class="tip-box">
+        <view class="tip-box-title">具体规则</view>
+        <view class="tip-box-content">1、用户预约核销一次教育商品可以获得对应的喵币，每预约核销一次可获得对应数量的喵币</view>
+      </view>
+      <view class="tip-box">
+        <view class="tip-box-title">使用规则</view>
+        <view class="tip-box-content">使用对应喵币，可兑换绿色通道券（绿色通道券预约商品不受库存的限制）</view>
+      </view>
+      <view class="tip-important">*喵币获取，请勿违规刷喵币，如发现您存在违规行为，我们有权取消您获得喵币的资格</view>
+    </block>
+  </view>
+</van-popup>

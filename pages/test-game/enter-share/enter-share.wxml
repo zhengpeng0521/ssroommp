@@ -1,0 +1,15 @@
+<!--pages/test-game/enter-share/enter-share.wxml-->
+<!--pages/test-game/game-share/game-share.wxml-->
+<view class="header">
+  <view class="hb-wrap">
+    <image class="hd-hb" src="https://img.ishanshan.com/gimg/n/20200206/52dd2ba678ea5707a7b66ca31f304d84"/>
+    <image class="avatar" mode="widthFix" src="{{result.avatar}}" />
+    <view class="text">答题领取红包</view>
+    <view class="account">????元</view>
+  </view>
+
+</view>
+<view class="foot">
+  <button class="btn error" open-type="getUserInfo" bindgetuserinfo="getUserInfo">开始答题</button>
+</view>
+

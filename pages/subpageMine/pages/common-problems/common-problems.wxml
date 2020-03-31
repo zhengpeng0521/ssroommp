@@ -1,0 +1,21 @@
+<!--pages/mine/common-problems/common-problems.wxml-->
+<view class="list-container">
+  <view class="title">关于激活</view>
+  <view class="list-item" wx:for='{{qusetions}}' wx:key='{{index}}' data-index='{{index}}' bindtap="slideAction">
+    <view class="item-title">
+      <text class="txt">{{item.title}}</text>
+      <text class="iconfont iconjiantou {{slide[index]?'slide':''}}"></text>
+    </view>
+    <view class="item-results {{slide[index]?'slide':''}}">{{item.results}}</view>
+  </view>
+</view>
+<view class="bottom-btn">
+  <button class="btn-1" hover-class="list-hover" open-type="contact">
+    <text class="btn-txt-1">在线客服</text>
+    <text class="btn-txt-2">10:00～20:00</text>
+  </button>
+  <button class="btn-2" hover-class="list-hover" bindtap="makePhoneCall">
+    <text class="btn-txt-1">电话客服</text>
+    <text class="btn-txt-2">400-093-8850</text>
+  </button>
+</view>

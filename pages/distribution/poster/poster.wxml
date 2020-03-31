@@ -1,0 +1,15 @@
+<!-- pages/distribution/poster/poster.wxml -->
+<view class="painter" catchtouchmove="preventScroll">
+  <painter style="position:fixed;right:-9999rpx;display:block;" palette="{{template}}" bind:imgOK="onImgOK" widthPixels="750" />
+  <image src="{{posterUrl}}" class="poster-img" mode="scaleToFill" />
+  <view class="share-action">
+    <button class="share-btn share-friend" open-type="share">
+      <image class="share-friend-img" src="/images/icon/share-wx.png" />
+      <view class="share-friend-text">分享好友</view>
+    </button>
+    <view class="share-btn" catchtap="saveShareImage">
+      <image class="share-friend-img" src="/images/icon/share-download.png" />
+      <view class="share-friend-text">下载图片</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "订单详情",
+    "usingComponents": {
+      "com-rate": "/components/rate/rate",
+      "com-tabs": "/components/tabs/tabs",
+      "v-popup": "/components/popup/popup",
+      "upload": "/components/upload/upload",
+      "custom-icon": "../../components/icon/icon"
+    }
+}

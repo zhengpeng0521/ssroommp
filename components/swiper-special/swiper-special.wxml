@@ -1,0 +1,22 @@
+<!--components/swiper-special/swiper-special.wxml-->
+<!-- <view class="list-container">
+  <view class='list-title'>
+    <text class='title-text'>{{title}}</text>
+  </view>
+</view> -->
+<view class="swiper-container" wx:if='{{list.length>0}}'>
+  <swiper class="swiper-component" circular previous-margin="30rpx" next-margin="300rpx" current='{{currentProp}}' bindchange="currentHandle">
+    <swiper-item class='swiper-item' wx:for='{{list}}' wx:key='{{index}}' >
+      <navigator url="/pages/index/ticket/ticket-detail/ticket-detail?goodsId={{item.id}}" class="swiper-item-nav {{current ===index?'active':''}}">
+        <view class="swiper-item-top" style="background-image:url('{{item.img}}??p=image/format,jpg/quality,q_75/resize,l_750')">
+          <!-- <view class="swiper-item-mask">
+            <view class="swiper-item-title">{{item.vipSpuName}}专属</view>
+          </view> -->
+        </view>
+        <view class="swiper-item-bottom">
+          <text class="txt">{{item.spuName}}</text>
+        </view>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
